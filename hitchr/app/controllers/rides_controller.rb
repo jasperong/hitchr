@@ -28,4 +28,9 @@ class RidesController < ApplicationController
     redirect_to root_path
   end
 
+  private
+  def ride_params
+    params.require(:ride).permit(:date, :time, :seats_available, :comments, :start_location, :end_location)
+  end
+
 end
