@@ -6,7 +6,6 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @ride = Ride.find(params[:ride_id])
     @booking = @ride.bookings.build(booking_params)
     @booking.user = current_user
 
