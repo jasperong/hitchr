@@ -1,4 +1,10 @@
 class User < ActiveRecord::Base
+  has_many :rides
+  has_many :bookings, through: :ride
+  has_many :reviews, through: :ride
+  has_many :rides
+
+  
 
   # ========> for sorcery <=========
   authenticates_with_sorcery!
