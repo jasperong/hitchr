@@ -1,41 +1,50 @@
 class UsersController < ApplicationController
-  # before_action :require_login, only: :show
+	# before_action :require_login, only: :show
 
 
-  def new
-    @user = User.new
-  end
+	def new
+		@user = User.new
+	end
 
-  def show
-    @user = User.find(params[:id])
-  end
+	def show
+		@user = User.find(params[:id])
+		@rides = @user.rides.all
+		#FIX THIS BELOW TO SHOW ALL REVIEWS FOR USER
+		#@reviews = @user.rides.all.reviews
 
-  def create
-    @user = User.new(user_params)
+		#FIX THIS BELOW TO SHOW ALL My Bookings
+		#and The bookings made for my ride offered
+		# @bookings = @user.rides.all.bookings.all
+	end
 
-    if @user.save
-      session[:user_id] = @user.id
-      redirect_to root_path, alert: "Signed up!"
-    else
-      render :new
-    end
-  end
+	def create
+		@user = User.new(user_params)
 
-  def edit
-  end
+		if @user.save
+			session[:user_id] = @user.id
+			redirect_to root_path, alert: "Signed up!"
+		else
+			render :new
+		end
+	end
 
-  def update
-    if @user.update_attributes(user_params)
-      redirect_to root_path
-    else
-      render :new
-    end
-  end
+	def edit
+		@user = User.find(params[:id])
+	end
 
-  private
+	def update
+		@user = User.find(params[:id])
+		if @user.update_attributes(user_params)
+			redirect_to user_path(@user)
+		else
+			render :new
+		end
+	end
 
-  def user_params
-    params.require(:user).permit(:email, :password, :password_confirmation, :first_name, :last_name, :gender, :date_of_birth, :reliability, :avatar)
-  end
+	private
+
+	def user_params
+		params.require(:user).permit(:email, :password, :password_confirmation, :first_name, :last_name, :gender, :date_of_birth, :reliability, :avatar)
+	end
 
 end
