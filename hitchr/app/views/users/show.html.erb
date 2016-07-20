@@ -1,0 +1,13 @@
+<h1> User Profile Page</h1>
+
+<div class="user-info">
+    <%= @user.first_name %> | <%= @user.first_name %><br />
+    <%= @user.email %><br / />
+    <%= @user.gender %><br />
+    <%= @user.date_of_birth %><br />
+    <%= link_to "Edit profile", edit_user_path(@user) %>
+</div>
+<div>
+  <%= link_to "Add Review", new_user_review(@user)%>
+  <%= render @user.reviews %>
+</div>

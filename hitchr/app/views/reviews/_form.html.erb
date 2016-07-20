@@ -1,0 +1,15 @@
+<div>
+  <%= form_for([@user, @user.reviews.build]) do |f| %>
+    <div class="field">
+      <%= f.label :rating %>
+      <%= f.text_field :rating %>
+    </div>
+    <div class="field">
+      <%= f.label :review %>
+      <%= f.text_field :review %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <%end%>
+</div>
