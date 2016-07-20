@@ -1,7 +1,11 @@
+require 'ffaker'
+
 FactoryGirl.define do
   factory :user do
 
-    sequence(:email) { |n| "person#{n}@example.com" } # we can use Faker gem here
+    # sequence(:email) { |n| "person#{n}@example.com" } # we can use Faker gem here
+
+    email {FFaker::Internet.email}
 
     first_name { %w(Althea David Hira).sample }
     last_name { %w(Yi Cisneros Kazmi).sample }
