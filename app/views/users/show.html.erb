@@ -2,9 +2,10 @@
 
 <div class="user-info">
 		<%= @user.first_name %> | <%= @user.last_name %><br />
-		<%= @user.email %><br / />
+		<%= @user.email %><br />
 		<%= @user.gender %><br />
 		<%= @user.date_of_birth %><br />
+		<!-- ADD THE PICTURE! -->
 		<%= link_to "Edit profile", edit_user_path(@user) %>
 </div>
 <div>
