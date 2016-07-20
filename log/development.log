@@ -8998,3 +8998,370 @@ SyntaxError (/Users/hirakazmi/Desktop/bitmaker/projects/hitchr/hitchr/app/contro
   [1m[35mSQL (0.2ms)[0m  INSERT INTO "reviews" ("rating", "review", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["rating", 5], ["review", "Panse propre lequel ils bolos."], ["user_id", 4], ["ride_id", 11], ["created_at", "2016-07-20 22:29:19.451298"], ["updated_at", "2016-07-20 22:29:19.451298"]]
   [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
   [1m[36mReview Load (8.2ms)[0m  [1mSELECT "reviews".* FROM "reviews"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "bookings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "ride_id" integer, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "seats" integer) [0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "reviews" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "ride_id" integer, "rating" integer, "review" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.8ms)[0m  [1mCREATE TABLE "rides" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "date" date, "seats_available" integer, "comments" text, "start_location" varchar, "end_location" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "time" time) [0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar NOT NULL, "first_name" varchar, "last_name" varchar, "gender" varchar, "date_of_birth" date, "reliability" float, "crypted_password" varchar, "salt" varchar, "created_at" datetime, "updated_at" datetime, "avatar_file_name" varchar, "avatar_content_type" varchar, "avatar_file_size" integer, "avatar_updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.7ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160720200616')
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160718212801')[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160718214055')
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160719033155')[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160719033538')
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160719033700')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160719043354')
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "bookings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "ride_id" integer, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "seats" integer) [0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "reviews" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "ride_id" integer, "rating" integer, "review" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.8ms)[0m  [1mCREATE TABLE "rides" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "date" date, "seats_available" integer, "comments" text, "start_location" varchar, "end_location" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "time" time) [0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar NOT NULL, "first_name" varchar, "last_name" varchar, "gender" varchar, "date_of_birth" date, "reliability" float, "crypted_password" varchar, "salt" varchar, "created_at" datetime, "updated_at" datetime, "avatar_file_name" varchar, "avatar_content_type" varchar, "avatar_file_size" integer, "avatar_updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (4.9ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.8ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160720200616')
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160718212801')[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160718214055')
+  [1m[36m (1.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160719033155')[0m
+  [1m[35m (1.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160719033538')
+  [1m[36m (1.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160719033700')[0m
+  [1m[35m (1.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160719043354')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'demetrius_mraz@starkaufderhar.com' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("email", "first_name", "last_name", "gender", "date_of_birth", "reliability", "salt", "crypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["email", "demetrius_mraz@starkaufderhar.com"], ["first_name", "Sasha"], ["last_name", "Romaguera"], ["gender", "male"], ["date_of_birth", "2016-07-25"], ["reliability", 0.2750185077452495], ["salt", "poTGXmTDDHhkXTPo2A16"], ["crypted_password", "$2a$10$0fWFJAPU15nvenmNQ6txsOrr65EA5nP6DiIltGTvF0x.BowoFLVoC"], ["created_at", "2016-07-20 23:33:04.237177"], ["updated_at", "2016-07-20 23:33:04.237177"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'barton@cronin.co.uk' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "first_name", "last_name", "gender", "date_of_birth", "reliability", "salt", "crypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["email", "barton@cronin.co.uk"], ["first_name", "Ray"], ["last_name", "Marks"], ["gender", "male"], ["date_of_birth", "2013-02-16"], ["reliability", 0.02351779387893005], ["salt", "2SC7PpydMQkMtjQZcp6x"], ["crypted_password", "$2a$10$Tw7d/sNskJmgQc.pynzLXOyTU7fxT9vWHM4p2PorXl1FUgEY1gqwy"], ["created_at", "2016-07-20 23:33:04.421748"], ["updated_at", "2016-07-20 23:33:04.421748"]]
+  [1m[36m (4.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'elvera.wolff@bins.name' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "first_name", "last_name", "gender", "date_of_birth", "reliability", "salt", "crypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["email", "elvera.wolff@bins.name"], ["first_name", "Rudy"], ["last_name", "Rowe"], ["gender", "male"], ["date_of_birth", "2014-08-30"], ["reliability", 0.9542068171468029], ["salt", "383j4YnCiaWv8GY29Z2p"], ["crypted_password", "$2a$10$269lCYwTshwr/TOKlmxmW.P1ZC9GPCAC9LH39pAyz6wA7uzL/1kwm"], ["created_at", "2016-07-20 23:33:04.599828"], ["updated_at", "2016-07-20 23:33:04.599828"]]
+  [1m[36m (5.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'andreane@rohanbuckridge.name' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "first_name", "last_name", "gender", "date_of_birth", "reliability", "salt", "crypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["email", "andreane@rohanbuckridge.name"], ["first_name", "Rosalee"], ["last_name", "Wiza"], ["gender", "female"], ["date_of_birth", "2015-01-24"], ["reliability", 0.8730119625066655], ["salt", "7egR9YmYJqMzoC9jQCb3"], ["crypted_password", "$2a$10$oDGaLEogyojKKIvTDUbA3O051ABGjqRMU3CSOzoNwEz3xxPHGSmIO"], ["created_at", "2016-07-20 23:33:04.777764"], ["updated_at", "2016-07-20 23:33:04.777764"]]
+  [1m[36m (5.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'mireille@lynch.name' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "first_name", "last_name", "gender", "date_of_birth", "reliability", "salt", "crypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["email", "mireille@lynch.name"], ["first_name", "Joesph"], ["last_name", "Beier"], ["gender", "female"], ["date_of_birth", "2013-04-09"], ["reliability", 0.4476271178316389], ["salt", "EyNRkHz54NjJyxd18GdF"], ["crypted_password", "$2a$10$T2HManoiq5YErSETOIjauONb29RFDATzxO0ctsGnj8/V3ldhEKko6"], ["created_at", "2016-07-20 23:33:04.959028"], ["updated_at", "2016-07-20 23:33:04.959028"]]
+  [1m[36m (4.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'peter@morarhintz.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "first_name", "last_name", "gender", "date_of_birth", "reliability", "salt", "crypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["email", "peter@morarhintz.com"], ["first_name", "Hunter"], ["last_name", "Halvorson"], ["gender", "male"], ["date_of_birth", "2015-03-13"], ["reliability", 0.3193477887607613], ["salt", "y17D8ZTGimQgPVDJsLdq"], ["crypted_password", "$2a$10$crpGbDnqgnZVfcPoVSCE/ur38KHBrXQXBk25mQ/4foRpB9snOzYVC"], ["created_at", "2016-07-20 23:33:05.144880"], ["updated_at", "2016-07-20 23:33:05.144880"]]
+  [1m[36m (5.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'vidal.hermiston@lueilwitzprosacco.ca' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "first_name", "last_name", "gender", "date_of_birth", "reliability", "salt", "crypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["email", "vidal.hermiston@lueilwitzprosacco.ca"], ["first_name", "Camren"], ["last_name", "Renner"], ["gender", "female"], ["date_of_birth", "2016-11-16"], ["reliability", 0.5564421977172275], ["salt", "sSDHctSYy3nQCiG5epiN"], ["crypted_password", "$2a$10$J7XKnQatI3L8iwqIzsFlwOKUkLiLZcH7o5bbD/F1QdEeiKEmwzlwW"], ["created_at", "2016-07-20 23:33:05.328227"], ["updated_at", "2016-07-20 23:33:05.328227"]]
+  [1m[36m (5.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'torrey@jacobilehner.info' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "first_name", "last_name", "gender", "date_of_birth", "reliability", "salt", "crypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["email", "torrey@jacobilehner.info"], ["first_name", "Brennan"], ["last_name", "Becker"], ["gender", "female"], ["date_of_birth", "2016-09-02"], ["reliability", 0.8499348752729278], ["salt", "ApGWX7cDQyUxWytQVZi6"], ["crypted_password", "$2a$10$Dl7QO4klXSBV1VV3O0xFYe1q1HKSnV9qNOAohLDooaC7un556ehXa"], ["created_at", "2016-07-20 23:33:05.512002"], ["updated_at", "2016-07-20 23:33:05.512002"]]
+  [1m[36m (4.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'ruth.pfeffer@grant.ca' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("email", "first_name", "last_name", "gender", "date_of_birth", "reliability", "salt", "crypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["email", "ruth.pfeffer@grant.ca"], ["first_name", "Vida"], ["last_name", "Emard"], ["gender", "female"], ["date_of_birth", "2012-12-08"], ["reliability", 0.7517983586321108], ["salt", "Tkf4vUmkszx6MCPjpd5u"], ["crypted_password", "$2a$10$RduI3C9MlIpjgjyBn.FdsusVlXY8uUhvCki2huD0YfDfSD3V7OguC"], ["created_at", "2016-07-20 23:33:05.689484"], ["updated_at", "2016-07-20 23:33:05.689484"]]
+  [1m[36m (4.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'gabrielle@baumbach.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "first_name", "last_name", "gender", "date_of_birth", "reliability", "salt", "crypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["email", "gabrielle@baumbach.com"], ["first_name", "Greg"], ["last_name", "Herman"], ["gender", "female"], ["date_of_birth", "2013-07-19"], ["reliability", 0.4652686398118132], ["salt", "b8VvTezZLaDyfYWbgXAw"], ["crypted_password", "$2a$10$TwJfXXiPMaC5LnBpFhWiLO6TOHU2xLEAqKUvOKfekyDX8Awly7loK"], ["created_at", "2016-07-20 23:33:05.871639"], ["updated_at", "2016-07-20 23:33:05.871639"]]
+  [1m[36m (4.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "rides" ("date", "time", "seats_available", "comments", "start_location", "end_location", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["date", "2013-03-13"], ["time", "2016-07-20 23:33:05.894075"], ["seats_available", 1], ["comments", "Approvisionne mésusèrent aventurer projets."], ["start_location", "Ottawa"], ["end_location", "Quebec"], ["user_id", 9], ["created_at", "2016-07-20 23:33:05.910675"], ["updated_at", "2016-07-20 23:33:05.910675"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "rides" ("date", "time", "seats_available", "comments", "start_location", "end_location", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["date", "2014-03-16"], ["time", "2016-07-20 23:33:05.915314"], ["seats_available", 3], ["comments", "Vils restait pas à firent ville il instrumentalisèrent venait."], ["start_location", "Toronto"], ["end_location", "Halifax"], ["user_id", 9], ["created_at", "2016-07-20 23:33:05.916001"], ["updated_at", "2016-07-20 23:33:05.916001"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "rides" ("date", "time", "seats_available", "comments", "start_location", "end_location", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["date", "2012-05-07"], ["time", "2016-07-20 23:33:05.919543"], ["seats_available", 2], ["comments", "Venait paragraphe delà est maintes et moins et réecrite."], ["start_location", "Toronto"], ["end_location", "Quebec"], ["user_id", 2], ["created_at", "2016-07-20 23:33:05.920418"], ["updated_at", "2016-07-20 23:33:05.920418"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "rides" ("date", "time", "seats_available", "comments", "start_location", "end_location", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["date", "2013-05-29"], ["time", "2016-07-20 23:33:05.924057"], ["seats_available", 1], ["comments", "Convaincre coeur rebrousser petite ponctuation ruisseau."], ["start_location", "Ottawa"], ["end_location", "Halifax"], ["user_id", 3], ["created_at", "2016-07-20 23:33:05.924713"], ["updated_at", "2016-07-20 23:33:05.924713"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "rides" ("date", "time", "seats_available", "comments", "start_location", "end_location", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["date", "2012-12-17"], ["time", "2016-07-20 23:33:05.928147"], ["seats_available", 4], ["comments", "Preuve ferait saoule est déjà rebrousser coule."], ["start_location", "Ottawa"], ["end_location", "Halifax"], ["user_id", 5], ["created_at", "2016-07-20 23:33:05.928831"], ["updated_at", "2016-07-20 23:33:05.928831"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "rides" ("date", "time", "seats_available", "comments", "start_location", "end_location", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["date", "2016-08-29"], ["time", "2016-07-20 23:33:05.932107"], ["seats_available", 2], ["comments", "Déjà les oxymore bolos alphabetville loin s réecrite dernier."], ["start_location", "Ottawa"], ["end_location", "Halifax"], ["user_id", 2], ["created_at", "2016-07-20 23:33:05.932772"], ["updated_at", "2016-07-20 23:33:05.932772"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "rides" ("date", "time", "seats_available", "comments", "start_location", "end_location", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["date", "2014-06-18"], ["time", "2016-07-20 23:33:05.936451"], ["seats_available", 3], ["comments", "Rencontra le panse ils."], ["start_location", "Montreal"], ["end_location", "Kingston"], ["user_id", 7], ["created_at", "2016-07-20 23:33:05.937134"], ["updated_at", "2016-07-20 23:33:05.937134"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "rides" ("date", "time", "seats_available", "comments", "start_location", "end_location", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["date", "2016-12-16"], ["time", "2016-07-20 23:33:05.940435"], ["seats_available", 3], ["comments", "Sournois pas ponctuation coule maintes en fourmillait lequel déconcerter."], ["start_location", "Ottawa"], ["end_location", "Quebec"], ["user_id", 6], ["created_at", "2016-07-20 23:33:05.941096"], ["updated_at", "2016-07-20 23:33:05.941096"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "rides" ("date", "time", "seats_available", "comments", "start_location", "end_location", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["date", "2013-10-06"], ["time", "2016-07-20 23:33:05.944684"], ["seats_available", 3], ["comments", "Bercail et ces peut."], ["start_location", "Toronto"], ["end_location", "Kingston"], ["user_id", 3], ["created_at", "2016-07-20 23:33:05.945558"], ["updated_at", "2016-07-20 23:33:05.945558"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "rides" ("date", "time", "seats_available", "comments", "start_location", "end_location", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["date", "2014-07-24"], ["time", "2016-07-20 23:33:05.949132"], ["seats_available", 2], ["comments", "Lorem pointdexclamators sur mit de approvisionne que larousse."], ["start_location", "Toronto"], ["end_location", "Halifax"], ["user_id", 4], ["created_at", "2016-07-20 23:33:05.949851"], ["updated_at", "2016-07-20 23:33:05.949851"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "rides" ("date", "time", "seats_available", "comments", "start_location", "end_location", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["date", "2014-06-08"], ["time", "2016-07-20 23:33:05.953191"], ["seats_available", 1], ["comments", "Il aux firent des."], ["start_location", "Montreal"], ["end_location", "Quebec"], ["user_id", 7], ["created_at", "2016-07-20 23:33:05.953946"], ["updated_at", "2016-07-20 23:33:05.953946"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "rides" ("date", "time", "seats_available", "comments", "start_location", "end_location", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["date", "2013-09-28"], ["time", "2016-07-20 23:33:05.957592"], ["seats_available", 4], ["comments", "Sauf long attendraient vils déjà question origines jeta route."], ["start_location", "Ottawa"], ["end_location", "Kingston"], ["user_id", 8], ["created_at", "2016-07-20 23:33:05.958327"], ["updated_at", "2016-07-20 23:33:05.958327"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "rides" ("date", "time", "seats_available", "comments", "start_location", "end_location", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["date", "2015-03-26"], ["time", "2016-07-20 23:33:05.961711"], ["seats_available", 4], ["comments", "Grammaire bolo virgulos joue bouche la on."], ["start_location", "Toronto"], ["end_location", "Kingston"], ["user_id", 6], ["created_at", "2016-07-20 23:33:05.962349"], ["updated_at", "2016-07-20 23:33:05.962349"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "rides" ("date", "time", "seats_available", "comments", "start_location", "end_location", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["date", "2012-08-02"], ["time", "2016-07-20 23:33:05.965656"], ["seats_available", 3], ["comments", "Purent raviser lourd est glissa puis."], ["start_location", "Toronto"], ["end_location", "Halifax"], ["user_id", 10], ["created_at", "2016-07-20 23:33:05.966337"], ["updated_at", "2016-07-20 23:33:05.966337"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "rides" ("date", "time", "seats_available", "comments", "start_location", "end_location", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["date", "2012-04-29"], ["time", "2016-07-20 23:33:05.969917"], ["seats_available", 1], ["comments", "Cela vers pans se projets toutes la le."], ["start_location", "Ottawa"], ["end_location", "Kingston"], ["user_id", 8], ["created_at", "2016-07-20 23:33:05.970726"], ["updated_at", "2016-07-20 23:33:05.970726"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "rides" ("date", "time", "seats_available", "comments", "start_location", "end_location", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["date", "2013-10-18"], ["time", "2016-07-20 23:33:05.974396"], ["seats_available", 3], ["comments", "Où ligne saoule petit grammaire."], ["start_location", "Montreal"], ["end_location", "Halifax"], ["user_id", 8], ["created_at", "2016-07-20 23:33:05.975070"], ["updated_at", "2016-07-20 23:33:05.975070"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "rides" ("date", "time", "seats_available", "comments", "start_location", "end_location", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["date", "2015-09-15"], ["time", "2016-07-20 23:33:05.978372"], ["seats_available", 4], ["comments", "Bolos les venait chemin paroles."], ["start_location", "Ottawa"], ["end_location", "Kingston"], ["user_id", 3], ["created_at", "2016-07-20 23:33:05.979021"], ["updated_at", "2016-07-20 23:33:05.979021"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "rides" ("date", "time", "seats_available", "comments", "start_location", "end_location", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["date", "2013-02-14"], ["time", "2016-07-20 23:33:05.982557"], ["seats_available", 2], ["comments", "Encore subline saoule il lui sa."], ["start_location", "Montreal"], ["end_location", "Kingston"], ["user_id", 7], ["created_at", "2016-07-20 23:33:05.983323"], ["updated_at", "2016-07-20 23:33:05.983323"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "rides" ("date", "time", "seats_available", "comments", "start_location", "end_location", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["date", "2014-02-22"], ["time", "2016-07-20 23:33:05.986636"], ["seats_available", 2], ["comments", "Sûr qu voyellie alphabetville orthodoxographique le passage."], ["start_location", "Ottawa"], ["end_location", "Kingston"], ["user_id", 5], ["created_at", "2016-07-20 23:33:05.987286"], ["updated_at", "2016-07-20 23:33:05.987286"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "rides" ("date", "time", "seats_available", "comments", "start_location", "end_location", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["date", "2013-04-21"], ["time", "2016-07-20 23:33:05.990634"], ["seats_available", 4], ["comments", "Pays alphanatale pourtant retourner virgulos question prémâchées route mots."], ["start_location", "Ottawa"], ["end_location", "Quebec"], ["user_id", 10], ["created_at", "2016-07-20 23:33:05.991266"], ["updated_at", "2016-07-20 23:33:05.991266"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRide Load (0.4ms)[0m  [1mSELECT "rides".* FROM "rides"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "bookings" ("seats", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["seats", 3], ["user_id", 2], ["ride_id", 12], ["created_at", "2016-07-20 23:33:06.004543"], ["updated_at", "2016-07-20 23:33:06.004543"]]
+  [1m[35m (4.6ms)[0m  commit transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mRide Load (0.3ms)[0m  SELECT "rides".* FROM "rides"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "bookings" ("seats", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["seats", 3], ["user_id", 10], ["ride_id", 13], ["created_at", "2016-07-20 23:33:06.013444"], ["updated_at", "2016-07-20 23:33:06.013444"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRide Load (0.3ms)[0m  [1mSELECT "rides".* FROM "rides"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "bookings" ("seats", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["seats", 2], ["user_id", 2], ["ride_id", 8], ["created_at", "2016-07-20 23:33:06.018088"], ["updated_at", "2016-07-20 23:33:06.018088"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mRide Load (0.3ms)[0m  SELECT "rides".* FROM "rides"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "bookings" ("seats", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["seats", 2], ["user_id", 3], ["ride_id", 8], ["created_at", "2016-07-20 23:33:06.023079"], ["updated_at", "2016-07-20 23:33:06.023079"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRide Load (0.3ms)[0m  [1mSELECT "rides".* FROM "rides"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "bookings" ("seats", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["seats", 4], ["user_id", 5], ["ride_id", 19], ["created_at", "2016-07-20 23:33:06.028069"], ["updated_at", "2016-07-20 23:33:06.028069"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mRide Load (0.3ms)[0m  SELECT "rides".* FROM "rides"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "bookings" ("seats", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["seats", 2], ["user_id", 7], ["ride_id", 1], ["created_at", "2016-07-20 23:33:06.033198"], ["updated_at", "2016-07-20 23:33:06.033198"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRide Load (0.2ms)[0m  [1mSELECT "rides".* FROM "rides"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "bookings" ("seats", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["seats", 1], ["user_id", 7], ["ride_id", 3], ["created_at", "2016-07-20 23:33:06.037960"], ["updated_at", "2016-07-20 23:33:06.037960"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mRide Load (0.3ms)[0m  SELECT "rides".* FROM "rides"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "bookings" ("seats", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["seats", 4], ["user_id", 2], ["ride_id", 17], ["created_at", "2016-07-20 23:33:06.042773"], ["updated_at", "2016-07-20 23:33:06.042773"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRide Load (0.2ms)[0m  [1mSELECT "rides".* FROM "rides"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "bookings" ("seats", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["seats", 1], ["user_id", 9], ["ride_id", 17], ["created_at", "2016-07-20 23:33:06.047329"], ["updated_at", "2016-07-20 23:33:06.047329"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mRide Load (0.2ms)[0m  SELECT "rides".* FROM "rides"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "bookings" ("seats", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["seats", 3], ["user_id", 10], ["ride_id", 10], ["created_at", "2016-07-20 23:33:06.051653"], ["updated_at", "2016-07-20 23:33:06.051653"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRide Load (0.3ms)[0m  [1mSELECT "rides".* FROM "rides"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "bookings" ("seats", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["seats", 2], ["user_id", 3], ["ride_id", 3], ["created_at", "2016-07-20 23:33:06.056650"], ["updated_at", "2016-07-20 23:33:06.056650"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mRide Load (0.3ms)[0m  SELECT "rides".* FROM "rides"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "bookings" ("seats", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["seats", 4], ["user_id", 1], ["ride_id", 7], ["created_at", "2016-07-20 23:33:06.061117"], ["updated_at", "2016-07-20 23:33:06.061117"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRide Load (0.2ms)[0m  [1mSELECT "rides".* FROM "rides"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "bookings" ("seats", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["seats", 1], ["user_id", 7], ["ride_id", 1], ["created_at", "2016-07-20 23:33:06.065625"], ["updated_at", "2016-07-20 23:33:06.065625"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mRide Load (0.4ms)[0m  SELECT "rides".* FROM "rides"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "bookings" ("seats", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["seats", 4], ["user_id", 4], ["ride_id", 3], ["created_at", "2016-07-20 23:33:06.070462"], ["updated_at", "2016-07-20 23:33:06.070462"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRide Load (0.2ms)[0m  [1mSELECT "rides".* FROM "rides"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "bookings" ("seats", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["seats", 4], ["user_id", 2], ["ride_id", 20], ["created_at", "2016-07-20 23:33:06.074957"], ["updated_at", "2016-07-20 23:33:06.074957"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mRide Load (0.3ms)[0m  SELECT "rides".* FROM "rides"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "bookings" ("seats", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["seats", 3], ["user_id", 6], ["ride_id", 3], ["created_at", "2016-07-20 23:33:06.079911"], ["updated_at", "2016-07-20 23:33:06.079911"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRide Load (0.3ms)[0m  [1mSELECT "rides".* FROM "rides"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "bookings" ("seats", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["seats", 2], ["user_id", 9], ["ride_id", 15], ["created_at", "2016-07-20 23:33:06.084759"], ["updated_at", "2016-07-20 23:33:06.084759"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mRide Load (0.2ms)[0m  SELECT "rides".* FROM "rides"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "bookings" ("seats", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["seats", 1], ["user_id", 8], ["ride_id", 5], ["created_at", "2016-07-20 23:33:06.089222"], ["updated_at", "2016-07-20 23:33:06.089222"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRide Load (0.2ms)[0m  [1mSELECT "rides".* FROM "rides"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "bookings" ("seats", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["seats", 1], ["user_id", 8], ["ride_id", 9], ["created_at", "2016-07-20 23:33:06.094150"], ["updated_at", "2016-07-20 23:33:06.094150"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mRide Load (0.2ms)[0m  SELECT "rides".* FROM "rides"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "bookings" ("seats", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["seats", 4], ["user_id", 1], ["ride_id", 11], ["created_at", "2016-07-20 23:33:06.098919"], ["updated_at", "2016-07-20 23:33:06.098919"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRide Load (0.3ms)[0m  [1mSELECT "rides".* FROM "rides"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "reviews" ("rating", "review", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["rating", 4], ["review", "Aux en tas paragraphe."], ["user_id", 4], ["ride_id", 10], ["created_at", "2016-07-20 23:33:06.113392"], ["updated_at", "2016-07-20 23:33:06.113392"]]
+  [1m[35m (4.7ms)[0m  commit transaction
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mRide Load (0.2ms)[0m  SELECT "rides".* FROM "rides"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "reviews" ("rating", "review", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["rating", 1], ["review", "Sans à là maintes ruisseau se."], ["user_id", 1], ["ride_id", 12], ["created_at", "2016-07-20 23:33:06.122543"], ["updated_at", "2016-07-20 23:33:06.122543"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRide Load (0.4ms)[0m  [1mSELECT "rides".* FROM "rides"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "reviews" ("rating", "review", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["rating", 3], ["review", "Prémâchées où et vaste dernier mots preuve laissa."], ["user_id", 10], ["ride_id", 1], ["created_at", "2016-07-20 23:33:06.128612"], ["updated_at", "2016-07-20 23:33:06.128612"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mRide Load (0.3ms)[0m  SELECT "rides".* FROM "rides"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "reviews" ("rating", "review", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["rating", 4], ["review", "Sauf sûr mot écho un agence."], ["user_id", 5], ["ride_id", 4], ["created_at", "2016-07-20 23:33:06.133352"], ["updated_at", "2016-07-20 23:33:06.133352"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRide Load (0.2ms)[0m  [1mSELECT "rides".* FROM "rides"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "reviews" ("rating", "review", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["rating", 5], ["review", "Rebrousser le fin fois petite des bolo ces."], ["user_id", 9], ["ride_id", 15], ["created_at", "2016-07-20 23:33:06.138160"], ["updated_at", "2016-07-20 23:33:06.138160"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mRide Load (0.4ms)[0m  SELECT "rides".* FROM "rides"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "reviews" ("rating", "review", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["rating", 1], ["review", "Vodkale déconcerter coula headline dissuader vie long qu."], ["user_id", 1], ["ride_id", 4], ["created_at", "2016-07-20 23:33:06.143065"], ["updated_at", "2016-07-20 23:33:06.143065"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRide Load (0.2ms)[0m  [1mSELECT "rides".* FROM "rides"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "reviews" ("rating", "review", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["rating", 3], ["review", "Dans cette leur pointdexclamators."], ["user_id", 6], ["ride_id", 11], ["created_at", "2016-07-20 23:33:06.147585"], ["updated_at", "2016-07-20 23:33:06.147585"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mRide Load (0.3ms)[0m  SELECT "rides".* FROM "rides"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "reviews" ("rating", "review", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["rating", 5], ["review", "Route ses semicolons rhétorique."], ["user_id", 5], ["ride_id", 20], ["created_at", "2016-07-20 23:33:06.152613"], ["updated_at", "2016-07-20 23:33:06.152613"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRide Load (0.2ms)[0m  [1mSELECT "rides".* FROM "rides"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "reviews" ("rating", "review", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["rating", 5], ["review", "Mots ipsum nécessaires route pacqua coeur."], ["user_id", 8], ["ride_id", 2], ["created_at", "2016-07-20 23:33:06.157041"], ["updated_at", "2016-07-20 23:33:06.157041"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mRide Load (0.2ms)[0m  SELECT "rides".* FROM "rides"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "reviews" ("rating", "review", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["rating", 3], ["review", "Mésusèrent pacqua passage fins est purent que regard son."], ["user_id", 3], ["ride_id", 2], ["created_at", "2016-07-20 23:33:06.161778"], ["updated_at", "2016-07-20 23:33:06.161778"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRide Load (0.3ms)[0m  [1mSELECT "rides".* FROM "rides"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "reviews" ("rating", "review", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["rating", 1], ["review", "Petite désormais été le et."], ["user_id", 10], ["ride_id", 8], ["created_at", "2016-07-20 23:33:06.167209"], ["updated_at", "2016-07-20 23:33:06.167209"]]
+  [1m[35m (7.9ms)[0m  commit transaction
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mRide Load (0.2ms)[0m  SELECT "rides".* FROM "rides"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "reviews" ("rating", "review", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["rating", 5], ["review", "Sa des ligne approvisionne larousse route prévint vodkale sauf."], ["user_id", 7], ["ride_id", 3], ["created_at", "2016-07-20 23:33:06.179692"], ["updated_at", "2016-07-20 23:33:06.179692"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRide Load (0.2ms)[0m  [1mSELECT "rides".* FROM "rides"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "reviews" ("rating", "review", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["rating", 5], ["review", "Ruisseau vie volent grand voyellie le."], ["user_id", 9], ["ride_id", 19], ["created_at", "2016-07-20 23:33:06.184504"], ["updated_at", "2016-07-20 23:33:06.184504"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mRide Load (0.2ms)[0m  SELECT "rides".* FROM "rides"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "reviews" ("rating", "review", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["rating", 4], ["review", "Italiques longtemps bien rhétorique approvisionne."], ["user_id", 1], ["ride_id", 6], ["created_at", "2016-07-20 23:33:06.188899"], ["updated_at", "2016-07-20 23:33:06.188899"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRide Load (0.3ms)[0m  [1mSELECT "rides".* FROM "rides"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "reviews" ("rating", "review", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["rating", 1], ["review", "Prévint purent flancs fins."], ["user_id", 8], ["ride_id", 15], ["created_at", "2016-07-20 23:33:06.194087"], ["updated_at", "2016-07-20 23:33:06.194087"]]
+  [1m[35m (9.6ms)[0m  commit transaction
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mRide Load (0.2ms)[0m  SELECT "rides".* FROM "rides"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "reviews" ("rating", "review", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["rating", 1], ["review", "Skyline approvisionne par headline phrases cette."], ["user_id", 1], ["ride_id", 19], ["created_at", "2016-07-20 23:33:06.208371"], ["updated_at", "2016-07-20 23:33:06.208371"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRide Load (0.2ms)[0m  [1mSELECT "rides".* FROM "rides"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "reviews" ("rating", "review", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["rating", 2], ["review", "Propre était voulut puis histoire vivent pays se."], ["user_id", 10], ["ride_id", 2], ["created_at", "2016-07-20 23:33:06.213102"], ["updated_at", "2016-07-20 23:33:06.213102"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mRide Load (0.5ms)[0m  SELECT "rides".* FROM "rides"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "reviews" ("rating", "review", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["rating", 2], ["review", "Grammaire loin aux paragraphe convaincre."], ["user_id", 1], ["ride_id", 11], ["created_at", "2016-07-20 23:33:06.218066"], ["updated_at", "2016-07-20 23:33:06.218066"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRide Load (0.4ms)[0m  [1mSELECT "rides".* FROM "rides"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "reviews" ("rating", "review", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["rating", 2], ["review", "Orthodoxographique ressaisi prémâchées alphabetville."], ["user_id", 1], ["ride_id", 18], ["created_at", "2016-07-20 23:33:06.223348"], ["updated_at", "2016-07-20 23:33:06.223348"]]
+  [1m[35m (8.7ms)[0m  commit transaction
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mRide Load (0.3ms)[0m  SELECT "rides".* FROM "rides"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "reviews" ("rating", "review", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["rating", 3], ["review", "Dernier aguets point fin ponctuation qui."], ["user_id", 9], ["ride_id", 17], ["created_at", "2016-07-20 23:33:06.236386"], ["updated_at", "2016-07-20 23:33:06.236386"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mRide Load (0.5ms)[0m  SELECT "rides".* FROM "rides"
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "rides"[0m
+  [1m[35mBooking Load (0.3ms)[0m  SELECT "bookings".* FROM "bookings"
