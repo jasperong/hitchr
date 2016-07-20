@@ -1,6 +1,8 @@
+require 'ffaker'
+
 FactoryGirl.define do
   factory :ride do
-    date { Date.today }
+    date { FFaker::Time.date }
     time { Time.now }
     seats_available { rand(1..4)}
     comments "I'm bringing a small bag."

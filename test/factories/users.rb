@@ -7,10 +7,10 @@ FactoryGirl.define do
 
     email {FFaker::Internet.email}
 
-    first_name { %w(Althea David Hira).sample }
-    last_name { %w(Yi Cisneros Kazmi).sample }
+    first_name { FFaker::Name.first_name }
+    last_name { FFaker::Name.last_name }
     gender { %w(male female).sample }
-    date_of_birth {Date.today}
+    date_of_birth { FFaker::Time.date }
     reliability {rand()}
     password { "123456" }
     password_confirmation { "123456" }

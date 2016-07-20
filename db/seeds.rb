@@ -6,9 +6,10 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+# require 'randumb'
 require 'factory_girl_rails'
 
 FactoryGirl.create_list :user, 10
-FactoryGirl.create_list :ride, 10, user: User.first
+FactoryGirl.create_list :ride, 10, user: User.order_by_rand.limit(9).all
 FactoryGirl.create_list :booking, 10, user: User.first, ride: Ride.first
 FactoryGirl.create_list :review, 10, user: User.first, ride: Ride.first

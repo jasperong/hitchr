@@ -6365,3 +6365,216 @@ SyntaxError (/Users/hirakazmi/Desktop/bitmaker/projects/hitchr/hitchr/app/contro
   [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "reviews" ("rating", "review", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["rating", 4], ["review", "Great ride!"], ["user_id", 1], ["ride_id", 1], ["created_at", "2016-07-20 21:14:02.980182"], ["updated_at", "2016-07-20 21:14:02.980182"]]
   [1m[35m (2.7ms)[0m  commit transaction
   [1m[36mUser Load (11.0ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[36m (3.5ms)[0m  [1mCREATE TABLE "bookings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "ride_id" integer, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "seats" integer) [0m
+  [1m[35m (9.4ms)[0m  CREATE TABLE "reviews" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "ride_id" integer, "rating" integer, "review" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (3.2ms)[0m  [1mCREATE TABLE "rides" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "date" date, "time" integer, "seats_available" integer, "comments" text, "start_location" varchar, "end_location" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (3.1ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar NOT NULL, "first_name" varchar, "last_name" varchar, "gender" varchar, "date_of_birth" date, "reliability" float, "crypted_password" varchar, "salt" varchar, "created_at" datetime, "updated_at" datetime, "avatar_file_name" varchar, "avatar_content_type" varchar, "avatar_file_size" integer, "avatar_updated_at" datetime) 
+  [1m[36m (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (3.0ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (3.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (3.4ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (3.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160719043354')
+  [1m[36m (3.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160718212801')[0m
+  [1m[35m (3.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160718214055')
+  [1m[36m (4.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160719033155')[0m
+  [1m[35m (3.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160719033538')
+  [1m[36m (3.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160719033700')[0m
+  [1m[35m (2.9ms)[0m  CREATE TABLE "bookings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "ride_id" integer, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "seats" integer) 
+  [1m[36m (3.3ms)[0m  [1mCREATE TABLE "reviews" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "ride_id" integer, "rating" integer, "review" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (3.0ms)[0m  CREATE TABLE "rides" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "date" date, "time" integer, "seats_available" integer, "comments" text, "start_location" varchar, "end_location" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (3.2ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar NOT NULL, "first_name" varchar, "last_name" varchar, "gender" varchar, "date_of_birth" date, "reliability" float, "crypted_password" varchar, "salt" varchar, "created_at" datetime, "updated_at" datetime, "avatar_file_name" varchar, "avatar_content_type" varchar, "avatar_file_size" integer, "avatar_updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (2.9ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (3.6ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (2.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (3.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160719043354')[0m
+  [1m[35m (3.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160718212801')
+  [1m[36m (3.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160718214055')[0m
+  [1m[35m (3.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160719033155')
+  [1m[36m (3.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160719033538')[0m
+  [1m[35m (3.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160719033700')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'elnora@rowe.info' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("email", "first_name", "last_name", "gender", "date_of_birth", "reliability", "salt", "crypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["email", "elnora@rowe.info"], ["first_name", "Ella"], ["last_name", "Ebert"], ["gender", "male"], ["date_of_birth", "2015-11-21"], ["reliability", 0.7038977967161029], ["salt", "PyKsuZzsKocD8gQhoPKq"], ["crypted_password", "$2a$10$9xW6uWAx2kaXzlDbizpZXOLNiK.FTJYEGSwdM8fEWN9A/RGr4s/Ka"], ["created_at", "2016-07-20 21:42:02.654765"], ["updated_at", "2016-07-20 21:42:02.654765"]]
+  [1m[36m (2.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'earl.kuvalis@connjakubowski.name' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "first_name", "last_name", "gender", "date_of_birth", "reliability", "salt", "crypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["email", "earl.kuvalis@connjakubowski.name"], ["first_name", "Laney"], ["last_name", "Hilll"], ["gender", "female"], ["date_of_birth", "2016-04-29"], ["reliability", 0.17203110214553208], ["salt", "X6qeFiz4iReXzzHuLJ7s"], ["crypted_password", "$2a$10$y9FDQwhaA9jUbZgrbo8jVuAQJQndF51l2aamSJMEdDUPbeu/4NuP2"], ["created_at", "2016-07-20 21:42:02.823666"], ["updated_at", "2016-07-20 21:42:02.823666"]]
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'cyrus.murphy@gerhold.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("email", "first_name", "last_name", "gender", "date_of_birth", "reliability", "salt", "crypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["email", "cyrus.murphy@gerhold.com"], ["first_name", "Elijah"], ["last_name", "Friesen"], ["gender", "male"], ["date_of_birth", "2013-07-18"], ["reliability", 0.9214410951263379], ["salt", "PcYx8kpNiehLUN4iguBF"], ["crypted_password", "$2a$10$zqF1m2NaJSDi7r0iTclsl./4Eu54GgRXEv1cjdCJ0d.Xd8zgZW8Fa"], ["created_at", "2016-07-20 21:42:02.980302"], ["updated_at", "2016-07-20 21:42:02.980302"]]
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'kaylah@trompwaelchi.info' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "first_name", "last_name", "gender", "date_of_birth", "reliability", "salt", "crypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["email", "kaylah@trompwaelchi.info"], ["first_name", "Nelle"], ["last_name", "Purdy"], ["gender", "male"], ["date_of_birth", "2015-05-27"], ["reliability", 0.41716491706831005], ["salt", "EgYaVPpJzuAQpsqHZboq"], ["crypted_password", "$2a$10$nPVsPgyomRSIzxjW5taCyuQZ0sy9.pKBQUb69xpnpzArGzK1XKkui"], ["created_at", "2016-07-20 21:42:03.128226"], ["updated_at", "2016-07-20 21:42:03.128226"]]
+  [1m[36m (2.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'alexis@kihnwintheiser.us' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "first_name", "last_name", "gender", "date_of_birth", "reliability", "salt", "crypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["email", "alexis@kihnwintheiser.us"], ["first_name", "Lonie"], ["last_name", "O'Reilly"], ["gender", "female"], ["date_of_birth", "2013-12-23"], ["reliability", 0.2731014731151987], ["salt", "5DyCQT3gtJpLubdprrFz"], ["crypted_password", "$2a$10$du0ElnY0R11eidU./p90AuLDKPXSA8C2DNoeuc3hL0sCd/JvkshOO"], ["created_at", "2016-07-20 21:42:03.292431"], ["updated_at", "2016-07-20 21:42:03.292431"]]
+  [1m[36m (2.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'cassidy.crist@schumm.info' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "first_name", "last_name", "gender", "date_of_birth", "reliability", "salt", "crypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["email", "cassidy.crist@schumm.info"], ["first_name", "Barbara"], ["last_name", "Gerhold"], ["gender", "female"], ["date_of_birth", "2014-10-16"], ["reliability", 0.0786419540984421], ["salt", "aMMhKen45EBNQqya2tRb"], ["crypted_password", "$2a$10$izC3P02yDpA0wiFFaMihl.ig/V17ZFc0e/BZozfPak4C4RvKlc39e"], ["created_at", "2016-07-20 21:42:03.447991"], ["updated_at", "2016-07-20 21:42:03.447991"]]
+  [1m[36m (8.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'renee_bode@deckow.us' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "first_name", "last_name", "gender", "date_of_birth", "reliability", "salt", "crypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["email", "renee_bode@deckow.us"], ["first_name", "Bethany"], ["last_name", "Morissette"], ["gender", "male"], ["date_of_birth", "2014-02-26"], ["reliability", 0.2815048647331897], ["salt", "6i7M1UbNnGA5CjHK9kNx"], ["crypted_password", "$2a$10$FRHtaFdROyEPJMFOyDpjTesamxm8gLaODgz/XSZBCQ0va.oakSIUy"], ["created_at", "2016-07-20 21:42:03.609507"], ["updated_at", "2016-07-20 21:42:03.609507"]]
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'ressie.parker@kirlin.name' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("email", "first_name", "last_name", "gender", "date_of_birth", "reliability", "salt", "crypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["email", "ressie.parker@kirlin.name"], ["first_name", "Estevan"], ["last_name", "Cassin"], ["gender", "male"], ["date_of_birth", "2013-12-20"], ["reliability", 0.8024363517006851], ["salt", "bhvXfHLdJSc6zvx8Zjge"], ["crypted_password", "$2a$10$ULiK2zVTWdnN4k3dYuyYrubyo0FfqYGjEPC2O2zzqETJKL22Vr.TW"], ["created_at", "2016-07-20 21:42:03.764642"], ["updated_at", "2016-07-20 21:42:03.764642"]]
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'emile_nicolas@harris.co.uk' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "first_name", "last_name", "gender", "date_of_birth", "reliability", "salt", "crypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["email", "emile_nicolas@harris.co.uk"], ["first_name", "Shayne"], ["last_name", "Murazik"], ["gender", "female"], ["date_of_birth", "2012-05-12"], ["reliability", 0.08667720844557858], ["salt", "YUnFNc6z9r7YhpzSzhJX"], ["crypted_password", "$2a$10$/4Oaw/GvURbkbpwopwbO/OIu63zghE.LDm1M6SXPHprr8rwati50i"], ["created_at", "2016-07-20 21:42:03.927581"], ["updated_at", "2016-07-20 21:42:03.927581"]]
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'hardy.zboncak@bradtke.ca' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("email", "first_name", "last_name", "gender", "date_of_birth", "reliability", "salt", "crypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["email", "hardy.zboncak@bradtke.ca"], ["first_name", "Justus"], ["last_name", "Eichmann"], ["gender", "female"], ["date_of_birth", "2015-10-25"], ["reliability", 0.9609554904673779], ["salt", "xbxYXpsxq9Tbc28ceuoD"], ["crypted_password", "$2a$10$oNzjE8JTVOPrBHKTv62PTOfdPAHSOKCo9pK6QLrsQRrOkiO1Wupi."], ["created_at", "2016-07-20 21:42:04.092173"], ["updated_at", "2016-07-20 21:42:04.092173"]]
+  [1m[36m (2.9ms)[0m  [1mcommit transaction[0m
+  [1m[36m (3.3ms)[0m  [1mCREATE TABLE "bookings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "ride_id" integer, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "seats" integer) [0m
+  [1m[35m (3.5ms)[0m  CREATE TABLE "reviews" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "ride_id" integer, "rating" integer, "review" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (3.8ms)[0m  [1mCREATE TABLE "rides" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "date" date, "time" integer, "seats_available" integer, "comments" text, "start_location" varchar, "end_location" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (3.3ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar NOT NULL, "first_name" varchar, "last_name" varchar, "gender" varchar, "date_of_birth" date, "reliability" float, "crypted_password" varchar, "salt" varchar, "created_at" datetime, "updated_at" datetime, "avatar_file_name" varchar, "avatar_content_type" varchar, "avatar_file_size" integer, "avatar_updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (3.5ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (3.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (4.4ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (2.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160719043354')
+  [1m[36m (4.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160718212801')[0m
+  [1m[35m (4.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160718214055')
+  [1m[36m (3.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160719033155')[0m
+  [1m[35m (3.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160719033538')
+  [1m[36m (1.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160719033700')[0m
+  [1m[35m (2.9ms)[0m  CREATE TABLE "bookings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "ride_id" integer, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "seats" integer) 
+  [1m[36m (3.5ms)[0m  [1mCREATE TABLE "reviews" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "ride_id" integer, "rating" integer, "review" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (2.9ms)[0m  CREATE TABLE "rides" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "date" date, "time" integer, "seats_available" integer, "comments" text, "start_location" varchar, "end_location" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (3.0ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar NOT NULL, "first_name" varchar, "last_name" varchar, "gender" varchar, "date_of_birth" date, "reliability" float, "crypted_password" varchar, "salt" varchar, "created_at" datetime, "updated_at" datetime, "avatar_file_name" varchar, "avatar_content_type" varchar, "avatar_file_size" integer, "avatar_updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (3.3ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (3.3ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (3.3ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (3.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160719043354')[0m
+  [1m[35m (3.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160718212801')
+  [1m[36m (1.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160718214055')[0m
+  [1m[35m (4.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160719033155')
+  [1m[36m (4.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160719033538')[0m
+  [1m[35m (3.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160719033700')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'robyn@spinka.com' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("email", "first_name", "last_name", "gender", "date_of_birth", "reliability", "salt", "crypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["email", "robyn@spinka.com"], ["first_name", "Aliya"], ["last_name", "Stanton"], ["gender", "female"], ["date_of_birth", "2013-06-14"], ["reliability", 0.5508092994667242], ["salt", "5pqWxr5huEs7Ta1rg8Qy"], ["crypted_password", "$2a$10$x909izBU0.ijHfgAupcAreAk8Z0btyOWu6Bx6PoCrpvi0mbyrTeia"], ["created_at", "2016-07-20 21:43:21.483142"], ["updated_at", "2016-07-20 21:43:21.483142"]]
+  [1m[36m (2.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'giovanni@marquardthalvorson.ca' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("email", "first_name", "last_name", "gender", "date_of_birth", "reliability", "salt", "crypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["email", "giovanni@marquardthalvorson.ca"], ["first_name", "Maybell"], ["last_name", "Breitenberg"], ["gender", "male"], ["date_of_birth", "2015-08-30"], ["reliability", 0.10681453882344283], ["salt", "L5iZqXkTDxxSB7ojinBM"], ["crypted_password", "$2a$10$pcNjowtGSZ/0n9U/TYOGauTiHef/AJShNPRRdX5tCcAqh7BYB7wIK"], ["created_at", "2016-07-20 21:43:21.643137"], ["updated_at", "2016-07-20 21:43:21.643137"]]
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'ova.sporer@wuckert.us' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "first_name", "last_name", "gender", "date_of_birth", "reliability", "salt", "crypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["email", "ova.sporer@wuckert.us"], ["first_name", "Peggie"], ["last_name", "Bernhard"], ["gender", "male"], ["date_of_birth", "2014-01-17"], ["reliability", 0.17067649255293982], ["salt", "E5tNy2zaeox78npdyFqr"], ["crypted_password", "$2a$10$cO/lUAKXxni3qpjEKtdXruXbmkZSZxpeRMKM9.gI5UwA.fOOcje5C"], ["created_at", "2016-07-20 21:43:21.795086"], ["updated_at", "2016-07-20 21:43:21.795086"]]
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'lexi.weimann@bergstrom.co.uk' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "first_name", "last_name", "gender", "date_of_birth", "reliability", "salt", "crypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["email", "lexi.weimann@bergstrom.co.uk"], ["first_name", "Luciano"], ["last_name", "Walter"], ["gender", "female"], ["date_of_birth", "2014-10-06"], ["reliability", 0.8789871452402565], ["salt", "TvWd77FfYsuurbjNz84L"], ["crypted_password", "$2a$10$CL1SP/At2XTlcuUc1I9B..nPGLA2E3UEMiYMHCfromhMII0eGveL."], ["created_at", "2016-07-20 21:43:21.956027"], ["updated_at", "2016-07-20 21:43:21.956027"]]
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'mina@hoeger.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("email", "first_name", "last_name", "gender", "date_of_birth", "reliability", "salt", "crypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["email", "mina@hoeger.com"], ["first_name", "Chaim"], ["last_name", "O'Kon"], ["gender", "female"], ["date_of_birth", "2016-01-16"], ["reliability", 0.7606681734831534], ["salt", "2HEPWrzgsY1GoZgQXqbt"], ["crypted_password", "$2a$10$bi0AwaYHSVyrGZvEAuFBq.Aw67GiOZfbQ9j10nondpZdScL/qlH9y"], ["created_at", "2016-07-20 21:43:22.105166"], ["updated_at", "2016-07-20 21:43:22.105166"]]
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'jabari_cruickshank@brown.co.uk' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("email", "first_name", "last_name", "gender", "date_of_birth", "reliability", "salt", "crypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["email", "jabari_cruickshank@brown.co.uk"], ["first_name", "Aurore"], ["last_name", "Bins"], ["gender", "male"], ["date_of_birth", "2012-06-11"], ["reliability", 0.7994831064906389], ["salt", "TwpmV5VVUyU8Jj4tQChG"], ["crypted_password", "$2a$10$rrQcOSfr0eBKzstBMrTfieXF2d5J5tycRoXAUsZJuxy6tLolyIkAK"], ["created_at", "2016-07-20 21:43:22.260383"], ["updated_at", "2016-07-20 21:43:22.260383"]]
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'elvie_wehner@price.name' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("email", "first_name", "last_name", "gender", "date_of_birth", "reliability", "salt", "crypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["email", "elvie_wehner@price.name"], ["first_name", "Eva"], ["last_name", "Roob"], ["gender", "male"], ["date_of_birth", "2012-05-14"], ["reliability", 0.39143304433796866], ["salt", "37GyNxAZLpg3gmFDWVpo"], ["crypted_password", "$2a$10$1Vaip8ibFXTmf.E.sDj/W.zWsiwzAhECYZ2XC9IRE3CsNyyZjpjvG"], ["created_at", "2016-07-20 21:43:22.425981"], ["updated_at", "2016-07-20 21:43:22.425981"]]
+  [1m[36m (2.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'eda@murrayjewess.co.uk' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("email", "first_name", "last_name", "gender", "date_of_birth", "reliability", "salt", "crypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["email", "eda@murrayjewess.co.uk"], ["first_name", "Andres"], ["last_name", "Balistreri"], ["gender", "male"], ["date_of_birth", "2013-01-14"], ["reliability", 0.0724241825541222], ["salt", "pQRfsNKjzXCECELAL4kz"], ["crypted_password", "$2a$10$m4Wj6u4uZrUIh7OkBrmoeeTE7hqC5U36SHXn5I.V/dojgzivho02O"], ["created_at", "2016-07-20 21:43:22.599202"], ["updated_at", "2016-07-20 21:43:22.599202"]]
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'ora.schmitt@mclaughlin.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("email", "first_name", "last_name", "gender", "date_of_birth", "reliability", "salt", "crypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["email", "ora.schmitt@mclaughlin.com"], ["first_name", "Ulices"], ["last_name", "Cronin"], ["gender", "male"], ["date_of_birth", "2013-05-22"], ["reliability", 0.699645511342242], ["salt", "pUhgKfA2QjQp4fgs897c"], ["crypted_password", "$2a$10$463OryrmiMtr0GfHVl6bxetVxRu0GtxPV6Db4EB6hPCTSyz14NCym"], ["created_at", "2016-07-20 21:43:22.756327"], ["updated_at", "2016-07-20 21:43:22.756327"]]
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'nella.vandervort@white.biz' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("email", "first_name", "last_name", "gender", "date_of_birth", "reliability", "salt", "crypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["email", "nella.vandervort@white.biz"], ["first_name", "Leslie"], ["last_name", "Shanahan"], ["gender", "male"], ["date_of_birth", "2014-09-24"], ["reliability", 0.8493707572276312], ["salt", "otD5jyQ1hgfJbspLdnaw"], ["crypted_password", "$2a$10$b.OJlQ5W1ortJr8YGUxtDOFgRZ9hWMsAaJtyCHp0LtUGsGzNkTUzC"], ["created_at", "2016-07-20 21:43:22.929850"], ["updated_at", "2016-07-20 21:43:22.929850"]]
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+  [1m[36m (4.1ms)[0m  [1mCREATE TABLE "bookings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "ride_id" integer, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "seats" integer) [0m
+  [1m[35m (4.1ms)[0m  CREATE TABLE "reviews" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "ride_id" integer, "rating" integer, "review" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (3.0ms)[0m  [1mCREATE TABLE "rides" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "date" date, "time" integer, "seats_available" integer, "comments" text, "start_location" varchar, "end_location" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (3.2ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar NOT NULL, "first_name" varchar, "last_name" varchar, "gender" varchar, "date_of_birth" date, "reliability" float, "crypted_password" varchar, "salt" varchar, "created_at" datetime, "updated_at" datetime, "avatar_file_name" varchar, "avatar_content_type" varchar, "avatar_file_size" integer, "avatar_updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (3.0ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (3.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (3.2ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (3.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160719043354')
+  [1m[36m (4.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160718212801')[0m
+  [1m[35m (1.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160718214055')
+  [1m[36m (1.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160719033155')[0m
+  [1m[35m (3.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160719033538')
+  [1m[36m (3.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160719033700')[0m
+  [1m[35m (2.9ms)[0m  CREATE TABLE "bookings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "ride_id" integer, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "seats" integer) 
+  [1m[36m (4.0ms)[0m  [1mCREATE TABLE "reviews" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "ride_id" integer, "rating" integer, "review" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (2.7ms)[0m  CREATE TABLE "rides" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "date" date, "time" integer, "seats_available" integer, "comments" text, "start_location" varchar, "end_location" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (3.6ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar NOT NULL, "first_name" varchar, "last_name" varchar, "gender" varchar, "date_of_birth" date, "reliability" float, "crypted_password" varchar, "salt" varchar, "created_at" datetime, "updated_at" datetime, "avatar_file_name" varchar, "avatar_content_type" varchar, "avatar_file_size" integer, "avatar_updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (3.1ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (3.4ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (7.5ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (3.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160719043354')[0m
+  [1m[35m (1.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160718212801')
+  [1m[36m (3.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160718214055')[0m
+  [1m[35m (3.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160719033155')
+  [1m[36m (4.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160719033538')[0m
+  [1m[35m (3.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160719033700')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'fidel_kunze@cassin.info' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("email", "first_name", "last_name", "gender", "date_of_birth", "reliability", "salt", "crypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["email", "fidel_kunze@cassin.info"], ["first_name", "Golda"], ["last_name", "Veum"], ["gender", "male"], ["date_of_birth", "2012-03-01"], ["reliability", 0.5631406462222416], ["salt", "sbHTywv5xRkU2WsaFRdY"], ["crypted_password", "$2a$10$MDXPlXHe2kRytI/lC40IEe5UfMyXbRZ75Mg9Iah3k.C2HHsQPzuke"], ["created_at", "2016-07-20 21:44:28.448244"], ["updated_at", "2016-07-20 21:44:28.448244"]]
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'edmund@kunze.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "first_name", "last_name", "gender", "date_of_birth", "reliability", "salt", "crypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["email", "edmund@kunze.com"], ["first_name", "Dale"], ["last_name", "Miller"], ["gender", "male"], ["date_of_birth", "2016-10-29"], ["reliability", 0.4442476276411036], ["salt", "JfY7STiHGpCcpLp7kM7m"], ["crypted_password", "$2a$10$QenZpNntjbz7PuQj1G89F.W6tsx.TTPZzgigLNW3iPIJ47U7Exf8m"], ["created_at", "2016-07-20 21:44:28.601300"], ["updated_at", "2016-07-20 21:44:28.601300"]]
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'antonina@schuster.us' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("email", "first_name", "last_name", "gender", "date_of_birth", "reliability", "salt", "crypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["email", "antonina@schuster.us"], ["first_name", "Roderick"], ["last_name", "Koelpin"], ["gender", "female"], ["date_of_birth", "2016-03-15"], ["reliability", 0.7559293031368373], ["salt", "2kyUjDF7TPb3RVGbx9Rx"], ["crypted_password", "$2a$10$meAQh/AO/S8lSfEPY8USsubmswMc24tAGNjlKdTdpkJLjnhM0pPj."], ["created_at", "2016-07-20 21:44:28.754744"], ["updated_at", "2016-07-20 21:44:28.754744"]]
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'adrienne@spencermosciski.ca' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "first_name", "last_name", "gender", "date_of_birth", "reliability", "salt", "crypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["email", "adrienne@spencermosciski.ca"], ["first_name", "Stephania"], ["last_name", "Schinner"], ["gender", "male"], ["date_of_birth", "2014-05-18"], ["reliability", 0.48364170109187077], ["salt", "2uwPQ2RKh4Up6h7F4CVq"], ["crypted_password", "$2a$10$f9t3.F8ekDVaHi7O9RsB../QWmyBA6xbypO9VsPPLpIcFOfWaTi4O"], ["created_at", "2016-07-20 21:44:28.905072"], ["updated_at", "2016-07-20 21:44:28.905072"]]
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'julia.haag@spencer.co.uk' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("email", "first_name", "last_name", "gender", "date_of_birth", "reliability", "salt", "crypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["email", "julia.haag@spencer.co.uk"], ["first_name", "Viola"], ["last_name", "Armstrong"], ["gender", "female"], ["date_of_birth", "2013-01-17"], ["reliability", 0.2678123449443862], ["salt", "7xFYpx33bysE1VMyrby8"], ["crypted_password", "$2a$10$urGD0yOw8E/JEQy1sVWpeue8B9LAONrotYsu5xRAUA/rjUE5hBqvG"], ["created_at", "2016-07-20 21:44:29.058790"], ["updated_at", "2016-07-20 21:44:29.058790"]]
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'briana_paucek@boehm.biz' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "first_name", "last_name", "gender", "date_of_birth", "reliability", "salt", "crypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["email", "briana_paucek@boehm.biz"], ["first_name", "Enrique"], ["last_name", "Murphy"], ["gender", "male"], ["date_of_birth", "2012-07-28"], ["reliability", 0.5186672536223849], ["salt", "xsc5z7vq7yS1hf8QiX2x"], ["crypted_password", "$2a$10$1g8KPL7k8sxcVXdZcvyg1uphx2pYB.ESiV43GCUpTBMTBrWMaT6eK"], ["created_at", "2016-07-20 21:44:29.216400"], ["updated_at", "2016-07-20 21:44:29.216400"]]
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'montana.cartwright@ziemannhane.ca' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("email", "first_name", "last_name", "gender", "date_of_birth", "reliability", "salt", "crypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["email", "montana.cartwright@ziemannhane.ca"], ["first_name", "Mabel"], ["last_name", "Bruen"], ["gender", "female"], ["date_of_birth", "2013-06-28"], ["reliability", 0.7110452965773483], ["salt", "zvfCLLREz2X8MqYXxRyg"], ["crypted_password", "$2a$10$IDmpBQ/Ign1wJOP/FF7cJuxfXwUYuz7eyzg1qNwNxsM8Osa0Guf6."], ["created_at", "2016-07-20 21:44:29.383768"], ["updated_at", "2016-07-20 21:44:29.383768"]]
+  [1m[36m (2.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'katelyn@harris.name' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("email", "first_name", "last_name", "gender", "date_of_birth", "reliability", "salt", "crypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["email", "katelyn@harris.name"], ["first_name", "Fatima"], ["last_name", "Marquardt"], ["gender", "male"], ["date_of_birth", "2016-03-09"], ["reliability", 0.7437402506667071], ["salt", "y7VCWH2EGd6ZemTYzZBX"], ["crypted_password", "$2a$10$8dGBDgkOWgezxIX5XraHZeGqTdO7cKCLnCXQpF6qo7/4Pbel2u0I6"], ["created_at", "2016-07-20 21:44:29.544770"], ["updated_at", "2016-07-20 21:44:29.544770"]]
+  [1m[36m (5.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'braden@sipes.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "first_name", "last_name", "gender", "date_of_birth", "reliability", "salt", "crypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["email", "braden@sipes.com"], ["first_name", "Filiberto"], ["last_name", "Rath"], ["gender", "female"], ["date_of_birth", "2014-09-04"], ["reliability", 0.8471688976420902], ["salt", "UpYDBzzUccqPG9rxFU1A"], ["crypted_password", "$2a$10$DVFBEGdFyu6Vga0DZM7qJeY7JKqvyi7oj6oghATitJRZc5WyyLBtK"], ["created_at", "2016-07-20 21:44:29.714824"], ["updated_at", "2016-07-20 21:44:29.714824"]]
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'ransom_moore@haag.name' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "first_name", "last_name", "gender", "date_of_birth", "reliability", "salt", "crypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["email", "ransom_moore@haag.name"], ["first_name", "Emanuel"], ["last_name", "Dooley"], ["gender", "male"], ["date_of_birth", "2016-11-07"], ["reliability", 0.47060413372789645], ["salt", "zH7fqJqBQWr35Gqqb6Bh"], ["crypted_password", "$2a$10$o.mTZ9.MzGyc7Z8htgleo.Gwh.gOFkwF1HJt/L28W7ox2FhqbbP/q"], ["created_at", "2016-07-20 21:44:29.872837"], ["updated_at", "2016-07-20 21:44:29.872837"]]
+  [1m[36m (2.8ms)[0m  [1mcommit transaction[0m
