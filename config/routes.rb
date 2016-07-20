@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   resources :bookings
 
   resources :users do
-    resources :bookings
-    resources :reviews
+    resources :bookings, only: [:show]
+    resources :reviews, only: [:show]
   end
 
   resources :rides do

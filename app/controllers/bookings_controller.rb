@@ -13,6 +13,7 @@ class BookingsController < ApplicationController
       redirect_to root_path, alert: "Booking created successfully"
     else
       render "rides/show"
+    end
   end
 
   private
