@@ -1,37 +1,37 @@
 class RidesController < ApplicationController
 
-  def index
-    @rides = Ride.all
-  end
+	def index
+		@rides = Ride.all
+	end
 
-  def show
-    @ride = Ride.find(params[:id])
-    @booking = @ride.bookings.build
-  end
+	def show
+		@ride = Ride.find(params[:id])
+		@booking = @ride.bookings.build
+	end
 
-  def new
-    @ride = Ride.new
-  end
+	def new
+		@ride = Ride.new
+	end
 
-  def create
-    @ride = Ride.find(ride_params)
+	def create
+		@ride = Ride.new(ride_params)
 
-    if @ride.save
-      redirect_to root_path
-    else
-      render :new
-    end
-  end
+		if @ride.save
+			redirect_to root_path
+		else
+			render :new
+		end
+	end
 
-  def destroy
-    @ride = Ride.find(params[:id])
-    @ride.destroy
-    redirect_to root_path
-  end
+	def destroy
+		@ride = Ride.find(params[:id])
+		@ride.destroy
+		redirect_to root_path
+	end
 
-  private
-  def ride_params
-    params.require(:ride).permit(:date, :time, :seats_available, :comments, :start_location, :end_location)
-  end
+	private
+	def ride_params
+		params.require(:ride).permit(:date, :time, :seats_available, :comments, :start_location, :end_location)
+	end
 
 end
