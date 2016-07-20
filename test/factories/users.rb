@@ -6,7 +6,9 @@ FactoryGirl.define do
     first_name { %w(Althea David Hira).sample }
     last_name { %w(Yi Cisnero Ky).sample }
     gender { %w(male female).sample }
-    date {Date.today}
+    date_of_birth {Date.today}
     reliability {rand()}
+    password { "123456" }
+    password_confirmation { "123456"}
   end
 end
