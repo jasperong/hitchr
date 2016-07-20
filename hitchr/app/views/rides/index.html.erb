@@ -1,1 +1,17 @@
 <h1>Hitchr!</h1>
+
+
+<ul class="rides">
+<% @rides.each do |ride| %>
+  <div class="rides-container">
+    <li>
+      </ br><%= ride.date %>
+      </ br><%= ride.time %>
+      </ br><%= ride.seats_available %>
+      </ br><%= ride.comments %>
+      </ br ><%= ride.start_location %>
+      </ br><%= ride.end_location %>
+  </li>
+  </div>
+<% end %>
+</ul>
