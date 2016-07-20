@@ -44,10 +44,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
   gem 'awesome_print'
 
 group :development, :test do
-<<<<<<< HEAD
-	# Call 'byebug' anywhere in the code to stop execution and get a debugger console
-	gem 'byebug'
-=======
+
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug'
+
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 
@@ -57,13 +57,12 @@ group :development, :test do
 
   gem 'randumb'
 
->>>>>>> factory_girl_work
 end
 
 group :development do
-	# Access an IRB console on exception pages or by using <%= console %> in views
-	gem 'web-console', '~> 2.0'
+  # Access an IRB console on exception pages or by using <%= console %> in views
+  gem 'web-console', '~> 2.0'
 
-	# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-	gem 'spring'
+  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'spring'
 end
