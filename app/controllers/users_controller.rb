@@ -8,6 +8,13 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find(params[:id])
+		@rides = @user.rides.all
+		#FIX THIS BELOW TO SHOW ALL REVIEWS FOR USER
+		#@reviews = @user.rides.all.reviews
+
+		#FIX THIS BELOW TO SHOW ALL My Bookings
+		#and The bookings made for my ride offered
+		# @bookings = @user.rides.all.bookings.all
 	end
 
 	def create
