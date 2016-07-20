@@ -1,8 +1,8 @@
 FactoryGirl.define do
 
   factory :booking do
-    ride_id''
+    ride_id ''
     user_id ''
   end
-  
+
 end
