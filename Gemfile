@@ -43,6 +43,13 @@ group :development, :test do
   gem 'byebug'
 
   gem 'factory_girl_rails', '~> 4.7'
+
+  gem 'awesome_print'
+
+  gem 'ffaker'
+
+  gem 'randumb'
+
 end
 
 group :development do
