@@ -1,8 +1,8 @@
 FactoryGirl.define do
 
   factory :booking do
-    ride_id ''
-    user_id ''
+    seats { rand(1..4) }
+    # we need a function to deal with seats available and seats booked
   end
 
 end
