@@ -24,4 +24,13 @@ class UserTest < ActiveSupport::TestCase
     assert_equal false, @user.valid?
   end
 
+  test "should be invalid without first_name" do
+    @user.first_name = nil
+    assert_nil @user.first_name
+    assert_equal false, @user.valid?
+  end
+
+
+
+
 end

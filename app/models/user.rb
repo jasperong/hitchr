@@ -4,7 +4,8 @@ class User < ActiveRecord::Base
   has_many :reviews, through: :ride
   has_many :rides
 
-
+  # ========> General validation <=========
+  validates :first_name, :last_name, :gender, :date_of_birth, presence: true
 
   # ========> for sorcery <=========
   authenticates_with_sorcery!
