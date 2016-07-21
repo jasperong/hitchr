@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 
 		#FIX THIS BELOW TO SHOW ALL My Bookings
 		#and The bookings made for my ride offered
-		#@bookings = @rides.bookings.all
+		#@bookings = @user.bookings.all
 	end
 
 	def create
