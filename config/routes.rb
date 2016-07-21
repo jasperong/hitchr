@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-  get 'home/index'
 
-  root "rides#index"
+  root "home#index"
   resources :sessions, only: [:new, :create, :destroy]
   resources :reviews
   resources :bookings
