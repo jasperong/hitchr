@@ -2,7 +2,6 @@ $(function() {
 
 
   $(".rateYo").rateYo({
-    rating: 3,
     halfStar: true,
     multiColor: {
       "startColor": "#FF0000", //RED
@@ -30,6 +29,17 @@ $(function() {
     //    dataType: 'JSON'
     //  });
 
+   });
+   $('.stars').each(function(index){
+     // console.log(index + ':' + $(this).text() );
+     // console.log(index + ':' + $(this).data('rating') )
+     $(this).rateYo(
+       "option", "rating", $(this).data('rating')
+     )
+
+     $(this).rateYo(
+       "option", "readOnly", true)
+     
    });
 
 });

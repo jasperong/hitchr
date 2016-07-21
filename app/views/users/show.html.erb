@@ -19,6 +19,12 @@
 
 <div>
   <br /> <h4>Review about me: </h4>
+  <% @user.reviews.each do |review| %>
+  <div class="rateYo stars" data-rating="<%= review.rating %>">
+  </div>
+  <!-- <%= review.rating %> -->
+  <%= review.review %>
+  <% end %>
 
 </div>
 
