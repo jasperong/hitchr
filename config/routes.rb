@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'home/index'
+
   root "rides#index"
   resources :sessions, only: [:new, :create, :destroy]
   resources :reviews
