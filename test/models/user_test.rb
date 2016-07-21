@@ -18,5 +18,10 @@ class UserTest < ActiveSupport::TestCase
     assert_equal false, @user.valid?
   end
 
+  test "should be invalid without password confirmation" do
+    @user.password_confirmation = nil
+    assert_nil @user.password_confirmation
+    assert_equal false, @user.valid?
+  end
 
 end
