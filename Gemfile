@@ -15,6 +15,8 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 gem "figaro"
 
+gem 'jquery-turbolinks'
+
 gem 'cancancan', '~> 1.10'
 
 gem "sorcery"

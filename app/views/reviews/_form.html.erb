@@ -1,7 +1,11 @@
 <div>
   <%= form_for([@user, @review]) do |f| %>
     <div class="rateYo">
-      <input type="hidden" name="rating" value="" />
+      <!-- <input id="rate" type="hidden" name="rating" value="" /> -->
+    </div>
+    <div class="field">
+      <%= f.hidden_field :rating %>
+
     </div>
     <div class="field">
       <%= f.label :review %>

@@ -6,15 +6,16 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @review = @user.reviews.build(booking_params)
-    @review.user = user.id
-
+    @review = @user.reviews.build(review_params)
 
     if @review.save
       redirect_to root_path
     else
       render :new, alert: "Review failed"
     end
+
+
+
   end
 
   private

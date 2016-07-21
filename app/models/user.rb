@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
 
   has_many :rides
   has_many :bookings, through: :ride
-  has_many :reviews, through: :ride
+  has_many :reviews
   has_many :rides
 
   # ========> General validation <=========
