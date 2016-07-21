@@ -6,6 +6,8 @@ class UserTest < ActiveSupport::TestCase
     @user = build(:user)
   end
 
+## RAILS VALIDATIONS
+
   test "should be invalid without an email" do
     @user.email = nil
     assert_nil @user.email # AY: added presence validation in model
@@ -36,16 +38,22 @@ class UserTest < ActiveSupport::TestCase
     assert_equal false, @user.valid?
   end
 
-  test "should be invalid without gender" do
-    @user.gender = nil
-    assert_nil @user.gender
-    assert_equal false, @user.valid?
-  end
-
   test "should be invalid without birthday" do
     @user.date_of_birth = nil
     assert_nil @user.date_of_birth
     assert_equal false, @user.valid?
   end
-  
+
+## CUSTOM VALIDATIONS
+
+  test "should be valid when DOB is 18+ years ago" do
+    @user.date_of_birth = 19.years.ago
+    assert_equal true, @user.valid?
+  end
+
+  test "should be invalid when DOB is -18 years ago" do
+    @user.date_of_birth = 17.years.ago
+    assert_equal false, @user.valid?
+  end
+
 end
