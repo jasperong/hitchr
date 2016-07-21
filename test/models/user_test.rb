@@ -47,6 +47,5 @@ class UserTest < ActiveSupport::TestCase
     assert_nil @user.date_of_birth
     assert_equal false, @user.valid?
   end
-
-
+  
 end
