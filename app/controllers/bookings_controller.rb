@@ -9,9 +9,9 @@ class BookingsController < ApplicationController
 		@booking = @ride.bookings.build(booking_params)
 		@booking.user = current_user
 		if @booking.save
-			redirect_to rides_path, alert: "Booking created successfully"
+			redirect_to user_path(@booking.user), alert: "Booking created successfully"
 		else
-			render ride_path(@ride)
+			render rides_path
 		end
 	end
 
