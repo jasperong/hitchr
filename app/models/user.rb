@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
   private
 
   def min_age
-      if date_of_birth > 18.years.ago
+      if  date_of_birth.nil? || date_of_birth > 18.years.ago 
       errors.add(:date_of_birth, "should be over 18 years ago!")
     end
   end
