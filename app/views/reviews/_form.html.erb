@@ -1,8 +1,7 @@
 <div>
-  <%= form_for([@user, @booking]) do |f| %>
-    <div class="field">
-      <%= f.label :rating %>
-      <%= f.text_field :rating %>
+  <%= form_for([@user, @review]) do |f| %>
+    <div class="rateYo">
+      <input type="hidden" name="rating" value="" />
     </div>
     <div class="field">
       <%= f.label :review %>
