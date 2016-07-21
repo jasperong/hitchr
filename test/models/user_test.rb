@@ -36,7 +36,11 @@ class UserTest < ActiveSupport::TestCase
     assert_equal false, @user.valid?
   end
 
-
+  test "should be invalid without gender" do
+    @user.gender = nil
+    assert_nil @user.gender
+    assert_equal false, @user.valid?
+  end
 
 
 end
