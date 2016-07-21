@@ -10688,3 +10688,719 @@ ActiveRecord::RecordNotFound (Couldn't find User with 'id'=):
   [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "reviews" ("rating", "review", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["rating", 4], ["review", "Panse chaîne ces initiale exploitent petit est regard le."], ["user_id", 4], ["ride_id", 4], ["created_at", "2016-07-21 17:12:16.015439"], ["updated_at", "2016-07-21 17:12:16.015439"]]
   [1m[35m (0.9ms)[0m  commit transaction
   [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[36m (0.8ms)[0m  [1mDROP TABLE "bookings"[0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "bookings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "ride_id" integer, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "seats" integer) 
+  [1m[36m (0.6ms)[0m  [1mDROP TABLE "reviews"[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "reviews" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "ride_id" integer, "rating" integer, "review" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.6ms)[0m  [1mDROP TABLE "rides"[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "rides" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "date" date, "seats_available" integer, "comments" text, "start_location" varchar, "end_location" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "time" time) 
+  [1m[36m (0.6ms)[0m  [1mDROP TABLE "users"[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar NOT NULL, "first_name" varchar, "last_name" varchar, "gender" varchar, "date_of_birth" date, "reliability" float, "crypted_password" varchar, "salt" varchar, "created_at" datetime, "updated_at" datetime, "avatar_file_name" varchar, "avatar_content_type" varchar, "avatar_file_size" integer, "avatar_updated_at" datetime) 
+  [1m[36m (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.6ms)[0m  DROP TABLE "bookings"
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "bookings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "ride_id" integer, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "seats" integer) [0m
+  [1m[35m (0.6ms)[0m  DROP TABLE "reviews"
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "reviews" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "ride_id" integer, "rating" integer, "review" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.6ms)[0m  DROP TABLE "rides"
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "rides" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "date" date, "seats_available" integer, "comments" text, "start_location" varchar, "end_location" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "time" time) [0m
+  [1m[35m (0.6ms)[0m  DROP TABLE "users"
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar NOT NULL, "first_name" varchar, "last_name" varchar, "gender" varchar, "date_of_birth" date, "reliability" float, "crypted_password" varchar, "salt" varchar, "created_at" datetime, "updated_at" datetime, "avatar_file_name" varchar, "avatar_content_type" varchar, "avatar_file_size" integer, "avatar_updated_at" datetime) [0m
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.5ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'sofia_braun@davis.biz' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "first_name", "last_name", "gender", "date_of_birth", "reliability", "salt", "crypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["email", "sofia_braun@davis.biz"], ["first_name", "Clay"], ["last_name", "Hayes"], ["gender", "male"], ["date_of_birth", "2012-07-10"], ["reliability", 0.9065253880056048], ["salt", "RiNEsjZ1UprY9adsdsmP"], ["crypted_password", "$2a$10$IvH/4e/zm/q0/MkDHlMwMON0/P9WbYCB5JsEQq4.HKnOR6CH.RF.K"], ["created_at", "2016-07-21 17:18:33.177707"], ["updated_at", "2016-07-21 17:18:33.177707"]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'johnpaul_jewess@hagenes.info' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("email", "first_name", "last_name", "gender", "date_of_birth", "reliability", "salt", "crypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["email", "johnpaul_jewess@hagenes.info"], ["first_name", "Arlene"], ["last_name", "Doyle"], ["gender", "female"], ["date_of_birth", "2015-03-28"], ["reliability", 0.6062966857546259], ["salt", "Uy3DVmcGXvpVpgEaYxUr"], ["crypted_password", "$2a$10$QsdthM4glrkRE1jf6LTd4.RsFsctRo7sa0IQDkrihLl1zOodcVr2u"], ["created_at", "2016-07-21 17:18:33.314596"], ["updated_at", "2016-07-21 17:18:33.314596"]]
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'lela_kiehn@bartoletti.biz' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("email", "first_name", "last_name", "gender", "date_of_birth", "reliability", "salt", "crypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["email", "lela_kiehn@bartoletti.biz"], ["first_name", "Jalon"], ["last_name", "Schuppe"], ["gender", "female"], ["date_of_birth", "2014-03-18"], ["reliability", 0.06686170286180881], ["salt", "VidspWpRt191mJs5zxai"], ["crypted_password", "$2a$10$M12UxYZpX5xL68D2k5Cn2.faWEemIFhpzLOG8OsJfxRF0C3gk.lCy"], ["created_at", "2016-07-21 17:18:33.450002"], ["updated_at", "2016-07-21 17:18:33.450002"]]
+  [1m[36m (2.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'audrey@halvorsonhackett.name' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("email", "first_name", "last_name", "gender", "date_of_birth", "reliability", "salt", "crypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["email", "audrey@halvorsonhackett.name"], ["first_name", "Rogelio"], ["last_name", "Collins"], ["gender", "male"], ["date_of_birth", "2015-11-26"], ["reliability", 0.5671023854307726], ["salt", "LQcXWsqKxJeyP4WFLFvz"], ["crypted_password", "$2a$10$znyb.mUQfVsjwHj/mnhJY.zC8dm5e7QMf3K.y.V.5knLRgk8Z9f2q"], ["created_at", "2016-07-21 17:18:33.592134"], ["updated_at", "2016-07-21 17:18:33.592134"]]
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'brain@tromp.biz' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("email", "first_name", "last_name", "gender", "date_of_birth", "reliability", "salt", "crypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["email", "brain@tromp.biz"], ["first_name", "Jayme"], ["last_name", "Oga"], ["gender", "male"], ["date_of_birth", "2015-06-09"], ["reliability", 0.38041818094509106], ["salt", "q6rLC5UFo7xEKDxkU38Y"], ["crypted_password", "$2a$10$mTGi0CoTcsGpB/KVn1K7i.oLYx8gwtDgtYiRoVWETejJwmavd.DIO"], ["created_at", "2016-07-21 17:18:33.732231"], ["updated_at", "2016-07-21 17:18:33.732231"]]
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'sarai.rowe@conn.info' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("email", "first_name", "last_name", "gender", "date_of_birth", "reliability", "salt", "crypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["email", "sarai.rowe@conn.info"], ["first_name", "Benedict"], ["last_name", "Durgan"], ["gender", "female"], ["date_of_birth", "2013-02-21"], ["reliability", 0.013940359632774957], ["salt", "aH8JzeqeMEuxAT4qCkhw"], ["crypted_password", "$2a$10$oy/HivMOHuKoaTilxt4r2.zQTRrEzro42ic5lRQMmP/v8WuvM0CH2"], ["created_at", "2016-07-21 17:18:33.866517"], ["updated_at", "2016-07-21 17:18:33.866517"]]
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'antonio@dooley.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("email", "first_name", "last_name", "gender", "date_of_birth", "reliability", "salt", "crypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["email", "antonio@dooley.com"], ["first_name", "Mervin"], ["last_name", "Parisian"], ["gender", "female"], ["date_of_birth", "2013-09-21"], ["reliability", 0.5416651513487896], ["salt", "wn2FTChqUgvyhX4b2ya3"], ["crypted_password", "$2a$10$uGMu2sDagnYJY19eMOqDW.Z86MGKJA7P41IMjtbcx0sNI31K5VzVC"], ["created_at", "2016-07-21 17:18:34.004578"], ["updated_at", "2016-07-21 17:18:34.004578"]]
+  [1m[36m (2.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'loraine@wolff.ca' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("email", "first_name", "last_name", "gender", "date_of_birth", "reliability", "salt", "crypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["email", "loraine@wolff.ca"], ["first_name", "Elliot"], ["last_name", "Murphy"], ["gender", "female"], ["date_of_birth", "2014-05-17"], ["reliability", 0.7168639297003141], ["salt", "t2yyD6oYpX4MCcDkdpz5"], ["crypted_password", "$2a$10$PuBKVQoo.2MSQBDOMX/Xme2UOhOjPs7UB2VfBxURzcLsQkaQEta5."], ["created_at", "2016-07-21 17:18:34.149908"], ["updated_at", "2016-07-21 17:18:34.149908"]]
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'pedro.bashirian@feil.info' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("email", "first_name", "last_name", "gender", "date_of_birth", "reliability", "salt", "crypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["email", "pedro.bashirian@feil.info"], ["first_name", "Jamar"], ["last_name", "Shanahan"], ["gender", "male"], ["date_of_birth", "2013-02-21"], ["reliability", 0.3532414685909194], ["salt", "mN63QHdwMoVudZth9JZE"], ["crypted_password", "$2a$10$X5lS..LtqCMeyoDr00Hs4OxOThuw.s8wjQ4DqJ6pRWd3xINF8Nm7m"], ["created_at", "2016-07-21 17:18:34.289682"], ["updated_at", "2016-07-21 17:18:34.289682"]]
+  [1m[36m (2.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'russell.batz@johns.ca' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("email", "first_name", "last_name", "gender", "date_of_birth", "reliability", "salt", "crypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["email", "russell.batz@johns.ca"], ["first_name", "Kristoffer"], ["last_name", "Ondricka"], ["gender", "female"], ["date_of_birth", "2012-08-18"], ["reliability", 0.14859892392185248], ["salt", "gdas9G8RAi82csia5W1X"], ["crypted_password", "$2a$10$tcS/TSvgVabJ5YVf9KkxgOnGvwMpvGy2tItXr5eYrA6vGeUxpgH7i"], ["created_at", "2016-07-21 17:18:34.429025"], ["updated_at", "2016-07-21 17:18:34.429025"]]
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "rides" ("date", "time", "seats_available", "comments", "start_location", "end_location", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["date", "2014-10-15"], ["time", "2016-07-21 17:18:34.447318"], ["seats_available", 1], ["comments", "Vivent pointdexclamators skyline petite joue."], ["start_location", "Ottawa"], ["end_location", "Kingston"], ["user_id", 3], ["created_at", "2016-07-21 17:18:34.452954"], ["updated_at", "2016-07-21 17:18:34.452954"]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "rides" ("date", "time", "seats_available", "comments", "start_location", "end_location", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["date", "2016-02-03"], ["time", "2016-07-21 17:18:34.455484"], ["seats_available", 2], ["comments", "Ligne monts ce il delà puis prochain retrait langues."], ["start_location", "Toronto"], ["end_location", "Halifax"], ["user_id", 7], ["created_at", "2016-07-21 17:18:34.455878"], ["updated_at", "2016-07-21 17:18:34.455878"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "rides" ("date", "time", "seats_available", "comments", "start_location", "end_location", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["date", "2014-10-09"], ["time", "2016-07-21 17:18:34.458735"], ["seats_available", 4], ["comments", "Paroles nom laissa et alphanatale l toutes pointdexclamators."], ["start_location", "Toronto"], ["end_location", "Halifax"], ["user_id", 8], ["created_at", "2016-07-21 17:18:34.459271"], ["updated_at", "2016-07-21 17:18:34.459271"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "rides" ("date", "time", "seats_available", "comments", "start_location", "end_location", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["date", "2014-09-18"], ["time", "2016-07-21 17:18:34.462244"], ["seats_available", 4], ["comments", "Histoire larousse régit laissa en semicolons."], ["start_location", "Ottawa"], ["end_location", "Quebec"], ["user_id", 2], ["created_at", "2016-07-21 17:18:34.462839"], ["updated_at", "2016-07-21 17:18:34.462839"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "rides" ("date", "time", "seats_available", "comments", "start_location", "end_location", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["date", "2013-06-22"], ["time", "2016-07-21 17:18:34.465640"], ["seats_available", 2], ["comments", "Remit réecrite bien ferait mots dans sémantique laissa."], ["start_location", "Montreal"], ["end_location", "Kingston"], ["user_id", 4], ["created_at", "2016-07-21 17:18:34.466202"], ["updated_at", "2016-07-21 17:18:34.466202"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "rides" ("date", "time", "seats_available", "comments", "start_location", "end_location", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["date", "2013-10-08"], ["time", "2016-07-21 17:18:34.468808"], ["seats_available", 2], ["comments", "Sans purent ses est mais langues origines route nécessaires."], ["start_location", "Ottawa"], ["end_location", "Kingston"], ["user_id", 8], ["created_at", "2016-07-21 17:18:34.469355"], ["updated_at", "2016-07-21 17:18:34.469355"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "rides" ("date", "time", "seats_available", "comments", "start_location", "end_location", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["date", "2013-12-23"], ["time", "2016-07-21 17:18:34.471701"], ["seats_available", 2], ["comments", "Leurs restait question saoule."], ["start_location", "Ottawa"], ["end_location", "Quebec"], ["user_id", 10], ["created_at", "2016-07-21 17:18:34.472208"], ["updated_at", "2016-07-21 17:18:34.472208"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "rides" ("date", "time", "seats_available", "comments", "start_location", "end_location", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["date", "2016-05-04"], ["time", "2016-07-21 17:18:34.474946"], ["seats_available", 1], ["comments", "L sans dans long fourmillait langues."], ["start_location", "Toronto"], ["end_location", "Halifax"], ["user_id", 2], ["created_at", "2016-07-21 17:18:34.475533"], ["updated_at", "2016-07-21 17:18:34.475533"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "rides" ("date", "time", "seats_available", "comments", "start_location", "end_location", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["date", "2015-05-30"], ["time", "2016-07-21 17:18:34.477716"], ["seats_available", 1], ["comments", "Interpelle lourd sain ruisseau peut puissante vous désormais."], ["start_location", "Ottawa"], ["end_location", "Kingston"], ["user_id", 8], ["created_at", "2016-07-21 17:18:34.478090"], ["updated_at", "2016-07-21 17:18:34.478090"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "rides" ("date", "time", "seats_available", "comments", "start_location", "end_location", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["date", "2013-04-30"], ["time", "2016-07-21 17:18:34.480080"], ["seats_available", 1], ["comments", "Semicolons réecrite aux ce."], ["start_location", "Ottawa"], ["end_location", "Kingston"], ["user_id", 4], ["created_at", "2016-07-21 17:18:34.480517"], ["updated_at", "2016-07-21 17:18:34.480517"]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "rides" ("date", "time", "seats_available", "comments", "start_location", "end_location", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["date", "2012-12-23"], ["time", "2016-07-21 17:18:34.482889"], ["seats_available", 2], ["comments", "Question même en demeurent son genre saoule."], ["start_location", "Toronto"], ["end_location", "Quebec"], ["user_id", 9], ["created_at", "2016-07-21 17:18:34.483607"], ["updated_at", "2016-07-21 17:18:34.483607"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "rides" ("date", "time", "seats_available", "comments", "start_location", "end_location", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["date", "2012-03-02"], ["time", "2016-07-21 17:18:34.486608"], ["seats_available", 2], ["comments", "Approvisionne où prevenant là."], ["start_location", "Montreal"], ["end_location", "Quebec"], ["user_id", 5], ["created_at", "2016-07-21 17:18:34.487175"], ["updated_at", "2016-07-21 17:18:34.487175"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "rides" ("date", "time", "seats_available", "comments", "start_location", "end_location", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["date", "2016-12-17"], ["time", "2016-07-21 17:18:34.489683"], ["seats_available", 4], ["comments", "Lequel ses lieues un."], ["start_location", "Ottawa"], ["end_location", "Quebec"], ["user_id", 7], ["created_at", "2016-07-21 17:18:34.490251"], ["updated_at", "2016-07-21 17:18:34.490251"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "rides" ("date", "time", "seats_available", "comments", "start_location", "end_location", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["date", "2016-04-29"], ["time", "2016-07-21 17:18:34.493116"], ["seats_available", 1], ["comments", "Finir décida question ce motus ressaisi et."], ["start_location", "Ottawa"], ["end_location", "Kingston"], ["user_id", 7], ["created_at", "2016-07-21 17:18:34.493625"], ["updated_at", "2016-07-21 17:18:34.493625"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "rides" ("date", "time", "seats_available", "comments", "start_location", "end_location", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["date", "2014-08-25"], ["time", "2016-07-21 17:18:34.496435"], ["seats_available", 2], ["comments", "Initiale phrases vie loin pans aguets océan côtes."], ["start_location", "Ottawa"], ["end_location", "Halifax"], ["user_id", 2], ["created_at", "2016-07-21 17:18:34.497106"], ["updated_at", "2016-07-21 17:18:34.497106"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "rides" ("date", "time", "seats_available", "comments", "start_location", "end_location", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["date", "2016-07-10"], ["time", "2016-07-21 17:18:34.499717"], ["seats_available", 1], ["comments", "Pacqua loin venait mots restait ligne sur vie."], ["start_location", "Toronto"], ["end_location", "Halifax"], ["user_id", 5], ["created_at", "2016-07-21 17:18:34.500310"], ["updated_at", "2016-07-21 17:18:34.500310"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "rides" ("date", "time", "seats_available", "comments", "start_location", "end_location", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["date", "2013-02-25"], ["time", "2016-07-21 17:18:34.502653"], ["seats_available", 1], ["comments", "Jeta puis la ne paradisiagmatique il."], ["start_location", "Montreal"], ["end_location", "Quebec"], ["user_id", 3], ["created_at", "2016-07-21 17:18:34.503155"], ["updated_at", "2016-07-21 17:18:34.503155"]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "rides" ("date", "time", "seats_available", "comments", "start_location", "end_location", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["date", "2012-04-04"], ["time", "2016-07-21 17:18:34.505278"], ["seats_available", 2], ["comments", "Le lorem moins panse."], ["start_location", "Ottawa"], ["end_location", "Kingston"], ["user_id", 5], ["created_at", "2016-07-21 17:18:34.505712"], ["updated_at", "2016-07-21 17:18:34.505712"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "rides" ("date", "time", "seats_available", "comments", "start_location", "end_location", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["date", "2015-06-08"], ["time", "2016-07-21 17:18:34.508177"], ["seats_available", 4], ["comments", "Vivent cette lieues fût fins un peut."], ["start_location", "Ottawa"], ["end_location", "Kingston"], ["user_id", 9], ["created_at", "2016-07-21 17:18:34.508622"], ["updated_at", "2016-07-21 17:18:34.508622"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "rides" ("date", "time", "seats_available", "comments", "start_location", "end_location", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["date", "2012-05-14"], ["time", "2016-07-21 17:18:34.510740"], ["seats_available", 4], ["comments", "Aux ce consonnia traîner mais grand coula se purent."], ["start_location", "Montreal"], ["end_location", "Halifax"], ["user_id", 5], ["created_at", "2016-07-21 17:18:34.511145"], ["updated_at", "2016-07-21 17:18:34.511145"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRide Load (0.2ms)[0m  [1mSELECT "rides".* FROM "rides"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "bookings" ("seats", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["seats", 2], ["user_id", 6], ["ride_id", 10], ["created_at", "2016-07-21 17:18:34.523535"], ["updated_at", "2016-07-21 17:18:34.523535"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mRide Load (0.2ms)[0m  SELECT "rides".* FROM "rides"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "bookings" ("seats", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["seats", 2], ["user_id", 7], ["ride_id", 20], ["created_at", "2016-07-21 17:18:34.528275"], ["updated_at", "2016-07-21 17:18:34.528275"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRide Load (0.2ms)[0m  [1mSELECT "rides".* FROM "rides"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "bookings" ("seats", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["seats", 1], ["user_id", 5], ["ride_id", 12], ["created_at", "2016-07-21 17:18:34.532398"], ["updated_at", "2016-07-21 17:18:34.532398"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mRide Load (0.2ms)[0m  SELECT "rides".* FROM "rides"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "bookings" ("seats", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["seats", 3], ["user_id", 4], ["ride_id", 17], ["created_at", "2016-07-21 17:18:34.535922"], ["updated_at", "2016-07-21 17:18:34.535922"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRide Load (0.1ms)[0m  [1mSELECT "rides".* FROM "rides"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "bookings" ("seats", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["seats", 2], ["user_id", 1], ["ride_id", 10], ["created_at", "2016-07-21 17:18:34.539126"], ["updated_at", "2016-07-21 17:18:34.539126"]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mRide Load (0.2ms)[0m  SELECT "rides".* FROM "rides"
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "bookings" ("seats", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["seats", 2], ["user_id", 3], ["ride_id", 1], ["created_at", "2016-07-21 17:18:34.542410"], ["updated_at", "2016-07-21 17:18:34.542410"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRide Load (0.2ms)[0m  [1mSELECT "rides".* FROM "rides"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "bookings" ("seats", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["seats", 2], ["user_id", 3], ["ride_id", 18], ["created_at", "2016-07-21 17:18:34.546317"], ["updated_at", "2016-07-21 17:18:34.546317"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mRide Load (0.2ms)[0m  SELECT "rides".* FROM "rides"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "bookings" ("seats", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["seats", 4], ["user_id", 4], ["ride_id", 16], ["created_at", "2016-07-21 17:18:34.550233"], ["updated_at", "2016-07-21 17:18:34.550233"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRide Load (0.2ms)[0m  [1mSELECT "rides".* FROM "rides"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "bookings" ("seats", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["seats", 3], ["user_id", 9], ["ride_id", 8], ["created_at", "2016-07-21 17:18:34.553751"], ["updated_at", "2016-07-21 17:18:34.553751"]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mRide Load (0.2ms)[0m  SELECT "rides".* FROM "rides"
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "bookings" ("seats", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["seats", 1], ["user_id", 3], ["ride_id", 4], ["created_at", "2016-07-21 17:18:34.556878"], ["updated_at", "2016-07-21 17:18:34.556878"]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRide Load (0.1ms)[0m  [1mSELECT "rides".* FROM "rides"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "bookings" ("seats", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["seats", 4], ["user_id", 6], ["ride_id", 15], ["created_at", "2016-07-21 17:18:34.559914"], ["updated_at", "2016-07-21 17:18:34.559914"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mRide Load (0.1ms)[0m  SELECT "rides".* FROM "rides"
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "bookings" ("seats", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["seats", 2], ["user_id", 9], ["ride_id", 1], ["created_at", "2016-07-21 17:18:34.562698"], ["updated_at", "2016-07-21 17:18:34.562698"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRide Load (0.2ms)[0m  [1mSELECT "rides".* FROM "rides"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "bookings" ("seats", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["seats", 2], ["user_id", 9], ["ride_id", 1], ["created_at", "2016-07-21 17:18:34.565873"], ["updated_at", "2016-07-21 17:18:34.565873"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mRide Load (0.2ms)[0m  SELECT "rides".* FROM "rides"
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "bookings" ("seats", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["seats", 2], ["user_id", 9], ["ride_id", 1], ["created_at", "2016-07-21 17:18:34.569331"], ["updated_at", "2016-07-21 17:18:34.569331"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRide Load (0.2ms)[0m  [1mSELECT "rides".* FROM "rides"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "bookings" ("seats", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["seats", 3], ["user_id", 4], ["ride_id", 9], ["created_at", "2016-07-21 17:18:34.572373"], ["updated_at", "2016-07-21 17:18:34.572373"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mRide Load (0.1ms)[0m  SELECT "rides".* FROM "rides"
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "bookings" ("seats", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["seats", 1], ["user_id", 7], ["ride_id", 12], ["created_at", "2016-07-21 17:18:34.575628"], ["updated_at", "2016-07-21 17:18:34.575628"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRide Load (0.1ms)[0m  [1mSELECT "rides".* FROM "rides"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "bookings" ("seats", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["seats", 1], ["user_id", 3], ["ride_id", 19], ["created_at", "2016-07-21 17:18:34.578220"], ["updated_at", "2016-07-21 17:18:34.578220"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mRide Load (0.1ms)[0m  SELECT "rides".* FROM "rides"
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "bookings" ("seats", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["seats", 2], ["user_id", 7], ["ride_id", 3], ["created_at", "2016-07-21 17:18:34.580726"], ["updated_at", "2016-07-21 17:18:34.580726"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRide Load (0.1ms)[0m  [1mSELECT "rides".* FROM "rides"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "bookings" ("seats", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["seats", 3], ["user_id", 2], ["ride_id", 12], ["created_at", "2016-07-21 17:18:34.583826"], ["updated_at", "2016-07-21 17:18:34.583826"]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mRide Load (0.1ms)[0m  SELECT "rides".* FROM "rides"
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "bookings" ("seats", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["seats", 3], ["user_id", 5], ["ride_id", 3], ["created_at", "2016-07-21 17:18:34.586544"], ["updated_at", "2016-07-21 17:18:34.586544"]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRide Load (0.1ms)[0m  [1mSELECT "rides".* FROM "rides"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "reviews" ("rating", "review", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["rating", 1], ["review", "Lorem petite genre écho route aguets."], ["user_id", 4], ["ride_id", 5], ["created_at", "2016-07-21 17:18:34.595619"], ["updated_at", "2016-07-21 17:18:34.595619"]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mRide Load (0.1ms)[0m  SELECT "rides".* FROM "rides"
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "reviews" ("rating", "review", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["rating", 1], ["review", "Ipsum passage ponctuation coeur sémantique."], ["user_id", 2], ["ride_id", 12], ["created_at", "2016-07-21 17:18:34.598843"], ["updated_at", "2016-07-21 17:18:34.598843"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRide Load (0.2ms)[0m  [1mSELECT "rides".* FROM "rides"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "reviews" ("rating", "review", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["rating", 5], ["review", "Que qui paradisiagmatique question s virgulos initiale."], ["user_id", 8], ["ride_id", 10], ["created_at", "2016-07-21 17:18:34.601437"], ["updated_at", "2016-07-21 17:18:34.601437"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mRide Load (0.1ms)[0m  SELECT "rides".* FROM "rides"
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "reviews" ("rating", "review", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["rating", 3], ["review", "Bolos chemin initiale jour monts lourd nom petit."], ["user_id", 7], ["ride_id", 8], ["created_at", "2016-07-21 17:18:34.603979"], ["updated_at", "2016-07-21 17:18:34.603979"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRide Load (0.1ms)[0m  [1mSELECT "rides".* FROM "rides"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "reviews" ("rating", "review", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["rating", 3], ["review", "Paragraphe litéralement ressaisi se fourbes vodkale."], ["user_id", 6], ["ride_id", 4], ["created_at", "2016-07-21 17:18:34.606549"], ["updated_at", "2016-07-21 17:18:34.606549"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mRide Load (0.1ms)[0m  SELECT "rides".* FROM "rides"
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "reviews" ("rating", "review", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["rating", 3], ["review", "Un pays son nécessaires."], ["user_id", 2], ["ride_id", 12], ["created_at", "2016-07-21 17:18:34.609937"], ["updated_at", "2016-07-21 17:18:34.609937"]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRide Load (0.1ms)[0m  [1mSELECT "rides".* FROM "rides"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "reviews" ("rating", "review", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["rating", 2], ["review", "Route sauvages un fourmillait été sain chemin déconcerter."], ["user_id", 3], ["ride_id", 8], ["created_at", "2016-07-21 17:18:34.612535"], ["updated_at", "2016-07-21 17:18:34.612535"]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mRide Load (0.1ms)[0m  SELECT "rides".* FROM "rides"
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "reviews" ("rating", "review", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["rating", 4], ["review", "Laissa en retrait rebrousser se déconcerter en."], ["user_id", 6], ["ride_id", 17], ["created_at", "2016-07-21 17:18:34.615094"], ["updated_at", "2016-07-21 17:18:34.615094"]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRide Load (0.1ms)[0m  [1mSELECT "rides".* FROM "rides"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "reviews" ("rating", "review", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["rating", 5], ["review", "Déjà été bouche loin genre paradisiagmatique ferait règlalades consonnia."], ["user_id", 9], ["ride_id", 6], ["created_at", "2016-07-21 17:18:34.617783"], ["updated_at", "2016-07-21 17:18:34.617783"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mRide Load (0.1ms)[0m  SELECT "rides".* FROM "rides"
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "reviews" ("rating", "review", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["rating", 1], ["review", "Nostalgique grammaire ferait alors du."], ["user_id", 9], ["ride_id", 11], ["created_at", "2016-07-21 17:18:34.620677"], ["updated_at", "2016-07-21 17:18:34.620677"]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRide Load (0.2ms)[0m  [1mSELECT "rides".* FROM "rides"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "reviews" ("rating", "review", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["rating", 3], ["review", "Nécessaires aguets fourbes créas long panse mots ruisseau agence."], ["user_id", 4], ["ride_id", 12], ["created_at", "2016-07-21 17:18:34.623615"], ["updated_at", "2016-07-21 17:18:34.623615"]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mRide Load (0.1ms)[0m  SELECT "rides".* FROM "rides"
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "reviews" ("rating", "review", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["rating", 2], ["review", "Headline propre une c dernier."], ["user_id", 5], ["ride_id", 12], ["created_at", "2016-07-21 17:18:34.626436"], ["updated_at", "2016-07-21 17:18:34.626436"]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRide Load (0.1ms)[0m  [1mSELECT "rides".* FROM "rides"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "reviews" ("rating", "review", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["rating", 1], ["review", "Il projets pas interpelle et pacqua grand."], ["user_id", 8], ["ride_id", 16], ["created_at", "2016-07-21 17:18:34.628969"], ["updated_at", "2016-07-21 17:18:34.628969"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mRide Load (0.2ms)[0m  SELECT "rides".* FROM "rides"
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "reviews" ("rating", "review", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["rating", 4], ["review", "Langues aux copy lettrines leur route origines."], ["user_id", 1], ["ride_id", 11], ["created_at", "2016-07-21 17:18:34.631851"], ["updated_at", "2016-07-21 17:18:34.631851"]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRide Load (0.1ms)[0m  [1mSELECT "rides".* FROM "rides"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "reviews" ("rating", "review", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["rating", 4], ["review", "Vaste sauf nostalgique en bercail."], ["user_id", 6], ["ride_id", 7], ["created_at", "2016-07-21 17:18:34.634489"], ["updated_at", "2016-07-21 17:18:34.634489"]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mRide Load (0.1ms)[0m  SELECT "rides".* FROM "rides"
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "reviews" ("rating", "review", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["rating", 2], ["review", "Headline histoire avait tas où."], ["user_id", 1], ["ride_id", 1], ["created_at", "2016-07-21 17:18:34.637045"], ["updated_at", "2016-07-21 17:18:34.637045"]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRide Load (0.1ms)[0m  [1mSELECT "rides".* FROM "rides"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "reviews" ("rating", "review", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["rating", 3], ["review", "Ferait bouche vers initiale sûr flancs."], ["user_id", 4], ["ride_id", 3], ["created_at", "2016-07-21 17:18:34.639568"], ["updated_at", "2016-07-21 17:18:34.639568"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mRide Load (0.3ms)[0m  SELECT "rides".* FROM "rides"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "reviews" ("rating", "review", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["rating", 5], ["review", "Paradisiagmatique phrases semicolons par projets il loin désormais."], ["user_id", 10], ["ride_id", 2], ["created_at", "2016-07-21 17:18:34.644115"], ["updated_at", "2016-07-21 17:18:34.644115"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRide Load (0.2ms)[0m  [1mSELECT "rides".* FROM "rides"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "reviews" ("rating", "review", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["rating", 2], ["review", "Nécessaires bourg-en-lettres headline entiers cette."], ["user_id", 3], ["ride_id", 1], ["created_at", "2016-07-21 17:18:34.648950"], ["updated_at", "2016-07-21 17:18:34.648950"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mRide Load (0.2ms)[0m  SELECT "rides".* FROM "rides"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "reviews" ("rating", "review", "user_id", "ride_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["rating", 1], ["review", "Aux fourmillait oxymore prévint ses jeta et."], ["user_id", 6], ["ride_id", 1], ["created_at", "2016-07-21 17:18:34.652930"], ["updated_at", "2016-07-21 17:18:34.652930"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/" for ::1 at 2016-07-21 13:19:49 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RidesController#index as HTML
+  [1m[35mRide Load (0.2ms)[0m  SELECT "rides".* FROM "rides"
+  Rendered rides/index.html.erb within layouts/application (24.8ms)
+Completed 200 OK in 315ms (Views: 297.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/sessions/new" for ::1 at 2016-07-21 13:20:43 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 53ms (Views: 52.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/js/bootstrap.min.js" for ::1 at 2016-07-21 13:20:43 -0400
+
+ActionController::RoutingError (No route matches [GET] "/sessions/js/bootstrap.min.js"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.8ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (11.1ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (88.8ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (53.5ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (112.1ms)
+
+
+Started GET "/sessions/js/jquery.js" for ::1 at 2016-07-21 13:20:44 -0400
+
+ActionController::RoutingError (No route matches [GET] "/sessions/js/jquery.js"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.1ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.9ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (79.1ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (49.1ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.3ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (107.9ms)
+
+
+Started POST "/sessions" for ::1 at 2016-07-21 13:20:51 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gnkf85tkcekp6eUmimHoe2Yeo01XKEC9uchhgVwyh8jjjE+Qh8GtBbStHnHUwMJCniZ/9mKzfyRhYoHmkzghuA==", "email"=>"mitch_pateman@hotmail.com", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = 'mitch_pateman@hotmail.com'  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 47ms (Views: 35.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/js/bootstrap.min.js" for ::1 at 2016-07-21 13:20:51 -0400
+
+ActionController::RoutingError (No route matches [GET] "/js/bootstrap.min.js"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.7ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.9ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (61.9ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (39.9ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (88.4ms)
+
+
+Started GET "/js/jquery.js" for ::1 at 2016-07-21 13:20:52 -0400
+
+ActionController::RoutingError (No route matches [GET] "/js/jquery.js"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.1ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (72.2ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (42.0ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (93.7ms)
+
+
+Started GET "/js/bootstrap.min.js" for ::1 at 2016-07-21 13:20:52 -0400
+
+ActionController::RoutingError (No route matches [GET] "/js/bootstrap.min.js"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.8ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.9ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (64.4ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (42.8ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (90.8ms)
+
+
+Started GET "/" for ::1 at 2016-07-21 13:20:56 -0400
+Processing by RidesController#index as HTML
+  [1m[35mRide Load (0.2ms)[0m  SELECT "rides".* FROM "rides"
+  Rendered rides/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 28ms (Views: 26.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-07-21 13:21:16 -0400
+Processing by RidesController#index as HTML
+  [1m[36mRide Load (0.2ms)[0m  [1mSELECT "rides".* FROM "rides"[0m
+  Rendered rides/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 26ms (Views: 25.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-07-21 13:28:44 -0400
+Processing by RidesController#index as HTML
+  [1m[35mRide Load (0.2ms)[0m  SELECT "rides".* FROM "rides"
+  Rendered rides/index.html.erb within layouts/application (3.1ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"users", :id=>nil} missing required keys: [:id]):
+     9: 	<div class="rides-container">
+    10: 		<li>
+    11: 			<!-- ADD IN  Avatar, Name, Rating  -->
+    12: 			<%= link_to "Edit profile", edit_user_path(@user) %>
+    13: 
+    14: 			<p><%= ride.date %></p>
+    15: 			</ br><%= ride.time %>
+  app/views/rides/index.html.erb:12:in `block in _app_views_rides_index_html_erb___2737375236596774536_70345765687400'
+  app/views/rides/index.html.erb:8:in `_app_views_rides_index_html_erb___2737375236596774536_70345765687400'
+
+
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.7ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (55.3ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (39.6ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/MitchP/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (92.9ms)
+
+
+Started GET "/" for ::1 at 2016-07-21 13:28:52 -0400
+Processing by RidesController#index as HTML
+  [1m[36mRide Load (0.2ms)[0m  [1mSELECT "rides".* FROM "rides"[0m
+  Rendered rides/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 27ms (Views: 26.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-07-21 13:29:20 -0400
+Processing by RidesController#index as HTML
+  [1m[35mRide Load (0.2ms)[0m  SELECT "rides".* FROM "rides"
+  Rendered rides/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 28ms (Views: 27.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-07-21 13:36:42 -0400
+Processing by RidesController#index as HTML
+  [1m[36mRide Load (0.2ms)[0m  [1mSELECT "rides".* FROM "rides"[0m
+  Rendered rides/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 38ms (Views: 37.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-07-21 13:36:57 -0400
+Processing by RidesController#index as HTML
+  [1m[35mRide Load (0.4ms)[0m  SELECT "rides".* FROM "rides"
+  Rendered rides/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 36ms (Views: 35.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2016-07-21 13:37:25 -0400
+Processing by RidesController#index as HTML
+  [1m[36mRide Load (0.3ms)[0m  [1mSELECT "rides".* FROM "rides"[0m
+  Rendered rides/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 31ms (Views: 30.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-07-21 13:38:40 -0400
+Processing by RidesController#index as HTML
+  [1m[35mRide Load (0.2ms)[0m  SELECT "rides".* FROM "rides"
+  Rendered rides/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 25ms (Views: 24.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-07-21 13:39:01 -0400
+Processing by RidesController#index as HTML
+  [1m[36mRide Load (0.2ms)[0m  [1mSELECT "rides".* FROM "rides"[0m
+  Rendered rides/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 25ms (Views: 24.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-07-21 13:42:20 -0400
+Processing by RidesController#index as HTML
+  [1m[35mRide Load (0.2ms)[0m  SELECT "rides".* FROM "rides"
+  Rendered rides/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 27ms (Views: 26.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-07-21 13:42:39 -0400
+Processing by RidesController#index as HTML
+  [1m[36mRide Load (0.2ms)[0m  [1mSELECT "rides".* FROM "rides"[0m
+  Rendered rides/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 30ms (Views: 29.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rides" for ::1 at 2016-07-21 13:43:35 -0400
+Processing by RidesController#index as HTML
+  [1m[35mRide Load (0.4ms)[0m  SELECT "rides".* FROM "rides"
+  Rendered rides/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 30ms (Views: 29.7ms | ActiveRecord: 0.4ms)
