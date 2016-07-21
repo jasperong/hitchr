@@ -1,18 +1,21 @@
 <h1>Hitchr!</h1>
 
+<div class="rateYo">
+  <input type="hidden" name="rating" value="" />
+</div>
 
 <ul class="rides">
 <% @rides.each do |ride| %>
-	<div class="rides-container">
-		<li>
-			<!-- ADD IN  Avatar, Name, Rating  -->
-			</ br><%= ride.date %>
-			</ br><%= ride.time %>
-			</ br><%= ride.seats_available %>
-			</ br><%= ride.comments %>
-			</ br ><%= ride.start_location %>
-			</ br><%= ride.end_location %>
-	</li>
-	</div>
+  <div class="rides-container">
+    <li>
+      <!-- ADD IN  Avatar, Name, Rating  -->
+      </ br><%= ride.date %>
+      </ br><%= ride.time %>
+      </ br><%= ride.seats_available %>
+      </ br><%= ride.comments %>
+      </ br ><%= ride.start_location %>
+      </ br><%= ride.end_location %>
+  </li>
+  </div>
 <% end %>
 </ul>
