@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  #  validate :min_age
+   validate :min_age
 
   has_many :rides
   has_many :bookings, through: :ride
@@ -22,11 +22,12 @@ class User < ActiveRecord::Base
   has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
-  # private
-  #
-  # def min_age
-  #     if date_of_birth < 18.years.ago
-  #       errors.add :date_of_birth, "You need to be 18 years of age"
-  #     end
-  # end
+  private
+
+  def min_age
+      if date_of_birth > 18.years.ago
+      errors.add(:date_of_birth, "should be over 18 years ago!")
+    end
+  end
+  
 end
