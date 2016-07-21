@@ -14,7 +14,14 @@ $(function() {
   //     console.log(responseData);
   //   });
   // });
-  $('#start_location').geocomplete();
-  $('#end_location').geocomplete();
+  $('#start_location').geocomplete({
+    country: "CA",
+    types: ["(cities)"]
+  });
+  $('#end_location').geocomplete({
+    country: "CA",
+    types: ["(cities)"]
+  });
+  });
 
 });
