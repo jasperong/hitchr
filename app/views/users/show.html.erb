@@ -1,40 +1,40 @@
 <h1> User Profile Page</h1>
 
 <div class="user-info">
-		<%= @user.first_name %> | <%= @user.last_name %><br />
-		<%= @user.email %><br />
-		<%= @user.gender %><br />
-		<%= @user.date_of_birth %><br />
-		<!-- ADD THE PICTURE! -->
-		<%= link_to "Edit profile", edit_user_path(@user) %>
+    <%= @user.first_name %> | <%= @user.last_name %><br />
+    <%= @user.email %><br />
+    <%= @user.gender %><br />
+    <%= @user.date_of_birth %><br />
+    <!-- ADD THE PICTURE! -->
+    <%= link_to "Edit profile", edit_user_path(@user) %>
+</div>
+<div >
+  <%= link_to "Add Review", new_user_review_path(@user)%>
+  <!--PUT ERB TAGS ON THIS AND FIX
+   render @user.reviews -->
 </div>
 <div>
-	<%= link_to "Add Review", new_review_path(@user)%>
-	<!--PUT ERB TAGS ON THIS AND FIX
-	 render @user.reviews -->
-
-</div>
-<div>
-	<%= link_to "Offer a Ride", new_ride_path(@user)%>
-</div>
-
-<div>
-	<br /> <h4>Review about me: </h4>
+  <%= link_to "Offer a Ride", new_ride_path(@user)%>
 </div>
 
 <div>
-	<br /> <h4>My Rides Offered: </h4>
-	<% @rides.each do |ride| %>
-		<%= ride.date %>
-		<%= ride.time %>
-		<%= ride.seats_available %>
-		<%= ride.comments %>
-		<%= ride.start_location %>
-		<%= ride.end_location %>
-	<% end %>
+  <br /> <h4>Review about me: </h4>
+
+</div>
+
+<div>
+  <br /> <h4>My Rides Offered: </h4>
+  <% @rides.each do |ride| %>
+    <%= ride.date %>
+    <%= ride.time %>
+    <%= ride.seats_available %>
+    <%= ride.comments %>
+    <%= ride.start_location %>
+    <%= ride.end_location %>
+  <% end %>
 </div>
 
 
 <div>
-	<br /><h4>My Bookings: </h4>
+  <br /><h4>My Bookings: </h4>
 </div>
