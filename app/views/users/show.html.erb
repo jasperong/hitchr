@@ -25,12 +25,14 @@
 <div>
 	<br /> <h4>My Rides Offered: </h4>
 	<% @rides.each do |ride| %>
+		<li>
 		<%= ride.date %>
 		<%= ride.time %>
 		<%= ride.seats_available %>
 		<%= ride.comments %>
 		<%= ride.start_location %>
 		<%= ride.end_location %>
+	</li>
 	<% end %>
 </div>
 
