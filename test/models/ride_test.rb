@@ -11,4 +11,12 @@ class RideTest < ActiveSupport::TestCase
     @ride.time > Time.now
     assert_equal true, @ride.valid?
   end
+
+  test "should only be invalid if ride date is in past" do
+    @ride.time < Time.now
+    assert_equal true, @ride.valid?
+  end
+
+  
+
 end
