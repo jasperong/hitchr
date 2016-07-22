@@ -9,7 +9,7 @@ $(function() {
   });
 
   $('.search-button').on('click', function(e) {
-    e.preventDefault();  
+    e.preventDefault();
 
     $.ajax({
       url: $(this).attr('action'),
@@ -21,6 +21,7 @@ $(function() {
       dataType: 'html'
     }).done(function(responseData) {
       console.log(responseData);
+      $('.ride-list').append(responseData)
     });
   });
 });
