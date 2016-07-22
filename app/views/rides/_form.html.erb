@@ -19,19 +19,19 @@
     </div>
     <div class="field">
       <%= f.label :time %><br />
-      <%= f.number_field :time, min: 1, max: 12 %>
+      <%= f.time_select :time, {ampm: true, minute_step: 30} %>
     </div>
     <div class="field">
       <%= f.label :seats_available %><br />
-      <%= f.number_field :seats_available, min: 1 %>
+      <%= f.number_field :seats_available, min: 1 , max: 7 %>
     </div>
     <div class="field">
       <%= f.label :start_location %><br />
-      <%= f.text_field :start_location %>
+      <%= f.text_field :start_location, id: "start_location"%>
     </div>
     <div class="field">
       <%= f.label :end_location %></br>
-      <%= f.text_field :end_location %>
+      <%= f.text_field :end_location, id: "end_location" %>
     </div>
     <div class="field">
       <%= f.label :comments %></br>

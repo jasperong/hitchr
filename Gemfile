@@ -19,6 +19,8 @@ gem 'cancancan', '~> 1.10'
 
 gem "sorcery"
 
+gem "geocomplete_rails"
+
 gem "quiet_assets"
 #Make logs stop logging on server
 

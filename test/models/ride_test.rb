@@ -8,7 +8,13 @@ class RideTest < ActiveSupport::TestCase
   end
 
   test "should only be valid if ride date is in future" do
-    @ride.time > Time.now
+    @ride.date = Date.today + 1.day
     assert_equal true, @ride.valid?
   end
+
+  test "should only be invalid if ride date is in past" do
+    @ride.date = 1.day.ago
+    assert_equal false, @ride.valid?
+  end
+
 end
