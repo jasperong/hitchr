@@ -5,7 +5,6 @@ class UserMailer < ApplicationMailer
     @user = user
     mail(to: @user.email, subject: "Welcome to Hitchr!")
   end
-end
 
   # 2. Setup an email for the driver to see when someone requests a seat
 
@@ -14,3 +13,14 @@ end
   # 4. Setup an email when a booked seat is cancelled by a rider
 
   # 5. Setup an email when a ride is cancelled by a driver
+
+  def cancelled_ride(ride)
+    @ride = ride
+
+    @ride.bookings.each do |booking|
+      email = booking.user.email
+      mail(to: email, subject: "Your ride from #{ride.start_location} to #{ride.end_location} has been cancelled!")
+    end
+  end
+
+end

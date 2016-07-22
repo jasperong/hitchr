@@ -1,0 +1,6 @@
+<p>Hey <%= @user.first_name %>,</p>
+----------------------------------------
+<p>We're so sorry, but <%= @ride.user %> cancelled the ride from <%= @ride.start_location %> to <%= @ride.end_location %>.</p>
+<p>Feel free to <%= link_to "check out some more rides", rides_url %>!</p>
+<p>Love,</p>
+<p>The Hitchr Team</p>
