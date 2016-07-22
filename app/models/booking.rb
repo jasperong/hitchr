@@ -14,4 +14,5 @@ class Booking < ActiveRecord::Base
       errors.add("Sorry, there are no more seats available.")
     end
   end
+
 end
