@@ -7,4 +7,20 @@ $(function() {
     country: "CA",
     types: ["(cities)"]
   });
+
+  $('.search-button').on('click', function(e) {
+    e.preventDefault();  
+
+    $.ajax({
+      url: $(this).attr('action'),
+      method: 'get',
+      data: {
+        start_location: $('#start_location').val(),
+        end_location: $('#end_location').val()
+      },
+      dataType: 'html'
+    }).done(function(responseData) {
+      console.log(responseData);
+    });
+  });
 });

@@ -5,5 +5,9 @@
   <%= text_field_tag :start_location, params[:start_location] %>
   <%= label_tag "To:" %>
   <%= text_field_tag :end_location, params[:end_location] %>
-  <%= submit_tag "Hitch a ride!", name: nil %>
+  <%= submit_tag "Hitch a ride!", name: nil, class: "search-button" %>
 <% end %>
+
+<div class="ride-list">
+
+</div>
