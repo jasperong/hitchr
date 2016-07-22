@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @rides = @user.rides.all
+    @rides = @user.rides
     #FIX THIS BELOW TO SHOW ALL REVIEWS FOR USER
     #@reviews = @user.rides.all.reviews
 
@@ -16,8 +16,8 @@ class UsersController < ApplicationController
     #and The bookings made for my ride offered
     @reviews = @user.reviews
     @bookings = []
-    @user.rides.all.each do |ride|
-      @bookings = ride.bookings.all
+    @rides.each do |ride|
+      @bookings = ride.bookings
     end
   end
 

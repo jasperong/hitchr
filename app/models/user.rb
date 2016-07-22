@@ -2,7 +2,8 @@ class User < ActiveRecord::Base
    validate :min_age
 
   has_many :rides
-  has_many :bookings, through: :ride
+  # has_many :ride_bookings, through: :bookings, source: :ride
+  has_many :bookings
   has_many :reviews
   has_many :rides
 
