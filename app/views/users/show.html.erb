@@ -49,4 +49,13 @@
 
 <div>
   <br /><h4>My Bookings: </h4>
+  <ul>
+
+  <% @bookings.each do |booking| %>
+    <li>
+        <%= booking.user.first_name %> <%= booking.user.last_name %><br>
+        Seats requested: <%= booking.seats %>
+    </li>
+  <% end %>
+</ul>
 </div>
