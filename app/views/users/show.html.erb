@@ -1,11 +1,11 @@
 <h1> User Profile Page</h1>
 
-<div class="user-info">
 		<%= image_tag @user.avatar.url %><br />
 		<%= @user.first_name %> | <%= @user.last_name %><br />
 		<%= @user.email %><br />
 		<%= @user.gender %><br />
 		<%= @user.date_of_birth %><br />
+		<%= number_to_phone(@user.phone_number, area_code: true) %><br>
 		<!-- ADD THE PICTURE! -->
 		<%= link_to "Edit profile", edit_user_path(@user) %>
 </div>

@@ -16,8 +16,9 @@ class BookingsController < ApplicationController
 	end
 
 	def destroy
-		@booking = Booking.find(params[:id])
+		@booking = @ride.bookings.find(params[:id])
 		@booking.destroy
+		UserMailer.cancelled_seat(@ride).deliver_later
 		redirect_to user_path(@booking.user)
 	end
 

@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
 
 	# ========> General validation <=========
 	validates :first_name, :last_name, :gender, :date_of_birth, presence: true
+	validates :phone_number, presence: true, numericality: true, length: {minimum: 10, maximum: 15}
 
 	# ========> for sorcery <=========
 	authenticates_with_sorcery!
