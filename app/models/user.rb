@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   has_many :rides
 
   # ========> General validation <=========
-  validates :first_name, :last_name, :gender, :date_of_birth, :phone_number, presence: true
+  validates :first_name, :last_name, :gender, :date_of_birth, presence: true
 
   # ========> for sorcery <=========
   authenticates_with_sorcery!
