@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   has_many :rides
 
   # ========> General validation <=========
-  validates :first_name, :last_name, :gender, :date_of_birth, presence: true
+  validates :first_name, :last_name, :gender, :date_of_birth, :phone_number, presence: true
 
   # ========> for sorcery <=========
   authenticates_with_sorcery!
@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
   private
 
   def min_age
-      if  date_of_birth.nil? || date_of_birth > 18.years.ago 
+      if date_of_birth.nil? || date_of_birth > 18.years.ago
       errors.add(:date_of_birth, "should be over 18 years ago!")
     end
   end
