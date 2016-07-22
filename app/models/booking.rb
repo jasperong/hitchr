@@ -2,6 +2,8 @@ class Booking < ActiveRecord::Base
   belongs_to :ride
   belongs_to :user
 
+  validate :enough_seats
+
   def enough_seats
     @ride = Ride.find(params[:user_id])
 
