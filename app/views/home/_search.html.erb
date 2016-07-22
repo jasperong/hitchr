@@ -11,6 +11,7 @@
 			<p> Time: <%= ride.time %></p>
 			<p>Seats Available: <%= ride.seats_available %></p>
 			<p>Comments: <%= ride.comments %></p>
+			<%= link_to "View Ride", ride_path(ride) %>
 			<br>
 	</li>
 </div>
