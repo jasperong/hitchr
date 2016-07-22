@@ -26,7 +26,7 @@ class RidesController < ApplicationController
   def destroy
     @ride = Ride.find(params[:id])
     @ride.destroy
-    UserMailer.cancelled_ride(@ride).deliver_later 
+    UserMailer.cancelled_seat(@ride).deliver_later 
     redirect_to root_path
   end
 
