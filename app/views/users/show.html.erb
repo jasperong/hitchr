@@ -50,7 +50,7 @@
 				<h4>Hitches on this ride: </h4>
 		<li>
 			<% ride.bookings.each do |booking| %>
-				<p><%=  booking.user.first_name  %></p>
+				<p><%= link_to booking.user.first_name, booking.user  %></p>
 				<p><%=  booking.seats %></p>
 				<p><%=  booking.created_at %></p>
 		</li><br><br>
