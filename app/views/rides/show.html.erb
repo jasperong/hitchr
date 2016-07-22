@@ -2,6 +2,8 @@
 <br>
 <%= render "bookings/form" %>
 <br><br>
+<p><%=image_tag @ride.user.avatar.url%></p>
+<p><%= @ride.user.first_name %> <%= @ride.user.last_name %></p>
 <p>From: <%= @ride.start_location %></p>
 <p>To: <%= @ride.end_location %></p>
 <p>Date: <%= @ride.date %></p>
