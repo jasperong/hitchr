@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
-  root "rides#index"
+
+  root "home#index"
+  get "/search" => "home#search"
+
   resources :sessions, only: [:new, :create, :destroy]
-  resources :reviews
   resources :bookings
 
   resources :users do
     resources :bookings, only: [:show]
-    resources :reviews, only: [:show]
+    resources :reviews, only: [:show, :new, :create]
   end
 
   resources :rides do

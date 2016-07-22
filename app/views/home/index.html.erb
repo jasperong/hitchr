@@ -1,0 +1,9 @@
+<h1>hello world</h1>
+
+<%= form_tag search_path, method: "get", class: "search" do %>
+  <%= label_tag "From:" %>
+  <%= text_field_tag :start_location, params[:start_location] %>
+  <%= label_tag "To:" %>
+  <%= text_field_tag :end_location, params[:end_location] %>
+  <%= submit_tag "Hitch a ride!", name: nil %>
+<% end %>
