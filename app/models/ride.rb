@@ -4,7 +4,6 @@ class Ride < ActiveRecord::Base
   has_many :reviews
 
   def self.search(start_loc, end_loc)
-    where("start_location LIKE ?", "%#{start_loc}%")
-    where("end_location LIKE ?", "%#{end_loc}%")
+    where("start_location LIKE ?", "%#{start_loc}%").where("end_location LIKE ?", "%#{end_loc}%")
   end
 end
