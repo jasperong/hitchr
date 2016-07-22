@@ -2,7 +2,7 @@ $(function() {
 
 
   $(".rateYo").rateYo({
-    halfStar: true,
+    fullStar: true,
     multiColor: {
       "startColor": "#FF0000", //RED
       "endColor"  : "#00FF00"  //GREEN
@@ -39,7 +39,7 @@ $(function() {
 
      $(this).rateYo(
        "option", "readOnly", true)
-     
+
    });
 
 });

@@ -1,13 +1,9 @@
-<h1>Hitchr!</h1>
-
-
-
-<ul class="rides">
 <% @rides.each do |ride| %>
 	<div class="rides-container">
 		<li>
 			<!-- ADD IN  Avatar, Name, Rating  -->
 			<br>
+			<p><%=image_tag ride.user.avatar.url%></p>
 			<p><%= ride.user.first_name %> <%= ride.user.last_name %></p>
 			<p>From: <%= ride.start_location %></p>
 			<p>To: <%= ride.end_location %></p>
@@ -18,6 +14,5 @@
 			<%= link_to "View Ride", ride_path(ride) %>
 			<br>
 	</li>
-	</div>
+</div>
 <% end %>
-</ul>

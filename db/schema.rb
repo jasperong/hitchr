@@ -24,10 +24,10 @@ ActiveRecord::Schema.define(version: 20160722170213) do
   create_table "reviews", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "ride_id"
-    t.integer  "rating"
     t.text     "review"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float    "rating"
   end
 
   create_table "rides", force: :cascade do |t|
