@@ -18,7 +18,7 @@ class BookingsController < ApplicationController
   def destroy
     @booking = @ride.bookings.find(params[:id])
     @booking.destroy
-    redirect_to user_path(@ride.user)
+    redirect_to user_path(@booking.user)
   end
 
   private
