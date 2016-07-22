@@ -1,0 +1,17 @@
+<% @rides.each do |ride| %>
+	<div class="rides-container">
+		<li>
+			<!-- ADD IN  Avatar, Name, Rating  -->
+			<br>
+			<p><%=image_tag ride.user.avatar.url%></p>
+			<p><%= ride.user.first_name %> <%= ride.user.last_name %></p>
+			<p>From: <%= ride.start_location %></p>
+			<p>To: <%= ride.end_location %></p>
+			<p>Date: <%= ride.date %></p>
+			<p> Time: <%= ride.time %></p>
+			<p>Seats Available: <%= ride.seats_available %></p>
+			<p>Comments: <%= ride.comments %></p>
+			<br>
+	</li>
+</div>
+<% end %>

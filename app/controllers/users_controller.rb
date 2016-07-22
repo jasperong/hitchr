@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
+
 	# before_action :require_login, only: :show
-
-
 	def new
 		@user = User.new
 	end
@@ -9,7 +8,11 @@ class UsersController < ApplicationController
 	def show
 		@user = User.find(params[:id])
 		@rides = @user.rides
-	
+		#FIX THIS BELOW TO SHOW ALL REVIEWS FOR USER
+		#@reviews = @user.rides.all.reviews
+
+		#FIX THIS BELOW TO SHOW ALL My Bookings
+		#and The bookings made for my ride offered
 		@reviews = @user.reviews
 		@bookings = []
 		@rides.each do |ride|
@@ -21,6 +24,7 @@ class UsersController < ApplicationController
 		@user = User.new(user_params)
 
 		if @user.save
+			UserMailer.welcome(@user).deliver_later
 			session[:user_id] = @user.id
 			redirect_to @user, alert: "Signed up!"
 		else
