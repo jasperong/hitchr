@@ -12,13 +12,13 @@ class UserMailer < ApplicationMailer
 
   # 4. Setup an email when a booked seat is cancelled by a rider
 
-  def cancelled_ride(ride)
-    
+  def cancelled_seat(ride)
+
   end
 
   # 5. Setup an email when a ride is cancelled by a driver
 
-  def cancelled_seat(ride)
+  def cancelled_ride(ride)
     @ride = ride
   end
 
