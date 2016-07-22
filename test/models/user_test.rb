@@ -38,6 +38,12 @@ class UserTest < ActiveSupport::TestCase
     assert_equal false, @user.valid?
   end
 
+  test "should be invalid without phone_number" do
+    @user.phone_number = nil
+    assert_nil @user.phone_number
+    assert_equal false, @user.valid?
+  end
+
   test "should be invalid without birthday" do
     @user.date_of_birth = nil
     assert_nil @user.date_of_birth

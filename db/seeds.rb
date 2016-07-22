@@ -19,5 +19,5 @@ end
 end
 
 20.times do
-  FactoryGirl.create_list :review, 1, user: User.all[rand(0...10)], ride: Ride.all[rand(0...20)]
+  FactoryGirl.create_list :review, 1, user: User.all[rand(0...10)]
 end
