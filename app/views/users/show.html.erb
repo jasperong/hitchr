@@ -19,18 +19,21 @@
 
 <div>
   <br /> <h4>Review about me: </h4>
+  <div class="user-reviews-container">
   <% @user.reviews.each do |review| %>
   <div class="rateYo stars" data-rating="<%= review.rating %>">
   </div>
   <!-- <%= review.rating %> -->
   <%= review.review %>
+  <div class="reviewing-user-container">
+    <% @reviews.each do |review| %>
+    <%= link_to review.user.first_name, user_path(@user) %>
+  </div>
   <% end %>
-
+  <% end %>
 </div>
 
-
-  <br /> <h4>Reviews about me: </h4>
-</div>
+<
 
 <div>
   <br /> <h4>My Rides Offered: </h4>
