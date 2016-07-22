@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-	before_action :load_ride
+	before_action :load_ride, except: [:destroy]
 
 	def show
 		@booking = @ride.bookings.find(params[:id])
@@ -16,7 +16,7 @@ class BookingsController < ApplicationController
 	end
 
 	def destroy
-		@booking = @ride.bookings.find(params[:id])
+		@booking = Booking.find(params[:id])
 		@booking.destroy
 		redirect_to user_path(@booking.user)
 	end
