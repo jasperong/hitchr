@@ -14,7 +14,10 @@ class UsersController < ApplicationController
 
     #FIX THIS BELOW TO SHOW ALL My Bookings
     #and The bookings made for my ride offered
-    # @bookings = @user.rides.all.bookings.all
+    @bookings = []
+    @user.rides.all.each do |ride|
+      @bookings = ride.bookings.all
+    end
   end
 
   def create
