@@ -20,7 +20,7 @@ $(function() {
       },
       dataType: 'html'
     }).done(function(responseData) {
-      console.log(responseData);
+      $('.ride-list').html('');
       $('.ride-list').append(responseData)
     });
   });
