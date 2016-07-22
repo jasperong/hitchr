@@ -11,6 +11,8 @@ FactoryGirl.define do
     reliability {rand()}
     password { "123456" }
     password_confirmation { "123456" }
+    phone_number { FFaker::PhoneNumber.phone_number }
+    
   end
-  
+
 end
