@@ -1,8 +1,8 @@
 class UserMailer < ApplicationMailer
 
   # 1. Setup a welcome email for new users
-  def welcome
-    @user = 
+  def welcome(user)
+    @user = user
     mail(to: @user.email, subject: "Welcome to Hitchr!")
   end
 end
