@@ -1,6 +1,7 @@
 <h1> User Profile Page</h1>
 
 <div class="user-info">
+    <%= image_tag @user.avatar.url %><br />
     <%= @user.first_name %> | <%= @user.last_name %><br />
     <%= @user.email %><br />
     <%= @user.gender %><br />
@@ -19,18 +20,21 @@
 
 <div>
   <br /> <h4>Review about me: </h4>
+  <div class="user-reviews-container">
   <% @user.reviews.each do |review| %>
   <div class="rateYo stars" data-rating="<%= review.rating %>">
   </div>
   <!-- <%= review.rating %> -->
   <%= review.review %>
+  <div class="reviewing-user-container">
+    <% @reviews.each do |review| %>
+    <%= link_to review.user.first_name, user_path(@user) %>
+  </div>
   <% end %>
-
+  <% end %>
 </div>
 
-
-  <br /> <h4>Reviews about me: </h4>
-</div>
+<
 
 <div>
   <br /> <h4>My Rides Offered: </h4>
@@ -46,16 +50,30 @@
   <% end %>
 </div>
 
+<div>
+  <br /> <h4>Bookings For My Rides:</h4>
+  <ul>
+
+    <% @bookings.each do |booking| %>
+    <li>
+      <%= booking.user.first_name %> <%= booking.user.last_name %><br>
+      Seats requested: <%= booking.seats %>
+    </li>
+    <% end %>
+  </ul>
+</div>
+
 
 <div>
   <br /><h4>My Bookings: </h4>
   <ul>
-
-  <% @bookings.each do |booking| %>
-    <li>
-        <%= booking.user.first_name %> <%= booking.user.last_name %><br>
-        Seats requested: <%= booking.seats %>
+    <% @rides.each do |ride| %>
+    <li><% ride.bookings.all.each do |booking| %>
+          <%= booking.user.first_name %> <%= booking.user.last_name %>:<br>
+          Seats I requested: <%= booking.seats %><br>
+          Date: <%= ride.date %>
+        <% end %>
     </li>
-  <% end %>
-</ul>
+    <% end %>
+  </ul>
 </div>
