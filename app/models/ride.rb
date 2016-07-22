@@ -8,6 +8,8 @@ class Ride < ActiveRecord::Base
   def correct_time
     if date.past?
       errors.add(:date, "Cannot make rides in the past")
+    else
+      return true
     end
   end
 
