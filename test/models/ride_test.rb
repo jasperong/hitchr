@@ -8,7 +8,7 @@ class RideTest < ActiveSupport::TestCase
   end
 
   test "should only be valid if ride date is in future" do
-    @ride.date = Date.tomorrow 
+    @ride.date = Date.today
     assert_equal true, @ride.valid?
   end
 
