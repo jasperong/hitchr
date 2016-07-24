@@ -17,9 +17,9 @@ class UserMailer < ApplicationMailer
 
     email = @ride.user.email
     mail(to:email, subject: "#{@booking.user.first_name} #{@booking.user.last_name}
-                              cancelled #{@booking.seats} seats for your ride from
-                              #{@ride.start_location} to #{@ride.end_location} on
-                              #{@ride.date}")
+                              cancelled their seat(s) for your ride on
+                              #{@ride.date} from
+                              #{@ride.start_location} to #{@ride.end_location}")
   end
 
   # 5. Setup an email when a ride is cancelled by a driver
