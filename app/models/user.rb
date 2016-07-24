@@ -1,16 +1,13 @@
 class User < ActiveRecord::Base
-   validate :min_age
 
   has_many :rides
   has_many :bookings
   has_many :reviews
-  has_many :rides
 
   # ========> General validation <=========
   validates :first_name, :last_name, :gender, :date_of_birth, presence: true
-
-  validates :phone_number, presence: true, numericality: true, length: {minimum: 10, maximum: 15}
-
+  validates :phone_number, presence: true, length: {minimum: 10, maximum: 15}
+  validate :min_age
 
   # ========> for sorcery <=========
   authenticates_with_sorcery!
