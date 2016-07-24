@@ -18,8 +18,12 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking = Booking.find(params[:id])
+    if current_user == @booking.user
+      UserMailer.cancelled_seat(@booking).deliver_later
+    elsif current_user != @booking.user
+      UserMailer.seat_rejected(@booking).deliver_later
+    end
     @booking.destroy
-    UserMailer.cancelled_seat(@ride).deliver_later
     redirect_to user_path(@booking.user)
   end
 
