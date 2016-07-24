@@ -10,7 +10,7 @@ class UserMailer < ApplicationMailer
   def seat_confirmation(ride)
     @ride = ride
     email = @ride.user.email
-    mail(to:email, subject: "Somebody wants to hitch a ride with you on #{@ride.date}
+    mail(to:email, subject: "Somebody wants to hitch a ride with you on #{@ride.date.strftime("%b %-d, %Y")}
                             from #{@ride.start_location} to #{@ride.end_location}")
   end
 
@@ -29,7 +29,7 @@ class UserMailer < ApplicationMailer
     email = @booking.ride.user.email
     mail(to:email, subject: "#{@booking.user.first_name} #{@booking.user.last_name}
                               cancelled their seat(s) for your ride on
-                              #{@booking.ride.date} from
+                              #{@booking.ride.date.strftime("%b %-d, %Y")} from
                               #{@booking.ride.start_location} to #{@booking.ride.end_location}")
   end
 
@@ -40,7 +40,7 @@ class UserMailer < ApplicationMailer
 
     @ride.bookings.each do |booking|
       email = booking.user.email
-      mail(to: email, subject: "Your ride from #{ride.start_location} to #{ride.end_location} on #{@ride.date} has been cancelled!")
+      mail(to: email, subject: "Your ride from #{ride.start_location} to #{ride.end_location} on #{@ride.date.strftime("%b %-d, %Y")} has been cancelled!")
     end
   end
 
