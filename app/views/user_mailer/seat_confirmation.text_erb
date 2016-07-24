@@ -1,0 +1,8 @@
+Hey <%= @user.first_name %>,
+
+<%= @booking.user %> wants to hitch a ride with you on <%= @ride.date %>
+from <%= @ride.start_location %> to <%= @ride.end_location %>. If you want to decline,
+simply click this link <%= @url %>.
+
+Love,
+The Hitchr Team

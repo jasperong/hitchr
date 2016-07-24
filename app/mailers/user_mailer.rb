@@ -7,8 +7,16 @@ class UserMailer < ApplicationMailer
   end
 
   # 2. Setup an email for the driver to see when someone requests a seat
+  def seat_confirmation(ride)
+    @ride = ride
+    email = @ride.user.email
+    mail(to:email, subject: "Somebody wants to hitch a ride with you on #{@ride.date}
+                            from #{@ride.start_location} #{@ride.end_location}")
+  end
+
 
   # 3. Setup an email for a rider when a driver accepts OR rejects a seat request
+  def 
 
   # 4. Setup an email when a booked seat is cancelled by a rider
 
