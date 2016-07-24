@@ -1,36 +1,52 @@
 class UserMailer < ApplicationMailer
 
-  # 1. Setup a welcome email for new users
-  def welcome(user)
-    @user = user
-    mail(to: @user.email, subject: "Welcome to Hitchr!")
-  end
+	# 1. Setup a welcome email for new users
+	def welcome(user)
+		@user = user
+		mail(to: @user.email, subject: "Welcome to Hitchr!")
+	end
 
-  # 2. Setup an email for the driver to see when someone requests a seat
+	# 2. Setup an email for the driver to see when someone requests a seat
+	def seat_confirmation(ride)
+		@ride = ride
+		email = @ride.user.email
+		mail(to:email, subject: "Somebody wants to hitch a ride with you on #{@ride.date.strftime("%b %-d, %Y")}
+														from #{@ride.start_location} to #{@ride.end_location}")
+	end
 
-  # 3. Setup an email for a rider when a driver accepts OR rejects a seat request
 
-  # 4. Setup an email when a booked seat is cancelled by a rider
+	# 3. Setup an email for a rider when a driver rejects a seat request
+	def seat_rejected(booking)
+		@booking = booking
+		email = @booking.user.email
+		mail(to:email, subject: "You were DECLINED for your ride on
+														#{@booking.ride.date.strftime("%b %-d, %Y")} from
+														#{@booking.ride.start_location} to #{@booking.ride.end_location}")
+	end
 
-  def cancelled_seat(ride)
-    @ride = ride
+	# 4. Setup an email when a booked seat is cancelled by a rider
 
-    email = @ride.user.email
-    mail(to:email, subject: "#{@booking.user.first_name} #{@booking.user.last_name}
-                              cancelled #{@booking.seats} seats for your ride from
-                              #{@ride.start_location} to #{@ride.end_location} on
-                              #{@ride.date}")
-  end
+	def cancelled_seat(booking)
+		@booking = booking
 
-  # 5. Setup an email when a ride is cancelled by a driver
+		email = @booking.ride.user.email
+		mail(to:email, subject: "#{@booking.user.first_name} #{@booking.user.last_name}
+															cancelled their seat(s) for your ride on
+															#{@booking.ride.date.strftime("%b %-d, %Y")} from
+															#{@booking.ride.start_location} to #{@booking.ride.end_location}")
+	end
 
-  def cancelled_ride(ride)
-    @ride = ride
+	# 5. Setup an email when a ride is cancelled by a driver
 
-    @ride.bookings.each do |booking|
-      email = booking.user.email
-      mail(to: email, subject: "Your ride from #{ride.start_location} to #{ride.end_location} on #{@ride.date} has been cancelled!")
-    end
-  end
+	def cancelled_ride(ride)
+		@ride = ride
+
+		@ride.bookings.each do |booking|
+			email = booking.user.email
+			mail(to: email, subject: "Your ride from #{ride.start_location} to
+			#{ride.end_location} on #{@ride.date.strftime("%b %-d, %Y")} has been cancelled!")
+		end
+
+	end
 
 end
