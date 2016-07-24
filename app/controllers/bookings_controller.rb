@@ -12,7 +12,7 @@ class BookingsController < ApplicationController
       UserMailer.seat_confirmation(@ride).deliver_later
       redirect_to root_path, alert: "Booking created successfully"
     else
-      render rides_path
+      redirect_to rides_path
     end
   end
 
