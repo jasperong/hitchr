@@ -16,9 +16,9 @@ class UserMailer < ApplicationMailer
 
 
   # 3. Setup an email for a rider when a driver rejects a seat request
-  def seat_confirmed(ride)
-    @ride = ride
-    email = @booking.ride.last.user.email
+  def seat_confirmed(booking)
+    @booking = booking
+    email = @booking.user.email
   end
 
   # 4. Setup an email when a booked seat is cancelled by a rider
@@ -40,7 +40,8 @@ class UserMailer < ApplicationMailer
 
     @ride.bookings.each do |booking|
       email = booking.user.email
-      mail(to: email, subject: "Your ride from #{ride.start_location} to #{ride.end_location} on #{@ride.date.strftime("%b %-d, %Y")} has been cancelled!")
+      mail(to: email, subject: "Your ride from #{ride.start_location} to
+      #{ride.end_location} on #{@ride.date.strftime("%b %-d, %Y")} has been cancelled!")
     end
   end
 
