@@ -26,7 +26,7 @@ class UserMailer < ApplicationMailer
   def cancelled_seat(ride)
     @ride = ride
 
-    email = @ride.user.email
+    email = @ride.last.user.email
     mail(to:email, subject: "#{@booking.user.first_name} #{@booking.user.last_name}
                               cancelled their seat(s) for your ride on
                               #{@ride.date} from
