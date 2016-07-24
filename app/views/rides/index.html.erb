@@ -1,10 +1,9 @@
-<h1>Hitchr!</h1>
+<!-- <h1>Hitchr!</h1>
 
 <ul class="rides">
 <% @rides.each do |ride| %>
   <div class="rides-container">
     <li>
-      <!-- ADD IN  Avatar, Name, Rating  -->
       <br>
       <p><%= ride.user.first_name %> <%= ride.user.last_name %></p>
       <p>From: <%= ride.start_location %></p>
@@ -18,30 +17,18 @@
   </li>
   </div>
 <% end %>
-</ul>
+</ul> -->
 
 <h2>Rides</h2>
 <% @rides.each do |ride| %>
 				<div class="grid">
 					<figure class="effect-winston">
-					<%= image_tag ride.user.avatar.url %> 
+					<%= image_tag ride.user.avatar.url %>
 						<figcaption>
-							<h2>Jolly <span>Winston</span></h2>
+							<h2><%= ride.user.first_name %><span><%= ride.user.last_name %></span></h2>
 							<p>
-								<a href="#"><i class="fa fa-fw fa-star-o"></i></a>
-								<a href="#"><i class="fa fa-fw fa-comments-o"></i></a>
-								<a href="#"><i class="fa fa-fw fa-envelope-o"></i></a>
-							</p>
-						</figcaption>
-					</figure>
-					<figure class="effect-winston">
-						<img src="img/1.jpg" alt="img01"/>
-						<figcaption>
-							<h2>Jolly <span>Winston</span></h2>
-							<p>
-								<a href="#"><i class="fa fa-fw fa-star-o"></i></a>
-								<a href="#"><i class="fa fa-fw fa-comments-o"></i></a>
-								<a href="#"><i class="fa fa-fw fa-envelope-o"></i></a>
+                <a href="<%= ride_path(ride) %>">View Ride</a>
+                <!-- <%= link_to "View Ride", ride_path(ride) %> -->
 							</p>
 						</figcaption>
 					</figure>
