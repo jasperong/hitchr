@@ -1,3 +1,80 @@
-// Place all the styles related to the Home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+  width: 100%;
+}
+
+
+.image {
+    height: 750px;
+    width: 100%;
+    background: #55e6c5;
+    z-index: 1;
+    }
+
+.content {
+    height: 750px;
+    width:100%;
+    background: white;
+    z-index: 2;
+}
+.content h1 {
+    font-size: 40px;
+    color: #464646;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    margin: 30px 60px;
+}
+.content p {
+    font-size:20px;
+    color: #343434;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    margin: 30px 60px;
+}
+#wall_1 {
+    background: url('homepagepic.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+}
+
+.title {
+  color: white;
+}
+
+.search-form {
+  border: 1px solid white;
+  width: 400px;
+  text-align: center;
+  padding: 10px 0px 10px 0px;
+  position: relative;
+  bottom: 0;
+}
+
+.search-text {
+  color: white;
+}
+
+#wall_2 {
+    background: url('school.png') repeat;
+    background-attachment: fixed;
+}
+#wall_3 {
+    background: url('skulls.png') repeat;
+    background-attachment: fixed;
+}
+
+
+#content_1 {position: relative;}
+
+h1::first-letter {
+    font-size: 60px;
+    font-weight: 600;
+    color:#3cb0f8;
+}
