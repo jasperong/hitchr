@@ -1,8 +1,14 @@
-<p>Hey <%= @user.first_name %>,<p>
+<p>Hey <%= @ride.user.first_name %>,</p>
 
-<p><%= @booking.user %> wants to hitch a ride with you on <%= @ride.date %>
-from <%= @ride.start_location %> to <%= @ride.end_location %>. If you want to decline,
-simply click this link <%= @url %>.</p>
+<p><%= @ride.bookings.last.user.first_name %> <%= @ride.bookings.last.user.last_name %>
+wants to hitch a ride for <%= @ride.bookings.last.seats %> people with you from <%= @ride.start_location %> to <%= @ride.end_location %>
+on <%= @ride.date %>.</p>
+
+</p>If you'd like to turn down the request, click DECLINE,
+otherwise we'll let <%= @ride.bookings.last.user.first_name %> know that you
+accept the request.</p>
+
+
 
 <p>Love,</p>
 <p>The Hitchr Team</p>
