@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160720200616) do
+ActiveRecord::Schema.define(version: 20160722170213) do
 
   create_table "bookings", force: :cascade do |t|
     t.integer  "ride_id"
@@ -24,10 +24,10 @@ ActiveRecord::Schema.define(version: 20160720200616) do
   create_table "reviews", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "ride_id"
-    t.integer  "rating"
     t.text     "review"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float    "rating"
   end
 
   create_table "rides", force: :cascade do |t|
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 20160720200616) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "phone_number"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
