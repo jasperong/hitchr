@@ -19,18 +19,17 @@
 <% end %>
 </ul> -->
 
-<h2>Rides</h2>
-<% @rides.each do |ride| %>
-				<div class="grid">
-					<figure class="effect-winston">
-					<%= image_tag ride.user.avatar.url %>
-						<figcaption>
-							<h2><%= ride.user.first_name %><span><%= ride.user.last_name %></span></h2>
-							<p>
-                <a href="<%= ride_path(ride) %>">View Ride</a>
-                <!-- <%= link_to "View Ride", ride_path(ride) %> -->
-							</p>
-						</figcaption>
-					</figure>
-				</div>
-        <%end%>
+        <h1>Hitchr!</h1>
+        <% @rides.each do |ride| %>
+        				<div class="grid">
+        					<figure class="effect-sadie">
+                  <%=image_tag ride.user.avatar.url%>
+        						<figcaption>
+        							<h2><%= ride.user.first_name %><span><%= ride.user.last_name %></span></h2>
+        							<p>Date: <%= ride.date.strftime("%b %-d, %Y") %><br>Time: <%= ride.time.strftime("%-l:%M %p") %></p>
+        							<a href="<%= ride_path(ride) %>">View Ride</a>
+        						</figcaption>
+        					</figure>
+
+        				</div>
+            <%end%>
