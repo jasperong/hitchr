@@ -1,0 +1,12 @@
+Hey <%= @ride.user.first_name %>,
+
+<%= @ride.bookings.last.user.first_name %> <%= @ride.bookings.last.user.last_name %>
+wants to hitch a ride for <%= @ride.bookings.last.seats %> people with you from <%= @ride.start_location %> to <%= @ride.end_location %>
+on <%= @ride.date %>. If you'd like to turn down the request, click DECLINE,
+otherwise we'll let <%= @ride.bookings.last.user.first_name %> know that you
+accept the request.
+
+
+
+Love,
+The Hitchr Team
