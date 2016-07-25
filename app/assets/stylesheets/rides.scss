@@ -38,9 +38,18 @@
   text-align: center;
 }
 
+.back_to_rides_a {
+  color: black;
+  text-decoration: none;
+}
+
 .button_style {
   background-color: green;
   border-radius: 10px;
   border-style: none;
-  border
+}
+
+.button_style:hover {
+  background-color: purple;
+  transition: 0.5s ease;
 }
