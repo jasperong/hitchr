@@ -2,7 +2,8 @@
 .tabs {
     width:100%;
     display:block;
-    margin-top: 40px;
+    margin: 10% auto;
+    width: 50%;
 }
 
     /*----- Tab Links -----*/
@@ -43,9 +44,9 @@
     /*----- Content of Tabs -----*/
     .tab-content {
         padding:15px;
-        border-radius:3px;
-        box-shadow:-1px 1px 1px rgba(0,0,0,0.15);
-        background:#fff;
+        border-radius:8px;
+        box-shadow:-6px 6px 6px rgba(0,0,0,0.15);
+        background:#eee;
     }
 
         .tab {
