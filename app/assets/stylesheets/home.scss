@@ -16,14 +16,14 @@ body {
 .image {
     height: 600px;
     width: 100%;
-    background: #379387;
+    background: #4ec1ac;
     z-index: 1;
     }
 
 .content {
     height: 750px;
     width:100%;
-    background: #379387;
+    background: #4ec1ac;
     z-index: 2;
 }
 .content h1 {
@@ -74,11 +74,13 @@ body {
 }
 
 #wall_2 {
-    background: url('traffic.jpg') no-repeat;
+    background: url('secondhp.jpg') no-repeat;
     background-attachment: fixed;
-    background-size: cover;
+    background-size: contain;
     width: 100%;
-    background-color: grey;
+    background-color: white;
+    background-position: 0px 400px;
+
 }
 
 
