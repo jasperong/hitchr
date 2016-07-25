@@ -9,7 +9,7 @@ class BookingsController < ApplicationController
     @booking = @ride.bookings.build(booking_params)
     @booking.user = current_user
     if @booking.save
-      UserMailer.seat_confirmation(@ride).deliver_later
+      UserMailer.seat_confirmation(@ride, @booking).deliver_later
       redirect_to root_path, alert: "Booking created successfully"
     else
       redirect_to rides_path
