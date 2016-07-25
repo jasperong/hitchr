@@ -1,6 +1,7 @@
 $(function() {
   //----- OPEN
   $('[data-popup-open]').on('click', function(e)  {
+    $('.popup').fadeOut(350);
       var targeted_popup_class = jQuery(this).attr('data-popup-open');
       $('[data-popup="' + targeted_popup_class + '"]').fadeIn(350);
 

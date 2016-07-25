@@ -7,6 +7,8 @@
     top:0px;
     left:0px;
     background:rgba(0,0,0,0.75);
+    z-index: 2;
+    margin-top: 5%;
 }
 
 /* Inner */
@@ -37,7 +39,7 @@
     -webkit-transform:translate(50%, -50%);
     transform:translate(50%, -50%);
     border-radius:1000px;
-    background:rgba(0,0,0,0.8);
+    background:rgba(200,200,200,0.8);
     font-family:Arial, Sans-Serif;
     font-size:20px;
     text-align:center;
@@ -48,6 +50,6 @@
 .popup-close:hover {
     -webkit-transform:translate(50%, -50%) rotate(180deg);
     transform:translate(50%, -50%) rotate(180deg);
-    background:rgba(0,0,0,1);
+    background:rgba(200,200,200,1);
     text-decoration:none;
 }

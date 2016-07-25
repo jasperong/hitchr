@@ -62,12 +62,14 @@
                 <% else %>
                    <li>
                        <a class="btn" data-popup-open="popup-1" href="#1">
-                         <%= link_to "Log in", new_session_path  %>
+                         <%# link_to "Log in", new_session_path  %>
+                         Log in
                        </a>
                    </li>
                    <li>
                      <a class="btn" data-popup-open="popup-2" href="#2">
-                       <%= link_to "Sign up", new_user_path %>
+                       <%# link_to "Sign up", new_user_path %>
+                       Sign up
                      </a>
                    </li>
                 <% end %>
@@ -83,7 +85,7 @@
 <div class="popup" data-popup="popup-1">
   <div class="popup-inner">
       <%= render partial: "users/form", object: @user %>
-      <p><a data-popup-close="popup-1" href="#">Close</a></p>
+      <a data-popup-close="popup-1" href="#">Close</a>
       <a class="popup-close" data-popup-close="popup-1" href="#1">x</a>
   </div>
 </div>
@@ -91,7 +93,7 @@
 <div class="popup" data-popup="popup-2">
     <div class="popup-inner">
           <%= render partial: "sessions/form" %>
-        <p><a data-popup-close="popup-2" href="#">Close</a></p>
+        <a data-popup-close="popup-2" href="#">Close</a>
         <a class="popup-close" data-popup-close="popup-2" href="#2">x</a>
     </div>
 </div>
