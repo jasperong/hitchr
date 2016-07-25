@@ -14,10 +14,15 @@
 }
 
 
+.user-avatar {
+  width: 100%;
+}
+
 .user_info {
   font-weight: 500;
   width: 100%;
   margin: 50px;
+  padding-left: 100px;
 }
 
 .header {
@@ -52,6 +57,8 @@ a:link {
   background-color: green;
   border-radius: 10px;
   border-style: none;
+  width: 120px;
+  height: 30px;
 }
 
 .button_style:hover {
@@ -62,11 +69,21 @@ a:link {
 .picture_div {
   float: left;
   margin-right: 100px;
+  height: 150px;
+  width: 150px;
 }
 
 .details {
   text-align: left;
   font-size: 20px;
+  float: left;
+}
+
+.comments_style {
+    clear: both;
+    width: 200px;
+    margin: 0 auto;
+    padding: 25px;
 }
 
 @media only screen and (max-width: 500px) {
