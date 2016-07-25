@@ -57,14 +57,20 @@
                      <%= link_to "Logout", session_path("current"), :method => :delete %>
                    </li>
                    <li>
-                     Signed in as <%= link_to current_user.first_name, user_path(current_user) %>
+                     <%= link_to current_user.first_name, user_path(current_user) %>
                    </li>
                 <% else %>
                    <li>
-                       <%= link_to "Log in", new_session_path  %>
+                       <a class="btn" data-popup-open="popup-1" href="#1">
+                         <%# link_to "Log in", new_session_path  %>
+                         Log in
+                       </a>
                    </li>
                    <li>
-                     <%= link_to "Sign up", new_user_path %>
+                     <a class="btn" data-popup-open="popup-2" href="#2">
+                       <%# link_to "Sign up", new_user_path %>
+                       Sign up
+                     </a>
                    </li>
                 <% end %>
                </ul>
@@ -75,6 +81,22 @@
    </nav>
 
 <%= yield %>
+
+<div class="popup" data-popup="popup-1">
+  <div class="popup-inner">
+      <%= render partial: "sessions/form", object: @user %>
+      <a data-popup-close="popup-1" href="#">Close</a>
+      <a class="popup-close" data-popup-close="popup-1" href="#1">x</a>
+  </div>
+</div>
+
+<div class="popup" data-popup="popup-2">
+    <div class="popup-inner">
+          <%= render partial: "users/form" %>
+        <a data-popup-close="popup-2" href="#">Close</a>
+        <a class="popup-close" data-popup-close="popup-2" href="#2">x</a>
+    </div>
+</div>
 
 </body>
 </html>

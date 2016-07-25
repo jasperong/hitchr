@@ -49,13 +49,16 @@
     <div class="tab" id="tab3">
       <br /> <h4>My Rides Offered: </h4>
       <% @rides.each do |ride| %>
+        <% arr = [0] %>
+        <% ride.bookings.each { |booking| arr << booking.seats} %>
+        <% total_seats = arr.inject(:+) %>
         <ul>
           <li>
             <p>From: <%= ride.start_location %></p>
             <p>To: <%= ride.end_location %></p>
             <p>Date: <%= ride.date.strftime("%b %-d, %Y") %></p>
-            <p>Time: <%= ride.time.strftime("%-l:%M %p") %></p>
-            <p>Seats Available: <%= ride.seats_available %></p>
+            <p> Time: <%= ride.time.strftime("%-l:%M %p") %></p>
+            <p>Seats Available: <%= ride.seats_available - total_seats %></p>
             <p>Comments: <%= ride.comments %></p>
             <%= link_to "Cancel Ride", ride_path(ride), :method => :delete %><br />
             <br />

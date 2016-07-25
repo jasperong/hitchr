@@ -2,20 +2,19 @@
     <div class="col-lg-12 text-center">
       <h1>Sign Up</h1>
 
-      <% @user = User.new %>
       <div class="user-form-errors">
-        <% if @user.errors.any? %>
+        <%# if @user.errors.any? %>
           <p>Oops - there were problems with your submission. Please fix the following:</p>
           <ul>
-            <% @user.errors.full_messages.each do |message| %>
-              <li><%= message %></li>
-            <% end %>
+            <%# @user.errors.full_messages.each do |message| %>
+              <li><%#= message %></li>
+            <%# end %>
           </ul>
-        <% end %>
+        <%# end %>
       </div>
 
       <div class="user-form">
-        <%= form_for @user do |f| %>
+        <%# form_for @user do |f| %>
 
           <div class="field">
             <%= f.label :first_name %> <br />
@@ -34,7 +33,7 @@
 
           <div class="field">
             <%= f.label :date_of_birth %> <br />
-            <%= f.date_select :date_of_birth %>
+            <%= f.date_field :date_of_birth %>
           </div>
 
           <div class="field">
@@ -66,7 +65,7 @@
             <%= f.submit "Save" %>
           </div>
 
-        <% end %>
+        <%# end %>
       </div>
     </div>
 </div>
