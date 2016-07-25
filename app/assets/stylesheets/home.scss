@@ -26,31 +26,29 @@ body {
     background: #4ec1ac;
     z-index: 2;
 }
-.content h1 {
-    font-size: 40px;
-    color: white;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 600;
-    margin: 30px 60px;
-}
-.content p {
-    font-size:20px;
-    color: white;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
-    margin: 30px 60px;
-}
+
 #wall_1 {
-    background: url('homepagepic.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: contain;
-    background-position: 0px 400px;
-    width: 100%;
+    // background: url('homepagepic.jpg');
+    // background-repeat: no-repeat;
+    // background-attachment: fixed;
+    // background-size: cover;
+    // background-position: 0px 400px;
+    // text-align: left;
+
+    @media (min-width: 1200px) {
+      background: url('homepagepic.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: 0px 400px;
+      text-align: left;
+
+    }
 }
 
 .title {
-  color: white;
+  color: #4ec1ac;
+
 }
 
 .search-form {
