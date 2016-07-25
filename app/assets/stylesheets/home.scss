@@ -7,6 +7,7 @@
 
 body {
   width: 100%;
+  background-color: #2a6f66;
 }
 
 
@@ -20,19 +21,19 @@ body {
 .content {
     height: 750px;
     width:100%;
-    background: white;
+    background: #2a6f66;
     z-index: 2;
 }
 .content h1 {
     font-size: 40px;
-    color: #464646;
+    color: white;
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
     margin: 30px 60px;
 }
 .content p {
     font-size:20px;
-    color: #343434;
+    color: white;
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
     margin: 30px 60px;
@@ -65,18 +66,23 @@ body {
 }
 
 #wall_2 {
-    background: url('school.png') repeat;
+    background: url('traffic.jpg') no-repeat;
     background-attachment: fixed;
+    background-size: cover;
+    width: 100%;
+    background-color: grey;
 }
 
 
-#content_1 {position: relative;}
+#content_1 {
+  position: relative;
 
-h1::first-letter {
-    font-size: 60px;
-    font-weight: 600;
-    color:#3cb0f8;
 }
+
+#content_2 {
+  position: relative;
+}
+
 
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
