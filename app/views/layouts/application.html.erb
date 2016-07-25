@@ -61,10 +61,14 @@
                    </li>
                 <% else %>
                    <li>
-                       <%= link_to "Log in", new_session_path  %>
+                       <a class="btn" data-popup-open="popup-1" href="#1">
+                         <%= link_to "Log in", new_session_path  %>
+                       </a>
                    </li>
                    <li>
-                     <%= link_to "Sign up", new_user_path %>
+                     <a class="btn" data-popup-open="popup-2" href="#2">
+                       <%= link_to "Sign up", new_user_path %>
+                     </a>
                    </li>
                 <% end %>
                </ul>
@@ -75,6 +79,22 @@
    </nav>
 
 <%= yield %>
+
+<div class="popup" data-popup="popup-1">
+  <div class="popup-inner">
+      <%= render partial: "users/form", object: @user %>
+      <p><a data-popup-close="popup-1" href="#">Close</a></p>
+      <a class="popup-close" data-popup-close="popup-1" href="#1">x</a>
+  </div>
+</div>
+
+<div class="popup" data-popup="popup-2">
+    <div class="popup-inner">
+          <%= render partial: "sessions/form" %>
+        <p><a data-popup-close="popup-2" href="#">Close</a></p>
+        <a class="popup-close" data-popup-close="popup-2" href="#2">x</a>
+    </div>
+</div>
 
 </body>
 </html>
