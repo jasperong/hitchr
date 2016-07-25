@@ -5,10 +5,10 @@
 
 .show_container  {
   margin: 0 auto;
-  width: 300px;
+  width: 800px;
   border: 1px solid gray;
   border-style: outset;
-  margin-top: 30px;
+  margin-top: 60px;
   padding: 10px;
   border-radius: 25px;
 }
@@ -56,4 +56,32 @@ a:link {
 .button_style:hover {
   background-color: purple;
   transition: 0.5s ease;
+}
+
+.picture_div {
+  float: left;
+  margin-right: 100px;
+}
+
+.details {
+  text-align: left;
+}
+
+@media only screen and (max-width: 500px) {
+  .show_container {
+        width: 200px;
+    }
+
+  .header {
+      width: auto;
+  }
+
+  .user_info {
+    width: auto;
+  }
+
+  .picture_div {
+    float: none;
+    margin: 0 auto;
+  }
 }
