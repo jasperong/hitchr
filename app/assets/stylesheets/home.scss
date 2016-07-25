@@ -1,5 +1,7 @@
 
 
+
+
 * {
     margin: 0;
     padding: 0;
@@ -7,21 +9,21 @@
 
 body {
   width: 100%;
-  background-color: #2a6f66;
+  background-color: white;
 }
 
 
 .image {
     height: 600px;
     width: 100%;
-    background: #55e6c5;
+    background: #379387;
     z-index: 1;
     }
 
 .content {
     height: 750px;
     width:100%;
-    background: #2a6f66;
+    background: #379387;
     z-index: 2;
 }
 .content h1 {
@@ -43,9 +45,8 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: contain;
-    background-position: 0px 51px;
+    background-position: 0px 400px;
     width: 100%;
-    margin-top: 20px;
 }
 
 .title {
@@ -54,12 +55,19 @@ body {
 
 .search-form {
   border: 1px solid white;
-  width: 400px;
+  width: 100%;
   text-align: center;
   padding: 10px 0px 10px 0px;
-  position: relative;
+  position: absolute;
   bottom: 0;
+  margin-bottom: 80px;
+  border: none;
+  background-color: black;
+  opacity: 0.5;
 }
+
+
+
 
 .search-text {
   color: white;
@@ -79,9 +87,7 @@ body {
 
 }
 
-#content_2 {
-  position: relative;
-}
+
 
 
 // Place all the styles related to the Home controller here.
