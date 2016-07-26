@@ -30,7 +30,7 @@
   </div>
 
   <div class="tab" id="tab2">
-    <br /> <h4>Review about me: </h4>
+    <br /> <h4>Reviews about me: </h4>
     <div class="user-reviews-container">
     <% @user.reviews.each do |review| %>
     <div class="rateYo stars" data-rating="<%= review.rating %>">
@@ -59,6 +59,7 @@
             <p>Date: <%= ride.date.strftime("%b %-d, %Y") %></p>
             <p> Time: <%= ride.time.strftime("%-l:%M %p") %></p>
             <p>Seats Available: <%= ride.seats_available - total_seats %></p>
+            <p>Price: <%= ride.price %></p>
             <p>Comments: <%= ride.comments %></p>
             <%= link_to "Cancel Ride", ride_path(ride), :method => :delete %><br />
             <br />
