@@ -2,6 +2,11 @@
     <div class="col-lg-12 text-center">
       <h1>Sign Up</h1>
 
+
+      <% unless @user %>
+        <% @user = User.new %>
+      <% end %>
+
       <div class="user-form-errors">
         <% if @user.errors.any? %>
           <p>Oops - there were problems with your submission. Please fix the following:</p>
@@ -33,7 +38,7 @@
 
           <div class="field">
             <%= f.label :date_of_birth %> <br />
-            <%= f.date_field :date_of_birth %>
+            <%= f.date_select :date_of_birth, start_year: 1940, end_year: Date.today.year %>
           </div>
 
           <div class="field">

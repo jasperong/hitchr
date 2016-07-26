@@ -1,3 +1,119 @@
 // Place all the styles related to the Rides controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.show_container  {
+  margin: 0 auto;
+  width: 700px;
+  border: 1px solid gray;
+  border-style: outset;
+  margin-top: 100px;
+  padding: 10px;
+  border-radius: 25px;
+  margin-bottom: 50px;
+}
+
+
+.user-avatar {
+  width: 250px;
+  height: 250px;
+}
+
+.user_info {
+  font-weight: 500;
+  width: 100%;
+  margin: 50px;
+  padding-left: 100px;
+}
+
+.header {
+  padding: 20px;
+  text-align: center;
+  margin: 0px;
+}
+
+.booking-form-style {
+  text-align: center;
+}
+
+#booking-div-button {
+  padding: 5px;
+  color: white;
+}
+
+.back_to_rides {
+  text-align: center;
+}
+
+a:link {
+  color: #000;
+}
+
+.back_to_rides_a {
+  color: black;
+  text-decoration: none;
+}
+
+.button_style {
+  background-color: green;
+  border-radius: 10px;
+  border-style: none;
+  width: 120px;
+  height: 30px;
+}
+
+.button_style:hover {
+  background-color: purple;
+  transition: 0.5s ease;
+}
+
+.picture_div {
+  float: left;
+  margin-right: 100px;
+  height: 150px;
+  width: 150px;
+}
+
+.details {
+  text-align: left;
+  font-size: 20px;
+  float: left;
+}
+
+.comments_style {
+    clear: both;
+    width: 200px;
+    margin: 0 auto;
+    padding: 25px;
+}
+
+@media only screen and (max-width: 500px) {
+  .show_container {
+        width: 300px;
+        margin-bottom: 30px;
+    }
+
+  .header {
+      width: auto;
+      font-size: 20px;
+  }
+
+  .user_info {
+    width: auto;
+    padding: inherit;
+  }
+
+  .picture_div {
+    float: none;
+    margin: 0 auto;
+    height: 100%;
+  }
+
+  .details {
+    text-align: left;
+    font-size: 15px;
+    float: left;
+  }
+
+}

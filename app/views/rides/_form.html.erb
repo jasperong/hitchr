@@ -15,7 +15,7 @@
   <div class="ride-form">
     <div class="field">
       <%= f.label :date %><br />
-      <%= f.date_field :date, min: Date.today %>
+      <%= f.date_select :date, min: Date.today %>
     </div>
     <div class="field">
       <%= f.label :time %><br />
@@ -32,6 +32,10 @@
     <div class="field">
       <%= f.label :end_location %></br>
       <%= f.text_field :end_location, id: "end_location" %>
+    </div>
+    <div class="field">
+      <%= f.label :price %></br>
+      <%= f.number_field :price, step: 0.01 %>
     </div>
     <div class="field">
       <%= f.label :comments %></br>

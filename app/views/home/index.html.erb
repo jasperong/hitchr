@@ -1,13 +1,45 @@
-<h1>Hitch a ride with us!</h1>
 
-<%= form_tag search_path, method: "get", class: "search" do %>
-  <%= label_tag "From:" %>
-  <%= text_field_tag :start_location, params[:start_location] %>
-  <%= label_tag "To:" %>
-  <%= text_field_tag :end_location, params[:end_location] %>
-  <%= submit_tag "Hitch a ride!", name: nil, class: "search-button" %>
-<% end %>
 
-<div class="ride-list">
+    <!-- <div class="parallax-window" data-parallax="scroll" data-image-src="<%= asset_path "homepagepic.jpg" %>" >
+      <div class="search-form" >
+      <%= form_tag search_path, method: "get", class: "search" do %>
+      <%= label_tag "From:", nil, class: 'search-text' %>
+      <%= text_field_tag :start_location, params[:start_location] %>
+      <%= label_tag "To:", nil, class: 'search-text' %>
+      <%= text_field_tag :end_location, params[:end_location] %>
+      <%= submit_tag "Hitch a ride!", name: nil, class: "search-button" %>
+      <% end %>
+    </div>
+    </div> -->
 
-</div>
+      <div id="wall_1" class="image" data-stellar-background-ratio="0.5" >
+    <div id="Video">
+      <video preload="preload" id="video" autoplay="autoplay" loop="loop">
+        <source src="<%= asset_path 'video.mp4' %>" type="video/mp4"></source>
+      </video>
+      <div id="message">
+      </div>
+      </div>
+    </div>
+
+
+
+    </div>
+    <div id="content_1" class="content" >
+      <div class="search-form" >
+        <%= form_tag search_path, method: "get", class: "search" do %>
+        <%= label_tag "From:", nil, class: 'search-text' %>
+        <%= text_field_tag :start_location, params[:start_location] %>
+        <%= label_tag "To:", nil, class: 'search-text' %>
+        <%= text_field_tag :end_location, params[:end_location] %>
+        <%= submit_tag "Hitch a ride!", name: nil, class: "search-button" %>
+        <% end %>
+      </div>
+
+        <div class="ride-list">
+          <!-- Search results go here -->
+        </div>
+    </div>
+
+    <div class="parallax-container" data-parallax="scroll" data-position="top" data-bleed="10" data-image-src="<%= asset_path "secondhp.jpg" %>" data-natural-width="1400" data-natural-height="900" style="height: 446px;"></div>
+    <div id="content_2" class="content" ></div>
