@@ -9,7 +9,7 @@
 <div class="tab-content">
   <div class="tab active" id="tab1">
     <h1> User Profile Page</h1>
-        <%= image_tag @user.avatar.url%><br />
+        <%= image_tag @user.avatar.url, class: "user-avatar"%><br />
         <%= @user.first_name %> | <%= @user.last_name %><br />
         <%= @user.email %><br />
         <%= @user.gender %><br />
