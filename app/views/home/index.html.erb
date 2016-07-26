@@ -12,11 +12,20 @@
     </div>
     </div> -->
 
-    <div class="parallax-container" data-parallax="scroll" data-position="top" data-bleed="-3" data-image-src="<%= asset_path "homepagepic.jpg" %>" data-natural-width="1400" data-natural-height="900" style="height: 546px;" data-ios-fix=true>
-      <h1 class="title"></h1>
+      <div id="wall_1" class="image" data-stellar-background-ratio="0.5" >
+    <div id="Video">
+      <video preload="preload" id="video" autoplay="autoplay" loop="loop">
+        <source src="<%= asset_path 'video.mp4' %>" type="video/mp4"></source>
+      </video>
+      <div id="message">
+      </div>
+      </div>
+    </div>
+
+
 
     </div>
-    <div id="content_1" class="content" data-stellar-vertical-offset="150">
+    <div id="content_1" class="content" >
       <div class="search-form" >
         <%= form_tag search_path, method: "get", class: "search" do %>
         <%= label_tag "From:", nil, class: 'search-text' %>
