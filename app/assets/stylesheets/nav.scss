@@ -1,7 +1,14 @@
 .navbar-inverse {
-  background-color: white;
   opacity: 0.7;
   border: none;
+  margin-bottom: 10px;
+  background-color: white;
+  overflow: hidden;
+  padding: 0 30px;
+  text-decoration: none;
+  margin: 0;
+
+
 }
 
 .navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus{
@@ -10,12 +17,35 @@
 }
 
 .navbar-inverse .navbar-toggle {
-  background-color: #02a689;
+  background-color: #1ede8b;
 }
 
 .navbar-inverse .navbar-nav > li > a {
-  color: #02a689;
+  color: black;
+  padding: 14px 16px;
+margin-bottom: 5px;
+text-transform: uppercase;
+margin-right: 5px;
 }
+
+a.btn:hover {
+  -webkit-transition: 0.1s ease;
+  transition: 0.1s ease;
+  border-bottom: 2px solid #1ede8b;
+  margin-left: 9px;
+  color: black;
+}
+.navbar-inverse .navbar-nav > li > a:hover {
+  color: black;
+}
+
+.navbar-nav > li {
+  @media (min-width: 768px){
+
+    float: right;
+  }
+}
+
 
 .navbar-inverse .navbar-brand {
   color: black;

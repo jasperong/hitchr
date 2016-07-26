@@ -1,11 +1,6 @@
 
 
 $(document).ready(function() {
-    $(window).stellar({
-      verticalOffset: 150
-    });
-
-
 
 
     $("html").niceScroll({
@@ -15,6 +10,11 @@ $(document).ready(function() {
         mousescrollstep:100,
         cursorborder:"0px solid #fff",
     });
+
+    $('.parallax-window').parallax({
+    naturalWidth: 600,
+    naturalHeight: 400
+  });
 
 
   });

@@ -12,28 +12,36 @@ body {
   background-color: white;
 }
 
+.parallax-window {
+    min-height: 400px;
+    background: transparent;
+}
+
+img.parallax-slider {
+  position: fixed;
+}
+
 
 .image {
-    height: 600px;
     width: 100%;
-    background: #4ec1ac;
+    background: #edefed;
     z-index: 1;
     }
 
 .content {
     height: 750px;
     width:100%;
-    background: #4ec1ac;
+    background: #edefed;
     z-index: 2;
 }
 
 #wall_1 {
-    // background: url('homepagepic.jpg');
-    // background-repeat: no-repeat;
-    // background-attachment: fixed;
-    // background-size: cover;
-    // background-position: 0px 400px;
-    // text-align: left;
+    background: url('homepagepic.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: contain;
+    background-position: 0px 400px;
+    text-align: left;
 
     @media (min-width: 1200px) {
       background: url('homepagepic.jpg');
@@ -46,22 +54,30 @@ body {
     }
 }
 
-.title {
-  color: #4ec1ac;
 
+
+  h1.title {
+    position: relative;
+    z-index: 110;
+    padding-top: 200px;
+    color: white;
+    text-align: center;
 }
 
+
+
 .search-form {
-  border: 1px solid white;
   width: 100%;
   text-align: center;
   padding: 10px 0px 10px 0px;
   position: absolute;
-  bottom: 0;
+  top: 0;
   margin-bottom: 80px;
+  margin-top: -6px;
   border: none;
   background-color: black;
-  opacity: 0.5;
+  opacity: 0.8;
+
 }
 
 
@@ -82,8 +98,13 @@ body {
 }
 
 
+
 #content_1 {
   position: relative;
+
+  // @media (min-width: 820px) {
+  //   margin-top: -51px;
+  // }
 
 }
 
