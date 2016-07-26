@@ -47,6 +47,7 @@
   </div>
 
     <div class="tab" id="tab3">
+      <%= link_to "Offer a Ride", new_ride_path(@user)%><br />
       <br /> <h4>My Rides Offered: </h4>
       <% @rides.each do |ride| %>
         <% arr = [0] %>
@@ -54,18 +55,17 @@
         <% total_seats = arr.inject(:+) %>
         <ul>
           <li>
-            <p>From: <%= ride.start_location %></p>
-            <p>To: <%= ride.end_location %></p>
-            <p>Date: <%= ride.date.strftime("%b %-d, %Y") %></p>
-            <p> Time: <%= ride.time.strftime("%-l:%M %p") %></p>
-            <p>Seats Available: <%= ride.seats_available - total_seats %></p>
-            <p>Price: <%= ride.price %></p>
-            <p>Comments: <%= ride.comments %></p>
+            <p><b>From:</b> <%= ride.start_location %></p>
+            <p><b>To:</b> <%= ride.end_location %></p>
+            <p><b>Date:</b> <%= ride.date.strftime("%b %-d, %Y") %></p>
+            <p><b>Time:</b> <%= ride.time.strftime("%-l:%M %p") %></p>
+            <p><b>Seats Available:</b> <%= ride.seats_available - total_seats %></p>
+            <p><b>Price:</b> $<%= ride.price %></p>
+            <p><b>Comments:</b> <%= ride.comments %></p>
             <%= link_to "Cancel Ride", ride_path(ride), :method => :delete %><br />
             <br />
-            <%= link_to "Offer a Ride", new_ride_path(@user)%><br />
-            <br />
-              <h4>Hitches on this ride: </h4>
+
+              <h5>Hitches on this ride: </h5>
               <ul>
                 <li>
                   <% ride.bookings.each do |booking| %>
@@ -77,6 +77,7 @@
               </ul>
             <% end %>
           </li>
+          <p>------------------------------------------------------</p>
         </ul>
       <% end %>
     </div>
