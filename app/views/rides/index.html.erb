@@ -1,5 +1,5 @@
-<h1>Hitchr!</h1>
-<% @rides.each do |ride| %>
+<h1>All Rides</h1>
+<% @rides.reverse.each do |ride| %>
         <div class="grid">
           <figure class="effect-sadie">
           <%=image_tag ride.user.avatar.url%>
