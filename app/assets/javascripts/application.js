@@ -15,3 +15,6 @@
 //= require_tree .
 //= require jquery.geocomplete
 //= require geocomplete
+//= require underscore
+//= require json2
+//= require judge
