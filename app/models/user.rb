@@ -1,5 +1,4 @@
 class User < ActiveRecord::Base
-
   has_many :rides
   has_many :bookings
   has_many :reviews
