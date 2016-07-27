@@ -54,6 +54,8 @@ div#video-wrap {
 }
 
 
+
+
 .content-overlay h1,
 .content-overlay p {
   color: #fff;
@@ -70,6 +72,10 @@ div#video-wrap {
     width:100%;
     background: #edefed;
     z-index: 2;
+}
+
+.popup {
+    z-index: 2000;
 }
 
 
