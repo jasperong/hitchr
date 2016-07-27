@@ -14,7 +14,7 @@
       </div>
 
       <div class="user-form">
-        <%= form_for @user do |f| %>
+        <%= form_for @user, html: {"data-parsley-validate" => ''} do |f| %>
 
           <div class="field">
             <%= f.label :first_name %> <br />
@@ -43,7 +43,8 @@
 
           <div class="field">
             <%= f.label :phone_number %> <br />
-            <%= f.text_field :phone_number, :placeholder => "123 456 7891" %>
+            <%= f.text_field :phone_number, :placeholder => "123 456 7891", "data-parsley-type"=>"digits",
+            "data-parsley-minlength" =>"10", "data-parsley-trigger" => "keyup", :required => "" %>
           </div>
 
           <div class="field">
