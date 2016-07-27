@@ -15,3 +15,4 @@
 //= require_tree .
 //= require jquery.geocomplete
 //= require geocomplete
+//= require backgroundVideo

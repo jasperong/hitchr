@@ -5,6 +5,8 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: arial, sans-serif;
+
 }
 
 body {
@@ -17,15 +19,39 @@ body {
     background: transparent;
 }
 
+
+div#outer-wrap {
+  margin-top: -31px;
+
+}
+
 div#Video {
     margin-top: -31px;
     background-color: black;
 }
 
-video#video {
-    width: 100%;
-    margin-top: -50px;
-    opacity: 0.8;
+video#my-video {
+    opacity: 0.6;
+}
+
+
+
+div#video-wrap {
+    background-color: black;
+}
+
+.content-overlay {
+  position: relative;
+  z-index: 20;
+  padding: 15%;
+  text-align: right;
+  margin-top: -3em;
+}
+
+
+.content-overlay h1,
+.content-overlay p {
+  color: #fff;
 }
 
 .image {
@@ -41,25 +67,6 @@ video#video {
     z-index: 2;
 }
 
-// #wall_1 {
-//     background: url('homepagepic.jpg');
-//     background-repeat: no-repeat;
-//     background-attachment: fixed;
-//     background-size: contain;
-//     background-position: 0px 400px;
-//     text-align: left;
-//
-//     @media (min-width: 1200px) {
-//       background: url('homepagepic.jpg');
-//       background-repeat: no-repeat;
-//       background-attachment: fixed;
-//       background-size: cover;
-//       background-position: 0px 400px;
-//       text-align: left;
-//
-//     }
-// }
-
 
 
   h1.title {
@@ -72,23 +79,16 @@ video#video {
 
 
 
-.search-form {
-  width: 100%;
-  text-align: center;
-  padding: 10px 0px 10px 0px;
-  position: absolute;
-  top: 0;
-  margin-bottom: 80px;
-  margin-top: -6px;
-  border: none;
-  background-color: black;
-  opacity: 0.8;
-
+#search-form {
+    width: 58%;
+    text-align: center;
+    padding: 30px 0px 30px 0px;
+    background-color: white;
+    position: relative;
+    z-index: 20;
+    border-radius: 100px;
+    margin-left: 250px;
 }
-
-
-
-
 .search-text {
   color: white;
 }
