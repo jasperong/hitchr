@@ -12,6 +12,11 @@ body {
   background-color: white;
 }
 
+.user-avatar {
+  width: 250px;
+  height: 250px;
+}
+
 .parallax-window {
     min-height: 400px;
     background: transparent;
@@ -123,7 +128,6 @@ video#video {
 .grid {
   position: relative;
   margin: 0 auto;
-  padding: 1em 0 4em;
   max-width: 1000px;
   list-style: none;
   text-align: center;
@@ -139,9 +143,9 @@ video#video {
   max-width: 480px;
   max-height: 360px;
   width: 48%;
-  background: #3085a3;
   text-align: center;
   cursor: pointer;
+  border-radius: 25px;
 }
 
 .grid figure img {
@@ -225,7 +229,7 @@ figure.effect-sadie h2 {
   top: 50%;
   left: 0;
   width: 100%;
-  color: #484c61;
+  color: #3085a3;
   -webkit-transition: -webkit-transform 0.35s, color 0.35s;
   transition: transform 0.35s, color 0.35s;
   -webkit-transform: translate3d(0,-50%,0);
@@ -250,14 +254,14 @@ figure.effect-sadie p {
 }
 
 figure.effect-sadie:hover h2 {
-  color: #fff;
+  color: white;
   -webkit-transform: translate3d(0,-50%,0) translate3d(0,-40px,0);
   transform: translate3d(0,-50%,0) translate3d(0,-40px,0);
 }
 
 figure.effect-sadie:hover figcaption::before ,
 figure.effect-sadie:hover p {
-  opacity: 1;
+  opacity: 2;
   -webkit-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
 }
