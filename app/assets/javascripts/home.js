@@ -1,7 +1,6 @@
 
 
 $(document).ready(function() {
-    console.log("I'm here on the home!");
 
 
     $("html").niceScroll({

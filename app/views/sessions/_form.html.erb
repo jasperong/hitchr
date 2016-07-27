@@ -8,11 +8,11 @@
           <h1>Log In</h1>
 
           <div class="log-in-form">
-          <%= form_tag sessions_path do %>
+          <%= form_tag sessions_path, html: {"data-parsley-validate" => ''} do |f| %>
 
             <div class="field">
               <%= label_tag :email %> <br />
-              <%= text_field_tag :email %>
+              <%= text_field_tag :email, "data-parsley-type" => "email", "data-parsley-trigger" => "blur", :required => "" %>
             </div>
 
             <div class="field">
