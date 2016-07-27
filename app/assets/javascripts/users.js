@@ -1,6 +1,5 @@
 $(function() {
 
-
   $(".rateYo").rateYo({
     fullStar: true,
     multiColor: {

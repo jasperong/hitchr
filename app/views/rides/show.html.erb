@@ -21,7 +21,9 @@
           <h3>Comments: </h3><p> <%= @ride.comments %></p><br>
         </div>
         <div class="back_to_rides">
-          <%= render "bookings/form" %>
+          <% unless @ride.user == current_user %>
+            <%= render "bookings/form" %>
+          <% end %>
           <%= link_to "Back to All Rides", rides_path, class: "back_to_rides_a"%>
         </div>
   </div>
