@@ -4,7 +4,7 @@
 
       <div class="user-form-errors">
         <% if @user.errors.any? %>
-          <p>Oops - there were problems with your submission. Please fix the following:</p>
+          <p>Oops! We couldn't process your submission. Please check your entries and try again.</p>
           <ul>
             <% @user.errors.full_messages.each do |message| %>
               <li><%= message %></li>
