@@ -15,12 +15,13 @@ $(function() {
 
       e.preventDefault();
   });
-
-  $('.popup-inner').on('click', function(e) {
-    e.stopPropagation();
-  });
-
-  $('.popup').on('click', function(e) {
-    $(this).fadeOut();
-  });
+  // 
+  // $('.popup-inner').on('click', function(e) {
+  //   e.stopPropagation();
+  // });
+  //
+  // $('.popup').on('click', function(e) {
+  //   e.stopPropagation();
+  //   $(this).fadeOut();
+  // });
 });
