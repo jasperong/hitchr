@@ -41,7 +41,8 @@
 
           <div class="field">
             <%= f.label :email %> <br />
-            <%= f.text_field :email, "data-parsley-type" => "email", "data-parsley-trigger" => "blur", :required => "" %>
+            <%= f.text_field :email, "data-parsley-type" => "email",
+            "data-parsley-trigger" => "blur", :required => "" %>
           </div>
 
           <div class="field">
@@ -62,13 +63,14 @@
           <div class="field">
              <%= f.label :password_confirmation %><br />
              <%= f.password_field :password_confirmation,
-             "data-parsley-minlength" => "6", "data-parsley-equalto"=>"#user_password", "data-parsley-trigger" => "blur",
+             "data-parsley-minlength" => "6", "data-parsley-equalto" => "#user_password", "data-parsley-trigger" => "blur",
              :required => "" %>
           </div>
 
           <div class="field">
              <%= f.label :avatar %><br />
              <%= f.file_field :avatar, "data-parsley-pattern" => "/\.(jpe?g|png)$/i" %>
+             <p>File shouldn't be larger than 3MB</p>
           </div>
 
           <div class="field">

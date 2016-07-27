@@ -18,5 +18,4 @@
 //= require underscore
 //= require json2
 //= require judge
-//= require jquery
 //= require parsley
