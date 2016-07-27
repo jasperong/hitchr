@@ -3,7 +3,7 @@
       <div class="user_info">
         <div class="picture_div">
           <h3>User :</h3>
-          <p><%=image_tag @ride.user.avatar.url, class: "user-avatar"%></p>
+          <p><%=image_tag @ride.user.avatar.url , class: "user-avatar"%></p>
           <h2><%= link_to "#{@ride.user.first_name} #{@ride.user.last_name}", user_path(@ride.user) %></h2>
         </div>
             <div class="details">
