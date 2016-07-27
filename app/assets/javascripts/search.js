@@ -8,8 +8,8 @@ $(function() {
     types: ["(cities)"]
   });
 
-  $('.search-button').on('click', function(e) {
-    e.preventDefault();
+  $('.search').on('submit', function(e) {
+    // e.preventDefault();
     $.ajax({
       url: $(this).attr('action'),
       method: 'get',
