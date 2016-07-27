@@ -190,6 +190,8 @@ h2.info-1 {
   text-align: center;
   cursor: pointer;
   height: 150px;
+  border-radius: 50px;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .grid figure img {
@@ -202,7 +204,7 @@ h2.info-1 {
 
 .grid figure figcaption {
   padding: 2em;
-  color: #67696c;
+  color: white;
   text-transform: uppercase;
   font-size: 1.25em;
   -webkit-backface-visibility: hidden;
@@ -261,21 +263,26 @@ figure.effect-sadie figcaption::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: -webkit-linear-gradient(top, rgba(0, 254, 161, 0) 0%, rgba(0, 254, 161, 0.5) 75%);
-  background: linear-gradient(to bottom, rgba(0, 254, 161, 0) 0%, rgba(0, 254, 161, 0.5) 75%);
   content: '';
   opacity: 0;
   -webkit-transform: translate3d(0,50%,0);
   transform: translate3d(0,50%,0);
 }
 
+figure.effect-sadie figcaption:hover {
+  // background-color: #ff8f4e;
+  background-color: #ff6d54;
+  border-radius: 50px;
+}
+
 figure.effect-sadie h2 {
+  padding-top: 15px;
   font-family: "Railway", "Arial", sans-serif;
   position: absolute;
   top: 50%;
   left: 0;
   width: 100%;
-  color: #3085a3;
+  color: white;
   -webkit-transition: -webkit-transform 0.35s, color 0.35s;
   transition: transform 0.35s, color 0.35s;
   -webkit-transform: translate3d(0,-50%,0);
@@ -300,7 +307,7 @@ figure.effect-sadie p {
 }
 
 figure.effect-sadie:hover h2 {
-  color: #67696c;
+  color: white;
   -webkit-transform: translate3d(0,-50%,0) translate3d(0,-40px,0);
   transform: translate3d(0,-50%,0) translate3d(0,-40px,0);
 }
