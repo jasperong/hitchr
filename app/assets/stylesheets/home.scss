@@ -5,7 +5,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: arial, sans-serif;
+    font-family: 'Raleway';
 
 }
 
@@ -36,7 +36,7 @@ div#Video {
 }
 
 video#my-video {
-    opacity: 0.6;
+    opacity: 0.4;
 }
 
 
@@ -48,9 +48,9 @@ div#video-wrap {
 .content-overlay {
   position: relative;
   z-index: 20;
-  padding: 15%;
-  text-align: right;
-  margin-top: -3em;
+  // padding: 15%;
+  // text-align: right;
+  // margin-top: -3em;
 }
 
 
@@ -82,7 +82,16 @@ div#video-wrap {
     text-align: center;
 }
 
+h1#main-title {
+    font-weight: 700;
+    font-size: 6em;
+    letter-spacing: 2px;
+}
 
+.title img {
+  width: 45%;
+
+}
 
 #search-form {
     width: 58%;
@@ -92,10 +101,21 @@ div#video-wrap {
     position: relative;
     z-index: 20;
     border-radius: 100px;
-    margin-left: 250px;
+    // margin-left: 300px;
+    float: right;
 }
 .search-text {
-  color: white;
+  color: black;
+}
+
+
+.content-container {
+  width: 80%;
+  margin: auto;
+  text-align: right;
+  height: 300px;
+  padding-top: 100px;
+
 }
 
 #wall_2 {

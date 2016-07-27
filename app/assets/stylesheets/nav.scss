@@ -11,7 +11,7 @@
 }
 
 .navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus{
-  background-color: #092827;
+  background-color: grey;
 
 }
 
@@ -20,37 +20,37 @@
 }
 
 
-
-nav li {
-  background-color: rgba(0, 0, 0, 0.2);
-
-}
-
 .navbar-inverse .navbar-nav > li > a {
   color: white;
   padding: 14px 16px;
-margin-bottom: 5px;
-text-transform: uppercase;
-margin-right: 5px;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+
 }
 
-a.btn:hover {
+
+
+.navbar-inverse .navbar-nav > li > a:hover {
+  color: #1ede8b;
   -webkit-transition: 0.1s ease;
   transition: 0.1s ease;
   border-bottom: 2px solid #1ede8b;
-  margin-left: 9px;
-  color: black;
-}
-.navbar-inverse .navbar-nav > li > a:hover {
-  color: #1ede8b;
+  margin-right: 9px;
 }
 
-.navbar-nav > li {
+
+
+
+
+.navbar-nav {
   @media (min-width: 768px){
 
     float: right;
+    margin: 0;
   }
 }
+
+
 
 
 .navbar-inverse .navbar-brand {
@@ -63,4 +63,8 @@ a.btn:hover {
   transition: 0.1s ease;
   border-bottom: 2px solid #1ede8b;
   margin-left: 9px;
+}
+
+div#bs-example-navbar-collapse-1 {
+    background-color: rgba(0, 0, 0, 0.2);
 }
