@@ -14,5 +14,11 @@
 //= require jquery_ujs
 //= require jquery.geocomplete
 //= require geocomplete
+
+//= require underscore
+//= require json2
+//= require judge
+//= require parsley
+
 //= require backgroundVideo
 //= require_tree .
