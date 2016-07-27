@@ -45,7 +45,9 @@
   </div>
 
     <div class="tab" id="tab3">
-      <%= link_to "Offer a Ride", new_ride_path(@user)%><br />
+      <% if current_user == ride.user %>
+        <%= link_to "Offer a Ride", new_ride_path(@user)%>
+      <% end %><br />
       <br /> <h4>My Rides Offered: </h4>
       <% @rides.each do |ride| %>
         <% arr = [0] %>
@@ -95,7 +97,9 @@
               <%= booking.user.first_name %> <%= booking.user.last_name %>:<br>
               Seats requested: <%= booking.seats %><br>
               Date: <%= booking.ride.date.strftime("%b %-d, %Y") %>
-              <%= link_to "Cancel Booking", booking_path(booking), :method => :delete %><br />
+              <% if current_user == booking.user %>
+                <%= link_to "Cancel Booking", booking_path(booking), :method => :delete %><br />
+              <% end %>
             </li><br><br>
           <% end %>
           <%= link_to "Hitch a new ride!", root_path %><br />
