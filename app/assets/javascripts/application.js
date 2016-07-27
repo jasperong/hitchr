@@ -16,3 +16,4 @@
 //= require jquery.geocomplete
 //= require geocomplete
 //= require backgroundVideo
+//= require_tree ../../../vendor/assets/javascripts/.
