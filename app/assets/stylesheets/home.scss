@@ -74,9 +74,6 @@ div#video-wrap {
     z-index: 2;
 }
 
-.popup {
-    z-index: 2000;
-}
 
 
 
@@ -103,7 +100,7 @@ h1#main-title {
     width: 58%;
     text-align: center;
     padding: 30px 0px 30px 0px;
-    background-color: white;
+    background-color: rgba(0, 0, 0, 0.4);
     position: relative;
     z-index: 20;
     border-radius: 100px;
