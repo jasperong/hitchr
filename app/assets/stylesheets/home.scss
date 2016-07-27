@@ -119,12 +119,23 @@ h1#main-title {
 }
 
 
+.wall2-info-container {
+  width: 100%;
+  height: 200px;
+  background: url('wall2.png') no-repeat;
+  background-size: cover;
 
+}
+
+h2.info-1 {
+    margin: 0;
+    font-size: 4em;
+    font-weight: 600;
+    color: white;
+}
 
 #content_1 {
   position: relative;
-  background: url('wall2.png') no-repeat;
-  background-size: contain;
 
   // @media (min-width: 820px) {
   //   margin-top: -51px;
@@ -142,6 +153,8 @@ h1#main-title {
     background-position: 0px 400px;
 
 }
+
+
 
 
 

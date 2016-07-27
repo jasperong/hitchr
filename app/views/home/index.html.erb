@@ -1,6 +1,6 @@
 
 
-<!-- ---------First wall ----------------- -->
+<!-- First wall  -->
     <div id="outer-wrap" style="width: 100%; height: 600px;">
       <div id="video-wrap" class="video-wrap">
           <video id="my-video" preload="metadata" autoplay loop>
@@ -26,21 +26,41 @@
           </div>
       </div>
     </div>
-    <!-- -------first wall end ---------- -->
+    <!-- first wall end  -->
 
 
-    <!-- -------second wall --------- -->
+    <!-- second wall  -->
     <div id="content_1" class="content" >
-        <div class="ride-list">
-          <!-- Search results go here -->
-        </div>
+      <div class="wall2-info-container">
+      <h2 class="info-1">Travel anywhere</h2>
+      <h3>Discover hard to get places and connect with friends</h3>
+      </div>
+      <h2 class="info-2">Hitchr opens up a world of posibilities</h2>
+      <h3>Creat a bookind | Post a rid | travel the distance </h3>
     </div>
- <!-- -------- second wall end ---------- -->
+ <!--  second wall end  -->
 
-<!-- -----------third wall ----------- -->
+<!-- third wall  -->
     <div class="parallax-container" data-parallax="scroll" data-position="top" data-bleed="10" data-image-src="<%= asset_path "secondhp.jpg" %>" data-natural-width="1400" data-natural-height="900" style="height: 446px;"></div>
-    <!-- -----------third wall end----------- -->
+    <!-- third wall end -->
 
-    <!-- -----------fourth wall ----------- -->
-    <div id="content_2" class="content" ></div>
-    <!-- -----------fourth wall end ----------- -->
+    <!-- fourth wall  -->
+    <div id="content_2" class="content" >
+    <div class="ride-list">
+      <!-- Search results go here -->
+    </div>
+
+    <% @rides.reverse.each do |ride| %>
+      <div class="grid">
+        <figure class="effect-sadie">
+        <%=image_tag ride.user.avatar.url, class: "user-avatar"%>
+          <figcaption>
+            <h2><%= ride.user.first_name %><span><%= ride.user.last_name %></span></h2>
+            <p>Date: <%= ride.date.strftime("%b %-d, %Y") %><br>Time: <%= ride.time.strftime("%-l:%M %p") %></p>
+            <a href="<%= ride_path(ride) %>">View Ride</a>
+          </figcaption>
+        </figure>
+      </div>
+    <%end%>
+  </div>
+    <!-- fourth wall end  -->

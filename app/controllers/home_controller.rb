@@ -1,6 +1,9 @@
 class HomeController < ApplicationController
+
+
   def index
     @user = current_user || User.new
+    @rides = Ride.limit(4)
     search
   end
 
@@ -15,5 +18,7 @@ class HomeController < ApplicationController
       render :index
     end
   end
+
+
 
 end
