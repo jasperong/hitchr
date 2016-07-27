@@ -5,17 +5,19 @@
 
 .show_container  {
   margin: 0 auto;
-  width: 800px;
+  width: 700px;
   border: 1px solid gray;
   border-style: outset;
   margin-top: 100px;
   padding: 10px;
   border-radius: 25px;
+  margin-bottom: 50px;
 }
 
 
 .user-avatar {
-  width: 100%;
+  width: 250px;
+  height: 250px;
 }
 
 .user_info {
@@ -99,11 +101,19 @@ a:link {
 
   .user_info {
     width: auto;
+    padding: inherit;
   }
 
   .picture_div {
     float: none;
     margin: 0 auto;
+    height: 100%;
+  }
+
+  .details {
+    text-align: left;
+    font-size: 15px;
+    float: left;
   }
 
 }
