@@ -14,47 +14,56 @@
       </div>
 
       <div class="user-form">
+        <!-- # use Parsley gem/jquery library to do form validations  -->
         <%= form_for @user, html: {"data-parsley-validate" => ''} do |f| %>
 
           <div class="field">
             <%= f.label :first_name %> <br />
-            <%= f.text_field :first_name %>
+            <%= f.text_field :first_name, "data-parsley-trigger" => "blur", :required => "" %>
           </div>
 
           <div class="field">
             <%= f.label :last_name %> <br />
-            <%= f.text_field :last_name %>
+            <%= f.text_field :last_name, "data-parsley-trigger" => "blur", :required => "" %>
           </div>
 
           <div class="field">
             <%= f.label :gender %> <br />
-            <%= f.select :gender, [['Male','Male'],['Female','Female'], ['Other','Other']] %>
+            <%= f.select :gender, [['Male','Male'],['Female','Female'], ['Other','Other']],
+            "data-parsley-trigger" => "blur", :required => "" %>
           </div>
 
           <div class="field">
             <%= f.label :date_of_birth %> <br />
-            <%= f.date_select :date_of_birth, start_year: 1940, end_year: Date.today.year %>
+            <%= f.date_select :date_of_birth, start_year: 1940, end_year: Date.today.year,
+            "data-parsley-trigger" => "blur", :required => "" %>
           </div>
 
           <div class="field">
             <%= f.label :email %> <br />
-            <%= f.text_field :email, "data-parsley-type"=>"email"%>
+            <%= f.text_field :email, "data-parsley-type" => "email", "data-parsley-trigger" => "blur" %>
           </div>
 
           <div class="field">
             <%= f.label :phone_number %> <br />
-            <%= f.text_field :phone_number, :placeholder => "123 456 7891", "data-parsley-type"=>"digits",
-            "data-parsley-minlength" =>"10", "data-parsley-trigger" => "keyup", :required => "" %>
+            <%= f.text_field :phone_number, :placeholder => "416 123 4567",
+            "data-parsley-pattern" => "^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$",
+            "data-parsley-trigger" => "blur",
+            "data-parsley-minlength" => "10", :required => "" %>
           </div>
 
           <div class="field">
              <%= f.label :password %><br />
-             <%= f.password_field :password %>
+             <%= f.password_field :password,
+             "data-parsley-trigger" => "blur", "data-parsley-minlength" => "3",
+              :required => "" %>
           </div>
 
           <div class="field">
              <%= f.label :password_confirmation %><br />
-             <%= f.password_field :password_confirmation %>
+             <%= f.password_field :password_confirmation,
+             "data-parsley-minlength" => "3", "data-parsley-trigger" => "blur",
+             :required => "" %>
           </div>
 
           <div class="field">

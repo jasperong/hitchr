@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
 
   # ========> General validation <=========
   validates :first_name, :last_name, :gender, :date_of_birth, presence: true
-  validates :phone_number, presence: true, length: {minimum: 10, maximum: 15}
+  validates :phone_number, presence: true
   validate :min_age
 
   # ========> for sorcery <=========
