@@ -124,6 +124,8 @@ GEM
       cocaine (~> 0.5.5)
       mime-types
       mimemagic (~> 0.3.0)
+    parsley-rails (2.0.7.0)
+      railties (>= 3.0.0)
     pkg-config (1.1.7)
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
@@ -215,6 +217,7 @@ DEPENDENCIES
   judge
   letter_opener
   paperclip (~> 5.0.0)
+  parsley-rails
   quiet_assets
   rails (= 4.2.6)
   randumb
