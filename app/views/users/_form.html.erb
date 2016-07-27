@@ -55,14 +55,14 @@
           <div class="field">
              <%= f.label :password %><br />
              <%= f.password_field :password,
-             "data-parsley-trigger" => "blur", "data-parsley-minlength" => "3",
+             "data-parsley-trigger" => "blur", "data-parsley-minlength" => "6",
               :required => "" %>
           </div>
 
           <div class="field">
              <%= f.label :password_confirmation %><br />
              <%= f.password_field :password_confirmation,
-             "data-parsley-minlength" => "3", "data-parsley-trigger" => "blur",
+             "data-parsley-minlength" => "6", "data-parsley-equalto"=>"#user_password", "data-parsley-trigger" => "blur",
              :required => "" %>
           </div>
 
