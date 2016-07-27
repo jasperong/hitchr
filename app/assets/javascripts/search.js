@@ -16,7 +16,7 @@ $(function() {
       data: {
         start_location: $('#start_location').val(),
         end_location: $('#end_location').val(),
-        date: $('#date_').val()
+        date: $('#date_'[0]).val()
         },
       dataType: 'html'
     }).done(function(responseData) {
