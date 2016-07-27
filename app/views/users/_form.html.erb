@@ -68,7 +68,7 @@
 
           <div class="field">
              <%= f.label :avatar %><br />
-             <%= f.file_field :avatar %>
+             <%= f.file_field :avatar, "data-parsley-pattern" => "/\.(jpe?g|png)$/i" %>
           </div>
 
           <div class="field">
