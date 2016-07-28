@@ -45,7 +45,7 @@
   </div>
 
     <div class="tab" id="tab3">
-      <% if current_user == ride.user %>
+      <% if current_user == @user %>
         <%= link_to "Offer a Ride", new_ride_path(@user)%>
       <% end %><br />
       <br /> <h4>My Rides Offered: </h4>
