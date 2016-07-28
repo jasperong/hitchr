@@ -6,7 +6,7 @@ wants to hitch a ride for <%= @booking.seats %> people with you from
 on <%= @ride.date.strftime("%b %-d, %Y") %>.</p>
 
 </p>If you'd like to turn down the request, click DECLINE under the MY RIDES tab:
-<%= link_to "My Profile", user_url(@booking.user) %>, otherwise we'll let
+<%= link_to "My Profile", user_url(@ride.user) %>, otherwise we'll let
 <%= @booking.user.first_name %> know that you accept the request.</p>
 
 <p>Love,</p>
