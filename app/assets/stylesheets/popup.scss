@@ -52,3 +52,14 @@
     background:rgba(200,200,200,1);
     text-decoration:none;
 }
+
+li.parsley-required {
+    float: right;
+    margin-top: -20px;
+}
+
+input#user_avatar {
+    text-align: center;
+    margin: 0;
+    margin-left: 37%;
+}
