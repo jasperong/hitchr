@@ -1,10 +1,14 @@
+
+<div class="show-header">
+
+</div>
 <div class="show_container">
   <h1 class="header">Book this ride</h1>
       <div class="user_info">
         <div class="picture_div">
           <h3>User :</h3>
+          <h2 ><%= link_to "#{@ride.user.first_name} #{@ride.user.last_name}", user_path(@ride.user), class: "driver-name" %></h2>
           <p><%=image_tag @ride.user.avatar.url , class: "user-avatar"%></p>
-          <h2><%= link_to "#{@ride.user.first_name} #{@ride.user.last_name}", user_path(@ride.user) %></h2>
         </div>
             <div class="details">
               <h3>Ride Details:</h3>
