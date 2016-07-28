@@ -2,9 +2,15 @@
   <ul class ="tab-links">
     <li class="active"><a href="#tab1">Profile</a></li>
     <li><a href="#tab2">My Reviews</a></li>
-    <li><a href="#tab3">My Rides</a></li>
-    <li><a href="#tab4">My Bookings</a></li>
-    <li><a href="#tab5">Ride Feedback</a></li>
+    <% if current_user == @user %>
+      <li><a href="#tab3">My Rides</a></li>
+    <%end%>
+    <% if current_user == @user %>
+      <li><a href="#tab4">My Bookings</a></li>
+    <%end%>
+    <% if current_user == @user %>
+      <li><a href="#tab5">Ride Feedback</a></li>
+    <%end%>
   </ul>
 
 <div class="tab-content">
@@ -27,7 +33,9 @@
        render @user.reviews -->
     </div>
     <div>
-      <%= link_to "Offer a Ride", new_ride_path(@user)%>
+      <% if current_user == @user %>
+        <%= link_to "Offer a Ride", new_ride_path(@user)%>
+      <%end%>
     </div>
   </div>
 
@@ -49,9 +57,9 @@
   </div>
 
     <div class="tab" id="tab3">
-      <% if current_user == @user %>
-        <%= link_to "Offer a Ride", new_ride_path(@user)%>
-      <% end %><br />
+
+        <%= link_to "Offer a Ride", new_ride_path(@user)%><br>
+
       <br /> <h4>My Rides Offered: </h4>
       <% @rides.each do |ride| %>
         <% arr = [0] %>
@@ -92,6 +100,7 @@
         </ul>
       <% end %>
     </div>
+
 
     <div class="tab" id="tab4">
       <br /><h4>My Bookings: </h4>
