@@ -32,7 +32,9 @@
 }
 
 
-
+.driver-name {
+  color: #ff874f;
+}
 
 
 .user-avatar {
@@ -71,12 +73,12 @@ a:link {
 }
 
 .back_to_rides_a {
-  color: black;
+  color: #ff874f;
   text-decoration: none;
 }
 
 .button_style {
-  background-color: green;
+  background-color: #ff874f;
   border-radius: 10px;
   border-style: none;
   width: 120px;
@@ -84,7 +86,7 @@ a:link {
 }
 
 .button_style:hover {
-  background-color: purple;
+  background-color: #0ec6f1;
   transition: 0.5s ease;
 }
 

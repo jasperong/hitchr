@@ -28,11 +28,12 @@ $(document).ready(function() {
          }
        });
 
+
     $('.navbar-toggle').on('click', function(){
-
-      $(".navbar-fixed-top").css("background-color", "rgba(0, 0, 0, 0.5)");
-
+      $(".navbar-fixed-top").toggleClass('alt-color');
     });
+
+  
 
 
 // For search button, on click scroll down to div containing searches

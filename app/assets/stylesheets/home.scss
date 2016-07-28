@@ -11,8 +11,10 @@
 
 body {
   width: 100%;
-  background-color: #edefed;
+  background-color: #424242
 }
+
+
 
 .user-avatar {
   width: 250px;
@@ -151,11 +153,12 @@ h2.info-2 {
 
 #content_1 {
   position: relative;
-  background-color: #ecf0ef;
+  background-color: #424242;
   // @media (min-width: 820px) {
   //   margin-top: -51px;
   // }
   height: 750px;
+
 
 }
 
@@ -203,7 +206,8 @@ h2.info-2 {
   cursor: pointer;
   height: 150px;
   border-radius: 50px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 7px solid rgba(0, 0, 0, 0.2);
 }
 
 .grid figure img {
@@ -216,7 +220,7 @@ h2.info-2 {
 
 .grid figure figcaption {
   padding: 2em;
-  color: white;
+  color: #a6a4a4;
   text-transform: uppercase;
   font-size: 1.25em;
   -webkit-backface-visibility: hidden;
@@ -283,7 +287,6 @@ figure.effect-sadie figcaption::before {
 
 figure.effect-sadie figcaption:hover {
   // background-color: #ff8f4e;
-  background-color: #ff6d54;
   border-radius: 50px;
 }
 
@@ -294,7 +297,7 @@ figure.effect-sadie h2 {
   top: 50%;
   left: 0;
   width: 100%;
-  color: white;
+  color: #a6a4a4;
   -webkit-transition: -webkit-transform 0.35s, color 0.35s;
   transition: transform 0.35s, color 0.35s;
   -webkit-transform: translate3d(0,-50%,0);
