@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
         redirect_back_or_to(root_path, alert: "Welcome back to Hitchr, #{@user.first_name}!")
       else
         flash[:error] = 'Oops! Password or email seems to be incorrect. Please try logging in again.'
-        render :new
+        redirect_back_or_to(root_path)
        end
     end
 
