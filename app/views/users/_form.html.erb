@@ -19,7 +19,6 @@
         <% end %>
       </div>
       <br />
-
       <div class="user-form">
         <!-- # use Parsley gem/jquery library to do form validations  -->
         <%= form_for @user, html: {"data-parsley-validate" => ''} do |f| %>
@@ -93,7 +92,6 @@
           <div class="field">
             <%= f.submit "Save" %>
           </div>
-
         <% end %>
       </div>
     </div>

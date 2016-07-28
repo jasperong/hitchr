@@ -14,9 +14,11 @@
           "data-parsley-type-message" => "Please enter valid email." %>
         </div>
 
-        <div class="field">
+        <div class="field_password">
            <%= label_tag :password %><br />
-           <%= password_field_tag :password %>
+           <%= password_field_tag :password, "", data: {:"parsley-trigger" => "blur"},
+           :required => "",
+           "data-parsley-required-message" => "Please enter your password." %>
         </div>
 
         <div class="field">
