@@ -4,9 +4,13 @@
     <li><a href="#tab2">My Reviews</a></li>
     <li><a href="#tab3">My Rides</a></li>
     <li><a href="#tab4">My Bookings</a></li>
+    <li><a href="#tab5">Ride Feedback</a></li>
   </ul>
 
 <div class="tab-content">
+
+
+
   <div class="tab active" id="tab1">
     <h1> User Profile Page</h1>
         <%= image_tag @user.avatar.url, class: "user-avatar"%><br />
@@ -91,6 +95,7 @@
     <div class="tab" id="tab4">
       <br /><h4>My Bookings: </h4>
       <ul>
+      <% if @ride %>
         <% @user.bookings.each do |booking| %>
             <li>	<h6><%= booking.ride.start_location %> to <%= booking.ride.end_location %></h6>
               <p><%= link_to "View Ride", booking.ride %></p>
@@ -103,7 +108,28 @@
             </li><br><br>
           <% end %>
           <%= link_to "Hitch a new ride!", root_path %><br />
+      <% end %>
       </ul>
+    </div>
+
+
+    <div class="tab" id="tab5">
+        <br /><h4>Ride Feedback: </h4>
+      <%  @rides.each do |ride| %>
+        <%   @bookings = ride.bookings %>
+        <%   @past_bookings = @bookings %>
+
+        <% @past_bookings.each do |booking| %>
+          <% if booking.user == current_user  %>
+
+            <p>Your ride on <%= booking.ride.date.strftime("%b %-d, %Y") %>
+               with <%= booking.ride.user.first_name %> <%= booking.ride.user.last_name %>,
+               from <%= booking.ride.start_location %> to <%= booking.ride.end_location %>,
+               has been COMPLETED! Total Price was <%= booking.ride.price %></p>
+            <p><%= link_to "Please leave a review!", new_user_review_url(booking.ride.user) %></p>
+            <% end %>
+           <% end %>
+        <% end %>
     </div>
   </div>
 </div>
