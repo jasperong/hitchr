@@ -15,8 +15,12 @@ $(function() {
 
       e.preventDefault();
   });
-  
+
   $('.popup-inner').on('click', function(e) {
+    e.stopPropagation();
+  });
+
+  $('input').on('click', function(e) {
     e.stopPropagation();
   });
 
