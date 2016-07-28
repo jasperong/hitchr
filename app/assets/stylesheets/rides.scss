@@ -21,13 +21,17 @@
 .show_container  {
   margin: 0 auto;
   width: 700px;
-  border: 1px solid gray;
+  border: 7px solid rgba(0, 0, 0, 0.2);
   border-style: outset;
   margin-top: 100px;
   padding: 10px;
   border-radius: 25px;
   margin-bottom: 50px;
+  background-color: rgba(0,0,0, 0.7);
+  color: white
 }
+
+
 
 
 
