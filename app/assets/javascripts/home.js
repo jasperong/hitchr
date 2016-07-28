@@ -30,7 +30,7 @@ $(document).ready(function() {
 
     $('.navbar-toggle').on('click', function(){
 
-      $(".navbar-fixed-top").css("background-color", "rgba(0, 0, 0, 0.8)");
+      $(".navbar-fixed-top").css("background-color", "rgba(0, 0, 0, 0.5)");
 
     });
 
