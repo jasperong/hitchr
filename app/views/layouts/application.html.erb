@@ -3,8 +3,8 @@
 <head>
   <title>Hitchr</title>
   <script src="http://maps.googleapis.com/maps/api/js?key=<%= ENV["gmaps_api_key"] %>&libraries=places"></script>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Raleway:400,900,700' %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Raleway:400,900,700' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
@@ -37,6 +37,22 @@
    <![endif]-->
 </head>
 <body>
+  <div class="popup" data-popup="popup-1">
+    <div class="popup-inner2">
+        <%= render partial: "sessions/form", object: @user %>
+        <a data-popup-close="popup-1" href="#"></a>
+        <a class="popup-close" data-popup-close="popup-1" href="#1">x</a>
+    </div>
+  </div>
+
+  <div class="popup" data-popup="popup-2">
+      <div class="popup-inner">
+            <%= render partial: "users/form", object: @user %>
+          <a data-popup-close="popup-2" href="#"></a>
+          <a class="popup-close" data-popup-close="popup-2" href="#2">x</a>
+      </div>
+  </div>
+
   <header>
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="margin-bottom: 0;">
@@ -86,21 +102,6 @@
 
 <%= yield %>
 
-<div class="popup" data-popup="popup-1">
-  <div class="popup-inner2">
-      <%= render partial: "sessions/form", object: @user %>
-      <a data-popup-close="popup-1" href="#"></a>
-      <a class="popup-close" data-popup-close="popup-1" href="#1">x</a>
-  </div>
-</div>
-
-<div class="popup" data-popup="popup-2">
-    <div class="popup-inner">
-          <%= render partial: "users/form", object: @user %>
-        <a data-popup-close="popup-2" href="#"></a>
-        <a class="popup-close" data-popup-close="popup-2" href="#2">x</a>
-    </div>
-</div>
 
 </body>
 </html>
