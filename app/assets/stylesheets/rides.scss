@@ -4,6 +4,57 @@
 
 
 
+/*  create ride styles */
+
+.ride_container {
+  margin: 0 auto;
+  width: 700px;
+  border: 7px solid rgba(0, 0, 0, 0.4);
+  border-style: outset;
+  margin-top: 100px;
+  padding: 10px;
+  border-radius: 25px;
+  margin-bottom: 50px;
+  background-color: #eee;
+  color: #000;
+}
+
+.ride-form {
+  margin: 0 auto;
+  width: 235px;
+  padding-bottom: 10px;
+  padding-right: 30px;
+}
+
+.ride_header {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+#button_divs {
+  text-align: center;
+  width: 65%;
+  padding-top: 10px;
+}
+
+.ride_button {
+  border-radius: 25px;
+  width: 100px;
+  color: white;
+  background-color: #ff874f;
+}
+
+.ride_button:hover {
+  background-color: #0ec6f1;
+  transition: 0.5s ease;
+}
+
+#ride_input_style {
+  padding: 5px;
+}
+
+/*  end */
+
 .show-header {
   width: 100%;
   height: 60px;
