@@ -31,11 +31,24 @@
   color: #a6a4a4;
 }
 
+.driver-text {
+  margin-left: 38px;
+}
 
 .driver-name {
   color: #ff874f;
 }
 
+h2.driver-link {
+    text-align: center;
+}
+
+.details {
+  text-align: left;
+  font-size: 15px;
+  float: left;
+  margin-left: -50px;
+}
 
 .user-avatar {
   width: 250px;
@@ -126,6 +139,8 @@ a:link {
     padding: inherit;
   }
 
+
+
   .picture_div {
     float: none;
     margin: 0 auto;
@@ -136,6 +151,7 @@ a:link {
     text-align: left;
     font-size: 15px;
     float: left;
+    margin-left: -50px;
   }
 
 }
