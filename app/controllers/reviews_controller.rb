@@ -7,8 +7,8 @@ class ReviewsController < ApplicationController
 
   def create
     @review = @user.reviews.build(review_params)
-
-
+    @review.completed = true
+    
     if @review.save
       redirect_to @user
     else

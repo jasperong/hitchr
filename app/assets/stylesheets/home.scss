@@ -335,3 +335,89 @@ figure.effect-sadie:hover p {
   transform: translate3d(0,0,0);
   border-radius: 0px 0px 25px 25px;
 }
+
+input.search-button {
+  border-color: #00df88;
+  border-bottom-color: #109a64;
+  background-color: #00df88;
+  color: #484848;
+  font-size: 15px;
+  padding: 9px 27px;
+  border-radius: 2px;
+  font-family: railway, arial, sans-serif;
+}
+
+input#date_ {
+    font-size: 15px;
+    padding-bottom: 9px;
+    padding-top: 9px;
+    color: #484848;
+}
+
+input#end_location {
+    font-size: 15px;
+    padding-bottom: 9px;
+    padding-top: 9px;
+    color: #484848;
+}
+
+input#start_location {
+    font-size: 15px;
+    padding-bottom: 9px;
+    padding-top: 9px;
+    color: #484848;
+}
+
+.search_wrap {
+
+    background-color: white;
+    padding-left: 50px;
+    position: relative;
+    padding-right: 50px;
+}
+
+.search_wrap_icon {
+    padding: 8px;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 0;
+}
+
+.search_wrap_icon > img {
+    width: 100%;
+}
+
+.search_wrap > input {
+    width: 100%;
+    border: none;
+
+}
+
+div#search_date_wrap {
+    width: 50%;
+    padding-top: 5px;
+}
+
+#start_location_wrap {
+    width: 50%;
+    float: left;
+    margin-right: 5px;
+}
+
+#end_location_wrap {
+    margin-top: 5px;
+    width: 50%;
+    float: left;
+    margin-right: 5px;
+}
+
+#search_date_wrap {
+    width: 30%;
+    float: left;
+    margin-right: 5px;
+}
+
+#search_date_tag {
+    color: white;
+}
