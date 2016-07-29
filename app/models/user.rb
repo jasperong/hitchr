@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
 
   # ========> for paperclip <=======
   has_attached_file :avatar, styles: { medium: "250x250>", thumb: "100x100>" }, default_url: "circle_arrow2.png"
-  validates_attachment_content_type :avatar, content_type: /\.(jpe?g|png)$/i
+  validates_attachment_content_type :avatar, content_type: /^image\/(jpg|jpeg|pjpeg|png|x-png)$/, :message => 'Only jpeg and png files please!'
   validates_with AttachmentSizeValidator, attributes: :avatar, less_than: 3.megabytes
 
   private
