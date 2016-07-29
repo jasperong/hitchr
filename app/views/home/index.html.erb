@@ -9,14 +9,14 @@
             <div class="content-overlay">
                 <!-- <h1 id="main-title">HITCHR</h1> -->
                 <div class="title"><%= image_tag('title.png')%></div>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <h3 id="tagline">Book an empty seat with a trusted driver, headed your way.</h3>
             </div>
             <div id="search-form" >
               <%= form_tag search_path, method: "get", class: "search" do %>
 
               <div class="search_wrap" id="start_location_wrap">
                 <div class="search_wrap_icon"><%= image_tag "Start_4Real.png" %></div>
-                <%= text_field_tag :start_location, params[:start_location], placeholder: "Where from?" %>
+                <%= text_field_tag :start_location, params[:start_location], placeholder: "Starting from?" %>
               </div>
 
               <div class="search_wrap" id="end_location_wrap">
@@ -39,11 +39,17 @@
     <!-- second wall  -->
     <div id="content_1" class="content" >
       <div class="wall2-info-container">
-      <h2 class="info-1">Travel anywhere</h2>
-      <h3 class="info-3">Discover hard to get places and connect with friends</h3>
+      <h2 class="info-1">Trek across Canada</h2>
+      <h3 class="info-3">From campus to home...</h3>
       </div>
-      <h2 class="info-2">Hitchr opens up a world of posibilities</h2>
-      <h3 class="info-3">Creat a bookind | Post a rid | travel the distance </h3>
+      <h3 class="info-3" id="description">...or from festival to festival.</h2>
+      <h3 class="info-3">Hitchr makes it easy for you to:</h3>
+      <div class="icon-home"><%= image_tag('save_money.png')%></div>
+      <h3 class="icon">SAVE MONEY, whether you're a Driver or a Rider</h3>
+      <div class="icon-home"><%= image_tag('search.png')%></div>
+      <h3 class="icon">FIND A RIDE, whenever you want, wherever you want</h3>
+      <div class="icon-home"><%= image_tag('trust.png')%></div>
+      <h3 class="icon">CHOOSE a trusted, community-reviewed Driver or Rider</h3>
     </div>
  <!--  second wall end  -->
 

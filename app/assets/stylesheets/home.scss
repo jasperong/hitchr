@@ -132,7 +132,7 @@ div#video-wrap {
 
 
 
-  h1.title {
+h1.title {
     position: relative;
     z-index: 110;
     padding-top: 200px;
@@ -144,6 +144,18 @@ h1#main-title {
     font-weight: 700;
     font-size: 6em;
     letter-spacing: 2px;
+}
+
+h3#tagline {
+    color: white;
+    font-weight: 100;
+    font-size: 23px;
+}
+
+h3.icon {
+    color: white;
+    font-weight: 100;
+    font-size: 18px;
 }
 
 .title img {
@@ -187,10 +199,14 @@ h1#main-title {
 
 }
 
+h2.info-1 {
+    padding-top: 10px;
+}
+
 .info-3 {
     font-weight: 600;
     font-size: 2.5em;
-    color: #5f6266;
+    color: rgba(#9da0a4, 1);
     padding-left: 0.5em;
 }
 
@@ -206,6 +222,17 @@ h2.info-2 {
     padding-left: 1em;
 }
 
+h3.info-3 {
+    padding-left: 1em;
+    color: grey;
+}
+
+#description {
+    color: white;
+    font-size: 30px;
+    padding-top: 16px;
+}
+
 #content_1 {
   position: relative;
   background-color: #424242;
@@ -213,7 +240,6 @@ h2.info-2 {
   //   margin-top: -51px;
   // }
   height: 750px;
-
 
 }
 
