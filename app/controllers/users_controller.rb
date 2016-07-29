@@ -14,6 +14,13 @@ class UsersController < ApplicationController
     #FIX THIS BELOW TO SHOW ALL My Bookings
     #and The bookings made for my ride offered
     @reviews = @user.reviews
+
+    # if @review = Review.find_by(user_id: @user.id)
+    #   @review
+    # else
+      # @review = @user.reviews.build
+    # end
+
     @bookings = []
     @rides.each do |ride|
       @bookings = ride.bookings

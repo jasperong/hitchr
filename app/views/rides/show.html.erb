@@ -33,7 +33,7 @@
           <h3>Comments: </h3><p> <%= @ride.comments %></p><br>
         </div>
         <div class="back_to_rides">
-          <% unless @ride.user == current_user %>
+          <% unless @ride.user == current_user && @ride.completed == true%>
             <%= render "bookings/form" %>
           <% end %>
           <%= link_to "Back to All Rides", rides_path, class: "back_to_rides_a"%>

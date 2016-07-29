@@ -1,6 +1,6 @@
 $(function() {
   $(".rateYo").rateYo({
-    rating: 3,
+    rating: 0,
     halfStar: true,
     multiColor: {
       "startColor": "#FF0000", //RED

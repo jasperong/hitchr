@@ -4,11 +4,7 @@
     <li><a href="#tab2">My Reviews</a></li>
     <% if current_user == @user %>
       <li><a href="#tab3">My Rides</a></li>
-    <%end%>
-    <% if current_user == @user %>
       <li><a href="#tab4">My Bookings</a></li>
-    <%end%>
-    <% if current_user == @user %>
       <li><a href="#tab5">Ride Feedback</a></li>
     <%end%>
   </ul>
@@ -21,14 +17,14 @@
     <h1> User Profile Page</h1>
         <%= image_tag @user.avatar.url, class: "user-avatar"%><br />
 
-        <% rating_total = [0] %>
-        <% @user.reviews.each do |review| %>
-          <% rating_total << review.rating %>
-        <% end %>
-        <% rating_average = rating_total.inject(:+) / rating_total.count - 1 %>
-        <div class="rateYo stars-readonly" data-rating=<%= rating_average %>></div>
-          <%= rating_total.count - 1%> ratings
-        <br />
+        <!-- <% rating_total = [0] %>
+        <%# @user.reviews.each do |review| %>
+          <%# rating_total << review.rating %>
+        <%# end %>
+        <%# rating_average = rating_total.inject(:+) / rating_total.count - 1 %>
+        <div class="rateYo stars-readonly" data-rating=<%# rating_average %>></div>
+          <%# rating_total.count - 1%> ratings
+        <br /> -->
 
         <%= @user.first_name %> | <%= @user.last_name %><br />
         <%= @user.email %><br />
@@ -110,7 +106,12 @@
       <ul>
         <% @user.bookings.each do |booking| %>
           <% if booking.ride && booking.ride.completed == false %>
+<<<<<<< HEAD
+              <li><h5><b><%= booking.ride.start_location %> to <%= booking.ride.end_location %></b></h5>
+                <p><%= link_to "View Ride", booking.ride %></p>
+=======
             <li><h5><b><%= booking.ride.start_location %> to <%= booking.ride.end_location %></b></h5>
+>>>>>>> master
                   <p><b>Your Driver:</b> <%= booking.ride.user.first_name %> <%= booking.ride.user.last_name %><br>
                      <b>Date:</b> <%= booking.ride.date.strftime("%b %-d, %Y") %> <br>
                      <b>Seats You Requested:</b> <%= booking.seats %></p>
@@ -135,9 +136,10 @@
                      <b>Date:</b> <%= booking.ride.date.strftime("%b %-d, %Y") %> <br>
                      <b>Seats You Requested:</b> <%= booking.seats %></p>
                   <br>
-                  <% unless @review.completed? %>
-                    <%= link_to "Please leave a review!", new_user_review_url(booking.ride.user) %>
-                  <% end %>
+
+                      <% unless booking.review && booking.review.completed? %>
+                        <%= link_to "Please leave a review!", new_user_review_url(booking.ride.user) %>
+                      <% end %>
               </li><br><br>
             <% end %>
         <% end %>
