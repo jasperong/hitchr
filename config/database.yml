@@ -22,4 +22,4 @@ test:
 
 production:
   <<: *default
-  database: hitch_production
+  database: hitchr_production
