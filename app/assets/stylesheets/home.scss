@@ -334,3 +334,35 @@ figure.effect-sadie:hover p {
   transform: translate3d(0,0,0);
   border-radius: 0px 0px 25px 25px;
 }
+
+input.search-button {
+  border-color: #00df88;
+  border-bottom-color: #109a64;
+  background-color: #00df88;
+  color: #484848;
+  font-size: 15px;
+  padding: 9px 27px;
+  border-radius: 2px;
+  font-family: railway, arial, sans-serif;
+}
+
+input#date_ {
+    font-size: 15px;
+    padding-bottom: 9px;
+    padding-top: 9px;
+    color: #484848;
+}
+
+input#end_location {
+    font-size: 15px;
+    padding-bottom: 9px;
+    padding-top: 9px;
+    color: #484848;
+}
+
+input#start_location {
+    font-size: 15px;
+    padding-bottom: 9px;
+    padding-top: 9px;
+    color: #484848;
+}
