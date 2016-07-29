@@ -48,10 +48,7 @@ ActiveRecord::Schema.define(version: 20160729184247) do
     t.datetime "updated_at", null: false
     t.float    "rating"
     t.boolean  "completed"
-<<<<<<< HEAD
     t.integer  "booking_id"
-=======
->>>>>>> master
   end
 
   create_table "rides", force: :cascade do |t|
