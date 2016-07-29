@@ -6,7 +6,7 @@
 <p>
   Total Price was <%= @booking.ride.price %>
 </p>
-<p><%= link_to "Please leave a review!", new_user_review_url(@booking.ride.user) %></p>
+<p><%= link_to "Please leave a review!", user_url(@booking.user) %></p>
 
 <p>Love,</p>
 <p>The Hitchr Team</p>
