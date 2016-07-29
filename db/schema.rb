@@ -12,6 +12,8 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 20160729184247) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "bookings", force: :cascade do |t|
     t.integer  "ride_id"
@@ -36,7 +38,7 @@ ActiveRecord::Schema.define(version: 20160729184247) do
     t.datetime "updated_at"
   end
 
-  add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority"
+  add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
 
   create_table "reviews", force: :cascade do |t|
     t.integer  "user_id"
@@ -46,7 +48,10 @@ ActiveRecord::Schema.define(version: 20160729184247) do
     t.datetime "updated_at", null: false
     t.float    "rating"
     t.boolean  "completed"
+<<<<<<< HEAD
     t.integer  "booking_id"
+=======
+>>>>>>> master
   end
 
   create_table "rides", force: :cascade do |t|
@@ -81,6 +86,6 @@ ActiveRecord::Schema.define(version: 20160729184247) do
     t.string   "phone_number"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
 end
