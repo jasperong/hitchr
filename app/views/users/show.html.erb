@@ -4,11 +4,7 @@
     <li><a href="#tab2">My Reviews</a></li>
     <% if current_user == @user %>
       <li><a href="#tab3">My Rides</a></li>
-    <%end%>
-    <% if current_user == @user %>
       <li><a href="#tab4">My Bookings</a></li>
-    <%end%>
-    <% if current_user == @user %>
       <li><a href="#tab5">Ride Feedback</a></li>
     <%end%>
   </ul>
@@ -21,14 +17,14 @@
     <h1> User Profile Page</h1>
         <%= image_tag @user.avatar.url, class: "user-avatar"%><br />
 
-        <% rating_total = [0] %>
-        <% @user.reviews.each do |review| %>
-          <% rating_total << review.rating %>
-        <% end %>
-        <% rating_average = rating_total.inject(:+) / rating_total.count - 1 %>
-        <div class="rateYo stars-readonly" data-rating=<%= rating_average %>></div>
-          <%= rating_total.count - 1%> ratings
-        <br />
+        <!-- <% rating_total = [0] %>
+        <%# @user.reviews.each do |review| %>
+          <%# rating_total << review.rating %>
+        <%# end %>
+        <%# rating_average = rating_total.inject(:+) / rating_total.count - 1 %>
+        <div class="rateYo stars-readonly" data-rating=<%# rating_average %>></div>
+          <%# rating_total.count - 1%> ratings
+        <br /> -->
 
         <%= @user.first_name %> | <%= @user.last_name %><br />
         <%= @user.email %><br />
@@ -139,7 +135,7 @@
                      <b>Seats You Requested:</b> <%= booking.seats %></p>
                   <br>
                     <%# booking.ride.reviews.each do |review| %>
-                      <% unless @review && @review.completed? %>
+                      <% unless booking.review && booking.review.completed? %>
                         <%= link_to "Please leave a review!", new_user_review_url(booking.ride.user) %>
                       <% end %>
                     <%# end %>
