@@ -21,6 +21,15 @@
             </div>
         </div>
         <div class="comments_style">
+          <% rating_total = [0] %>
+          <% @ride.user.reviews.each do |review| %>
+            <% rating_total << review.rating %>
+          <% end %>
+          <% rating_average = rating_total.inject(:+) / rating_total.count - 1 %>
+          <div class="rateYo stars-readonly" data-rating=<%= rating_average %>></div>
+            <%= rating_total.count - 1%> ratings
+          <br />
+
           <h3>Comments: </h3><p> <%= @ride.comments %></p><br>
         </div>
         <div class="back_to_rides">

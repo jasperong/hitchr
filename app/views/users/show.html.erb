@@ -14,6 +14,16 @@
   <div class="tab active" id="tab1">
     <h1> User Profile Page</h1>
         <%= image_tag @user.avatar.url, class: "user-avatar"%><br />
+
+        <% rating_total = [0] %>
+        <% @user.reviews.each do |review| %>
+          <% rating_total << review.rating %>
+        <% end %>
+        <% rating_average = rating_total.inject(:+) / rating_total.count - 1 %>
+        <div class="rateYo stars-readonly" data-rating=<%= rating_average %>></div>
+          <%= rating_total.count - 1%> ratings
+        <br />
+
         <%= @user.first_name %> | <%= @user.last_name %><br />
         <%= @user.email %><br />
         <%= @user.gender %><br />
