@@ -34,7 +34,7 @@ class UsersController < ApplicationController
     if @user.save
       UserMailer.welcome(@user).deliver_later
       session[:user_id] = @user.id
-      redirect_to @user, alert: "Signed up!"
+      redirect_to @user, alert: "Thanks for signing up to Hitchr, #{@user.first_name}!"
     else
       render :new
     end
