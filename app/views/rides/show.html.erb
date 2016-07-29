@@ -3,11 +3,11 @@
 
 </div>
 <div class="show_container">
-  <h1 class="header">Book this ride</h1>
+  <h1 class="header">Ride Info</h1>
       <div class="user_info">
         <div class="picture_div">
-          <h3>User :</h3>
-          <h2 ><%= link_to "#{@ride.user.first_name} #{@ride.user.last_name}", user_path(@ride.user), class: "driver-name" %></h2>
+          <h3 class="driver-text">Driver :</h3>
+          <h2 class="driver-link"><%= link_to "#{@ride.user.first_name} #{@ride.user.last_name}", user_path(@ride.user), class: "driver-name" %></h2>
           <p><%=image_tag @ride.user.avatar.url , class: "user-avatar"%></p>
         </div>
             <div class="details">
