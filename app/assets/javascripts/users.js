@@ -41,5 +41,9 @@ $(function() {
 
    });
 
+   $('.stars-readonly').each(function(index){
+     $(this).rateYo("option", "readOnly", true)
+   });
+
 });
 // 'input[name=rating]'

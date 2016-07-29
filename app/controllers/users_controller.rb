@@ -18,14 +18,6 @@ class UsersController < ApplicationController
     @rides.each do |ride|
       @bookings = ride.bookings
     end
-
-#Feed Back (where the fuck does @ride = ride come from?)
-    # @ride = Ride.find()
-    #
-    #  @ride.bookings.each do |booking|
-    #    email = booking.user.email
-    #    @booking = booking
-    #  end
   end
 
   def create
@@ -34,7 +26,7 @@ class UsersController < ApplicationController
     if @user.save
       UserMailer.welcome(@user).deliver_later
       session[:user_id] = @user.id
-      redirect_to @user, alert: "Signed up!"
+      redirect_to @user, alert: "Thanks for signing up to Hitchr, #{@user.first_name}!"
     else
       render :new
     end

@@ -9,13 +9,16 @@
         <div class="field">
           <%= label_tag :email %> <br />
           <%= text_field_tag :email, "", data: {:"parsley-type" => "email",
-          :"parsley-trigger" => "blur"}, :required => "" %>
+          :"parsley-trigger" => "blur"}, :required => "",
+          "data-parsley-required-message" => "Please enter your email.",
+          "data-parsley-type-message" => "Please enter valid email." %>
         </div>
 
-        <div class="field">
+        <div class="field_password">
            <%= label_tag :password %><br />
-           <%= password_field_tag :password, "", data: {:"parsley-minlength" => "6",
-           :"parsley-trigger" => "blur"}, :required => ""  %>
+           <%= password_field_tag :password, "", data: {:"parsley-trigger" => "blur"},
+           :required => "",
+           "data-parsley-required-message" => "Please enter your password." %>
         </div>
 
         <div class="field">

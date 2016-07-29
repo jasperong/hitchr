@@ -1,5 +1,10 @@
 /* Parsley */
 
+.row {
+  background-color: #EEE;
+
+}
+
 input.parsley-success,
 select.parsley-success,
 textarea.parsley-success {
@@ -35,4 +40,19 @@ textarea.parsley-error {
 
 .parsley-errors-list.filled {
   opacity: 1;
+}
+
+input#password {
+    color: black;
+    background-color: white;
+}
+
+input#email {
+  color: black;
+  background-color: white;
+}
+
+li.parsley-type,
+li.parsley-required {
+    color: #B94A48;
 }
