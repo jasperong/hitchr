@@ -18,14 +18,6 @@ class UsersController < ApplicationController
     @rides.each do |ride|
       @bookings = ride.bookings
     end
-
-#Feed Back (where the fuck does @ride = ride come from?)
-    # @ride = Ride.find()
-    #
-    #  @ride.bookings.each do |booking|
-    #    email = booking.user.email
-    #    @booking = booking
-    #  end
   end
 
   def create

@@ -1,8 +1,4 @@
-
-
 $(function() {
-
-
   $(".rateYo").rateYo({
     rating: 3,
     halfStar: true,
@@ -10,14 +6,11 @@ $(function() {
       "startColor": "#FF0000", //RED
       "endColor"  : "#00FF00"  //GREEN
     }
-
   });
-
 
   $('svg').on('click', function(){
     var width = $(this).parent();
     console.log(parseInt(width.css('width')))
   });
-
 });
 // 'input[name=rating]'
