@@ -44,11 +44,11 @@
       </div>
       <h3 class="info-3" id="description">...or from festival to festival.</h2>
       <h3 class="info-3">Hitchr makes it easy for you to:</h3>
-      <div class="icon-home"><%= image_tag('save_money.png')%></div>
+      <div class="icon-home-container"><%= image_tag('save_money.png', class: 'first-img')%></div>
       <h3 class="icon">SAVE MONEY, whether you're a Driver or a Rider</h3>
-      <div class="icon-home"><%= image_tag('search.png')%></div>
+      <div class="icon-home-container"><%= image_tag('search.png', class: 'secont-img')%></div>
       <h3 class="icon">FIND A RIDE, whenever you want, wherever you want</h3>
-      <div class="icon-home"><%= image_tag('trust.png')%></div>
+      <div class="icon-home-container"><%= image_tag('trust.png', class: 'third-img')%></div>
       <h3 class="icon">CHOOSE a trusted, community-reviewed Driver or Rider</h3>
     </div>
  <!--  second wall end  -->
@@ -59,7 +59,9 @@
 
     <!-- fourth wall  -->
     <div id="content_2" class="content" >
-      <div class="wall2-info-container"></div>
+    <div class="wall2-info-container">
+      <h1 class="placeholder-text">Check out some recent rides offered : </h1>
+    </div>
     <div class="ride-list">
       <!-- Search results go here -->
     </div>

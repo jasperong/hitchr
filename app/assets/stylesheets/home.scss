@@ -14,6 +14,22 @@ body {
   background-color: #424242
 }
 
+.first-img {
+  width: 10%
+}
+
+.secont-img {
+  width: 10%
+
+}
+
+.third-img {
+  width: 10%
+
+}
+
+
+
 
 div#search_date_wrap {
 }
@@ -22,8 +38,10 @@ div#search_date_wrap {
       float: left;
       width: 40%;
       padding-right: 25px;
+      padding-left: 40px;
       margin-left: 40px;
       border-radius: 20px;
+
 }
 
 #end_location_wrap {
@@ -32,6 +50,7 @@ div#search_date_wrap {
   width: 40%;
   margin-left: 10px;
   border-radius: 20px;
+  padding-left: 40px;
 
 }
 
@@ -190,6 +209,14 @@ h3.icon {
 
 }
 
+h1.placeholder-text {
+    font-size: 4em;
+    padding-top: 50px;
+    margin: 0;
+    color: white;
+    font-weight: 600;
+    padding-left: 30px;
+}
 
 .wall2-info-container {
   width: 100%;
