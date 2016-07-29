@@ -47,7 +47,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
   gem 'delayed_job_active_record'
   gem 'judge'
   gem 'parsley-rails'
-  gem 'puma'
 
 group :development, :test do
 
@@ -76,5 +75,6 @@ end
 
 group :production do
   gem 'rails_12factor'
+  gem 'puma'
 
 end
