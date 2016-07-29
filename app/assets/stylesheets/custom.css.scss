@@ -1,7 +1,7 @@
 /* Parsley */
 
 .row {
-  background-color: #EEE;
+  background-color: white;
 
 }
 
@@ -9,7 +9,7 @@ input.parsley-success,
 select.parsley-success,
 textarea.parsley-success {
   color: #468847;
-  background-color: #DFF0D8;
+  background-color: white;
   border: 1px solid #D6E9C6;
 }
 
@@ -42,15 +42,13 @@ textarea.parsley-error {
   opacity: 1;
 }
 
-input#password {
+input#password, input#email {
     color: black;
     background-color: white;
+    width: 100%;
+    height: 50px;
 }
 
-input#email {
-  color: black;
-  background-color: white;
-}
 
 li.parsley-type,
 li.parsley-required {
