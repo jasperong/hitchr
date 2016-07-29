@@ -155,7 +155,36 @@ h3#tagline {
 h3.icon {
     color: white;
     font-weight: 100;
-    font-size: 18px;
+    font-size: 24px;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.icon > span {
+    font-weight: bold;
+
+}
+
+.icon-home {
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+}
+
+.all-icons {
+  margin-top: 10px;
+}
+
+.icon-home > img {
+  width: 80px;
+  height: 80px;
+}
+
+.wrap-icon {
+  margin-top: 55px;
+  display: block;
+  margin-left: 2em;
+
 }
 
 .title img {
