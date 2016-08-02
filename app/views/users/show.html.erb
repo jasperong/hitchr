@@ -62,7 +62,7 @@
     <div class="tab" id="tab3">
         <%= link_to "Offer a Ride", new_ride_path(@user)%><br>
       <br /> <h4>My Rides Offered: </h4>
-      <% @rides.each do |ride| %>
+      <% @rides.reverse.each do |ride| %>
         <% arr = [0] %>
         <% ride.bookings.each { |booking| arr << booking.seats} %>
         <% total_seats = arr.inject(:+) %>
