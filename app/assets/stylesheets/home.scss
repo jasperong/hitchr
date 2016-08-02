@@ -546,3 +546,57 @@ input#start_location {
     border: none;
 
 }
+
+@media only screen and (max-width: 400px) {
+
+  .navbar-inverse .navbar-brand {
+    margin-top: 8px;
+    border: 1px solid #1ede8b;
+    border-radius: 25px;
+    height: 40px;
+    width: 85px;
+    padding: 11px;
+  }
+
+  h3#tagline {
+    text-align: center;
+  }
+
+  .title img {
+    width: 100%;
+  }
+
+   #search-form {
+      width: 100%;
+      border-radius: 0px;
+      margin-top: 40px;
+    }
+
+    #start_location_wrap{
+      float: none;
+      width: 100%;
+      margin-left: -15px;
+      margin-bottom: 20px;
+    }
+
+    #end_location_wrap {
+      float: none;
+      width: 100%;
+      margin-left: -15px;
+      margin-bottom: 20px;
+    }
+
+    div#search_date_wrap {
+        float: none;
+        padding: 0;
+    }
+
+    input#date_ {
+      width: 100%;
+      margin-left: -12px;
+    }
+
+    input.search-button {
+      margin-right: 45px;
+    }
+}
