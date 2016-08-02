@@ -8,19 +8,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @rides = @user.rides
-    #FIX THIS BELOW TO SHOW ALL REVIEWS FOR USER
-    #@reviews = @user.rides.all.reviews
-
-    #FIX THIS BELOW TO SHOW ALL My Bookings
-    #and The bookings made for my ride offered
     @reviews = @user.reviews
-
-    # if @review = Review.find_by(user_id: @user.id)
-    #   @review
-    # else
-      # @review = @user.reviews.build
-    # end
-
     @bookings = []
     @rides.each do |ride|
       @bookings = ride.bookings
