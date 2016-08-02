@@ -70,7 +70,7 @@
             <p><b>To:</b> <%= ride.end_location %></p>
             <p><b>Date:</b> <%= ride.date.strftime("%b %-d, %Y") %></p>
             <p><b>Time:</b> <%= ride.time.strftime("%-l:%M %p") %></p>
-            <p><b>Seats Available:</b> <%= ride.seats_available - total_seats %></p>
+            <p><b>Seats Available:</b><%= ride.seats_available - total_seats < 0 ? 0 : ride.seats_available - total_seats %></p>
             <p><b>Price:</b> $<%= ride.price %></p>
             <p><b>Comments:</b> <%= ride.comments %></p>
             <p><b>Status: </b> <%= ride.completed ? "Complete" : "Not Complete" %></p>

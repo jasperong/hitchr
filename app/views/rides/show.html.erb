@@ -22,7 +22,7 @@
                 <p>To:  <%= @ride.end_location %></p>
                 <p>Date:  <%= @ride.date.strftime("%b %-d, %Y") %></p>
                 <p>Departure:  <%= @ride.time.strftime("%-l:%M %p") %></p>
-                <p>Seats Available:  <%= @ride.seats_available - total_seats %></p>
+                <p>Seats Available:  <%= @ride.seats_available - total_seats < 0 ? 0 : @ride.seats_available - total_seats %></p>
                 <p>Price: $<%= @ride.price %></p>
             </div>
         </div>
