@@ -7,7 +7,7 @@
       <div class="user_info">
         <div class="picture_div">
           <h3 class="driver-text">Driver :</h3>
-          <h2 class="driver-link"><%= link_to "#{@ride.user.first_name} #{@ride.user.last_name}", user_path(@ride.user), class: "driver-name" %></h2>
+          <h2 class="driver-link"><%= link_to "#{@ride.user.first_name.capitalize} #{@ride.user.last_name.capitalize}", user_path(@ride.user), class: "driver-name" %></h2>
           <p><%=image_tag @ride.user.avatar.url , class: "user-avatar"%></p>
         </div>
 
