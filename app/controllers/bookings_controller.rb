@@ -8,7 +8,12 @@ class BookingsController < ApplicationController
   def create
     @booking = @ride.bookings.build(booking_params)
     @booking.user = current_user
-    if @booking.save
+
+    arr = [0]
+    @booking.ride.bookings.each { |booking| arr << booking.seats }
+    total_seats = arr.compact.inject(:+)
+
+    if @booking.save && @booking.seats <= total_seats
       UserMailer.seat_confirmation(@ride, @booking).deliver_later
       redirect_to user_path(current_user), alert: "Booking created successfully"
     else

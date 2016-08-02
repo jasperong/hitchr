@@ -11,20 +11,18 @@
 
 <div class="tab-content">
 
-
-
   <div class="tab active" id="tab1">
     <h1> User Profile Page</h1>
         <%= image_tag @user.avatar.url, class: "user-avatar"%><br />
 
-        <!-- <% rating_total = [0] %>
-        <%# @user.reviews.each do |review| %>
-          <%# rating_total << review.rating %>
-        <%# end %>
-        <%# rating_average = rating_total.inject(:+) / rating_total.count - 1 %>
-        <div class="rateYo stars-readonly" data-rating=<%# rating_average %>></div>
-          <%# rating_total.count - 1%> ratings
-        <br /> -->
+        <% rating_total = [0] %>
+        <% @user.reviews.each do |review| %>
+          <% rating_total << review.rating %>
+        <% end %>
+        <% rating_average = rating_total.inject(:+) / rating_total.count - 1 %>
+        <div class="rateYo stars-readonly" data-rating=<% rating_average %>></div>
+          <% rating_total.count - 1%> ratings
+        <br />
 
         <%= @user.first_name %> | <%= @user.last_name %><br />
         <%= @user.email %><br />
@@ -79,7 +77,9 @@
 
             <% if ride.completed == false %>
               <i><%= link_to "Cancel Ride", ride_path(ride), :method => :delete %></i><br />
-              <i><%= link_to "Ride Complete", ride_completed_path(ride), :method => :delete %></i><br />
+              <% if ride.date < Date.today %>
+                <i><%= link_to "Ride Complete", ride_completed_path(ride), :method => :delete %></i><br />
+              <% end %>
             <% end %>
             <br />
 
@@ -135,7 +135,7 @@
                      <b>Seats You Requested:</b> <%= booking.seats %></p>
                   <br>
 
-                      <% unless booking.review && booking.review.completed? %>
+                      <% unless booking.review && booking.review.completed %>
                         <%= link_to "Please leave a review!", new_user_review_url(booking.ride.user) %>
                       <% end %>
               </li><br><br>
