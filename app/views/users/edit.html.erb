@@ -50,7 +50,7 @@
 
     <div class="field">
        <%= f.label :password %><br />
-       <%= f.password_field :password_edit,
+       <%= f.password_field :password,
        "data-parsley-trigger" => "blur", "data-parsley-minlength" => "6",
         :required => "", "data-parsley-required-message" => "Please enter a password.",
         "data-parsley-minlength-message" => "Please input a password that contains at least 6 characters." %>
@@ -59,7 +59,7 @@
     <div class="field">
        <%= f.label :password_confirmation %><br />
        <%= f.password_field :password_confirmation,
-       "data-parsley-minlength" => "6", "data-parsley-equalto" => "#user_password_edit", "data-parsley-trigger" => "blur",
+       "data-parsley-minlength" => "6", "data-parsley-equalto" => "#user_password", "data-parsley-trigger" => "blur",
        :required => "", "data-parsley-required-message" => "Please confirm your password.",
        "data-parsley-equalto-message" => "Oops! Looks liks your passwords don't match. Please try again." %>
     </div>
