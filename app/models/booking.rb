@@ -12,7 +12,7 @@ class Booking < ActiveRecord::Base
     ride.bookings.each { |booking| arr << booking.seats }
     total_seats = arr.inject(:+)
     if total_seats >= ride.seats_available
-      errors.add(:booking, "Sorry, there are no more seats available.")
+      errors.add(:booking, "unavailable , there are no more seats left.")
     end
   end
 
