@@ -6,9 +6,9 @@ class Ride < ActiveRecord::Base
   validate :correct_time
 
   def self.search(start_loc, end_loc, date)
-    where("start_location LIKE ?", "%#{start_loc}%")
-    .where("end_location LIKE ?", "%#{end_loc}%")
-    .where("date LIKE ?", "%#{date.to_date}%")
+    where("start_location ILIKE ?", "%#{start_loc}%")
+    .where("end_location ILIKE ?", "%#{end_loc}%")
+    .where("cast(date as text) ILIKE ?", "%#{date.to_date}%")
   end
 
   def correct_time
