@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   get "/search" => "home#search"
 
   resources :sessions, only: [:new, :create, :destroy]
-  resources :bookings
+  
+  resources :bookings do
+    resources :reviews, only: [:show, :new, :create]
+  end
+
 
   resources :users do
     resources :bookings, only: [:show]
