@@ -12,11 +12,9 @@
         </div>
 
         <!-- Available Seats incrementation -->
-        <% @rides.each do |ride| %>
           <% arr = [0] %>
-          <% ride.bookings.each { |booking| arr << booking.seats} %>
-          <% total_seats = arr.inject(:+) %>
-        <% end %>
+          <% @ride.bookings.each { |booking| arr << booking.seats} %>
+          <% total_seats = arr.compact.inject(:+) %>
 
             <div class="details">
               <h3>Ride Details:</h3>
