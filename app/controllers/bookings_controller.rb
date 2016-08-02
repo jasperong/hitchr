@@ -17,6 +17,7 @@ class BookingsController < ApplicationController
       UserMailer.seat_confirmation(@ride, @booking).deliver_later
       redirect_to user_path(current_user), alert: "Booking created successfully"
     else
+      flash[:error] = @booking.errors.full_messages.to_sentence
       redirect_to ride_path(@ride)
     end
   end

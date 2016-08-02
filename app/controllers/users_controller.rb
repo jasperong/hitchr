@@ -8,7 +8,23 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @rides = @user.rides
+    #FIX THIS BELOW TO SHOW ALL REVIEWS FOR USER
+    #@reviews = @user.rides.all.reviews
+
+    #FIX THIS BELOW TO SHOW ALL My Bookings
+    #and The bookings made for my ride offered
     @reviews = @user.reviews
+
+    # if @review = Review.find_by(user_id: @user.id)
+    #   @review
+    # else
+      # @review = @user.reviews.build
+    # end
+
+    @bookings = []
+    @rides.each do |ride|
+      @bookings = ride.bookings
+    end
   end
 
   def create
@@ -19,6 +35,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to @user, alert: "Thanks for signing up to Hitchr, #{@user.first_name}!"
     else
+      flash[:error] = @user.errors.full_messages.to_sentence
       redirect_back_or_to(root_path)
     end
   end
@@ -34,14 +51,6 @@ class UsersController < ApplicationController
     else
       render :new
     end
-  end
-
-  def destroy
-    @user = User.find(params[:id])
-    UserMailer.deleted_user(@user).deliver_later
-    @user.destroy
-    flash[:success] = "User deleted"
-    redirect_to root_path
   end
 
   private
