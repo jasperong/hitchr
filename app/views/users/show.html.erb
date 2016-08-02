@@ -63,7 +63,7 @@
       <% @rides.reverse.each do |ride| %>
         <% arr = [0] %>
         <% ride.bookings.each { |booking| arr << booking.seats} %>
-        <% total_seats = arr.inject(:+) %>
+        <% total_seats = arr.compact.inject(:+) %>
         <ul>
           <li>
             <p><b>From:</b> <%= ride.start_location %></p>
