@@ -6,6 +6,11 @@ class UserMailer < ApplicationMailer
     mail(to: @user.email, subject: "Welcome to Hitchr!")
   end
 
+  def deleted_user(user)
+    @user = user
+    mail(to: @user.email, subject: "User Profile Deleted from Hitchr!")
+  end
+
   # 2. Setup an email for the driver to see when someone requests a seat
   def seat_confirmation(ride, booking)
     @ride = ride
