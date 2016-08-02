@@ -78,7 +78,7 @@
           <div class="field">
              <%= f.label :password_confirmation %><br />
              <%= f.password_field :password_confirmation,
-             "data-parsley-minlength" => "6", "data-parsley-equalto" => "#user_password", "data-parsley-trigger" => "blur",
+             "data-parsley-minlength" => "6", "data-parsley-equalto" => "input#user_password", "data-parsley-trigger" => "blur",
              :required => "", "data-parsley-required-message" => "Please confirm your password.",
              "data-parsley-equalto-message" => "Oops! Looks liks your passwords don't match. Please try again." %>
           </div>
