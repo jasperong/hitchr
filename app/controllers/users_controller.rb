@@ -36,6 +36,7 @@ class UsersController < ApplicationController
       redirect_to @user, alert: "Thanks for signing up to Hitchr, #{@user.first_name}!"
     else
       redirect_back_or_to(root_path)
+    end
   end
 
   def edit
