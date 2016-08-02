@@ -9,10 +9,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @rides = @user.rides
     @reviews = @user.reviews
-    @bookings = []
-    @rides.each do |ride|
-      @bookings = ride.bookings
-    end
   end
 
   def create

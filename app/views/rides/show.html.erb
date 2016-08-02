@@ -11,6 +11,7 @@
           <p><%=image_tag @ride.user.avatar.url , class: "user-avatar"%></p>
         </div>
 
+        <!-- Available Seats incrementation -->
         <% @rides.each do |ride| %>
           <% arr = [0] %>
           <% ride.bookings.each { |booking| arr << booking.seats} %>
