@@ -135,7 +135,7 @@
                      <b>Seats You Requested:</b> <%= booking.seats %></p>
                   <br>
 
-                      <% unless booking.review && booking.review.completed? %>
+                      <% unless booking.review && booking.review.completed %>
                         <%= link_to "Please leave a review!", new_user_review_url(booking.ride.user) %>
                       <% end %>
               </li><br><br>

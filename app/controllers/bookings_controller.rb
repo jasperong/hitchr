@@ -8,6 +8,8 @@ class BookingsController < ApplicationController
   def create
     @booking = @ride.bookings.build(booking_params)
     @booking.user = current_user
+    # @booking.review = @booking.review
+
     if @booking.save
       UserMailer.seat_confirmation(@ride, @booking).deliver_later
       redirect_to user_path(current_user), alert: "Booking created successfully"
