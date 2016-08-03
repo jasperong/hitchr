@@ -133,6 +133,7 @@ and (max-width: 767px) {
     div#search_date_wrap {
         float: none;
         padding: 0;
+        width: 100%;
     }
 
     input#date_ {
@@ -155,10 +156,26 @@ and (max-width: 435px) {
 
   h3#tagline {
     text-align: center;
+    font-size: large;
+  }
+
+}
+
+
+// Responsive search for in betweens
+
+@media only screen
+
+and (min-width: 436px)
+and (max-width: 768px) {
+
+  h3#tagline {
+    text-align: center;
     font-size: 20px;
   }
 
 }
+
 
 // Responsive search for iPad
 
@@ -183,7 +200,7 @@ and (max-width: 801px)
 
   h3#tagline {
     text-align: center;
-    font-size: 2em;
+    font-size: 25px;
   }
 
   .title img {
@@ -198,7 +215,7 @@ and (max-width: 801px)
 
     }
 
-    #start_location_wrap{
+    #start_location_wrap {
       float: none;
       width: 100%;
       margin-left: -15px;
@@ -212,14 +229,17 @@ and (max-width: 801px)
       margin-bottom: 20px;
     }
 
+
     div#search_date_wrap {
         float: none;
         padding: 0;
+
     }
 
+
     input#date_ {
-      width: 100%;
-      margin-left: -12px;
+      width: 134%;
+      margin-right: 55px;
     }
 
     input.search-button {
