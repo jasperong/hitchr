@@ -5,8 +5,10 @@ Rails.application.routes.draw do
 
   resources :sessions, only: [:new, :create, :destroy]
 
-  resources :bookings
-  
+  resources :bookings do
+    put '/review' => "booking#create_review"
+  end
+
   resources :users do
     resources :bookings, only: [:show]
   end

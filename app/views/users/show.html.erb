@@ -136,9 +136,21 @@
                      <b>Seats You Requested:</b> <%= booking.seats %></p>
                   <br>
 
-                      <% unless booking.review && booking.review.completed %>
-                        <%= link_to "Please leave a review!", new_user_review_url(booking.ride.user) %>
-                      <% end %>
+                  <% unless booking.review %>
+                    <%= form_tag "/review", method: :put do %>
+                      <div class="rateYo"></div>
+                      <div class="field">
+                        <%= hidden_field_tag :rating, params[:rating] %>
+                      </div>
+                      <div class="field">
+                        <%= text_field_tag :review, params[:review], placeholder: "Leave a Review"%>
+                      </div>
+                      <div class="actions">
+                        <%= submit_tag %>
+                      </div>
+                    <% end %>
+                  <% end %>
+                  
               </li><br><br>
             <% end %>
         <% end %>

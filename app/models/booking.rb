@@ -1,7 +1,6 @@
 class Booking < ActiveRecord::Base
   belongs_to :ride
   belongs_to :user
-  has_one :review
   validates :seats, presence: true
 
   validate :enough_seats

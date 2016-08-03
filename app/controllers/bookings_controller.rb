@@ -22,6 +22,12 @@ class BookingsController < ApplicationController
     end
   end
 
+  def create_review
+    @booking = Booking.find(params[:id])
+    @booking.review = params[:review]
+    @booking.rating = params[:rating]
+  end
+
   def destroy
     @booking = Booking.find(params[:id])
     if current_user == @booking.user
