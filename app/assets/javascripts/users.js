@@ -20,7 +20,7 @@ $(function() {
      console.log(ratingNumber);
 
      $('#review_rating').val(ratingNumber);
-
+     $('#set-rating').val(ratingNumber);
     //  $.ajax({
     //    url: $(this).attr('action'),
     //    method: $(this).attr('method'),

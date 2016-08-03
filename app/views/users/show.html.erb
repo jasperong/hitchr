@@ -48,7 +48,7 @@
     <% @rides.each do |ride| %>
       <% ride.bookings.each do |booking| %>
 
-        <div class="rateYo stars-readonly" data-rating="<%= booking.rating %>"> -->
+        <div class="rateYo stars-readonly" data-rating=<%= booking.rating %>>
         </div>
         <%= booking.rating %>
         <%= booking.review %><br><br>
@@ -142,15 +142,14 @@
 
                   <% unless booking.review %>
                     <%= form_for booking, method: :put do |f| %>
-                      <div class="rateYo"></div>
-                      <div class="field">
-                        <%= f.hidden_field :rating %>
+                      <div class="rateYo">
                       </div>
+                        <%= f.hidden_field :rating, id: "set-rating" %>
                       <div class="field">
                         <%= f.text_field :review, placeholder: "Leave a Review"%>
                       </div>
                       <div class="actions">
-                        <%= f.submit %>
+                        <%= f.submit "Submit Review" %>
                       </div>
                     <% end %>
                   <% end %>
