@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :load_ride, except: [:destroy]
+  before_action :load_ride, except: [:destroy, :update]
 
   def show
     @booking = @ride.bookings.find(params[:id])
@@ -23,10 +23,13 @@ class BookingsController < ApplicationController
     end
   end
 
-  def create_review
+  def update
     @booking = Booking.find(params[:id])
-    @booking.review = params[:review]
-    @booking.rating = params[:rating]
+    if @booking.update_attributes(review_params)
+      redirect_to user_path(@booking.ride.user)
+    else
+      flash[:notice] = "You Suck, Review Failed"
+    end
   end
 
   def destroy
@@ -43,11 +46,15 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:seats, :review, :rating)
+    params.require(:booking).permit(:seats)
   end
 
   def load_ride
     @ride = Ride.find(params[:ride_id])
+  end
+
+  def review_params
+    params.require(:booking).permit(:review, :rating)
   end
 
 end

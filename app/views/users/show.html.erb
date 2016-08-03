@@ -74,9 +74,9 @@
 
             <% if ride.completed == false %>
               <i><%= link_to "Cancel Ride", ride_path(ride), :method => :delete %></i><br />
-              <% if ride.date < Date.today %>
+              <%# if ride.date < Date.today %>
                 <i><%= link_to "Ride Complete", ride_completed_path(ride), :method => :delete %></i><br />
-              <% end %>
+              <%# end %>
             <% end %>
             <br />
 
@@ -136,16 +136,16 @@
                   <br>
 
                   <% unless booking.review %>
-                    <%= form_tag "/review", method: :put do %>
+                    <%= form_for booking, method: :put do |f| %>
                       <div class="rateYo"></div>
                       <div class="field">
-                        <%= hidden_field_tag :rating, params[:rating] %>
+                        <%= f.hidden_field :rating %>
                       </div>
                       <div class="field">
-                        <%= text_field_tag :review, params[:review], placeholder: "Leave a Review"%>
+                        <%= f.text_field :review, placeholder: "Leave a Review"%>
                       </div>
                       <div class="actions">
-                        <%= submit_tag %>
+                        <%= f.submit %>
                       </div>
                     <% end %>
                   <% end %>
