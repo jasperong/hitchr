@@ -45,10 +45,15 @@
   <div class="tab" id="tab2">
     <br /> <h4>Reviews about me: </h4>
     <div class="user-reviews-container">
-    <% @user.bookings.each do |booking| %>
-    <div class="rateYo stars" data-rating="<%= booking.rating %>">
-    </div>
-    <%= booking.review %><br><br>
+    <% @rides.each do |ride| %>
+      <% ride.bookings.each do |booking| %>
+
+        <div class="rateYo stars-readonly" data-rating="<%= booking.rating %>"> -->
+        </div>
+        <%= booking.rating %>
+        <%= booking.review %><br><br>
+
+      <% end %>
     <% end %>
     </div>
   </div>
