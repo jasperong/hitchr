@@ -75,3 +75,136 @@
   border-bottom: 2px solid #1ede8b;
   margin-left: 9px;
 }
+
+
+
+// Responsive search for iphone/nexus
+
+@media only screen
+
+and (min-width: 320px)
+and (max-width: 767px) {
+
+  .navbar-inverse .navbar-brand {
+    color: white;
+    margin-top: 8px;
+    border: 1px solid #1ede8b;
+    border-radius: 25px;
+    height: 40px;
+    width: 90px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    padding-left: 16px;
+  }
+
+  h3#tagline {
+    text-align: center;
+    font-size: medium;
+  }
+
+  .title img {
+    width: 100%;
+  }
+
+   #search-form {
+      width: 100%;
+      border-radius: 0px;
+      margin-top: 40px;
+    }
+
+    #start_location_wrap{
+      float: none;
+      width: 100%;
+      margin-left: -15px;
+      margin-bottom: 20px;
+    }
+
+    #end_location_wrap {
+      float: none;
+      width: 100%;
+      margin-left: -15px;
+      margin-bottom: 20px;
+    }
+
+    div#search_date_wrap {
+        float: none;
+        padding: 0;
+    }
+
+    input#date_ {
+      width: 100%;
+      margin-left: -12px;
+    }
+
+    input.search-button {
+      margin-right: 45px;
+    }
+}
+
+
+// Responsive search for iPad
+
+@media only screen
+
+and (min-width: 768px)
+and (max-width: 801px)
+
+{
+
+  .navbar-inverse .navbar-brand {
+    color: white;
+    margin-top: 8px;
+    border: 1px solid #1ede8b;
+    border-radius: 25px;
+    height: 40px;
+    width: 90px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    padding-left: 16px;
+  }
+
+  h3#tagline {
+    text-align: center;
+    font-size: 2em;
+  }
+
+  .title img {
+    width: 100%;
+  }
+
+   #search-form {
+      width: 75%;
+      border-radius: 0px;
+      margin-top: 10px;
+      margin-right: 75px;
+
+    }
+
+    #start_location_wrap{
+      float: none;
+      width: 100%;
+      margin-left: -15px;
+      margin-bottom: 20px;
+    }
+
+    #end_location_wrap {
+      float: none;
+      width: 100%;
+      margin-left: -15px;
+      margin-bottom: 20px;
+    }
+
+    div#search_date_wrap {
+        float: none;
+        padding: 0;
+    }
+
+    input#date_ {
+      width: 100%;
+      margin-left: -12px;
+    }
+
+    input.search-button {
+      margin-right: 45px;
+    }
+}
