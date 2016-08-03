@@ -77,9 +77,13 @@
 }
 
 
+
 // Responsive search for iphone/nexus
 
-@media only screen and (max-width: 480px) {
+@media only screen
+
+and (min-width: 320px)
+and (max-width: 767px) {
 
   .navbar-inverse .navbar-brand {
     color: white;
@@ -140,7 +144,12 @@
 
 // Responsive search for iPad
 
-@media only screen and (min-width: 768px) {
+@media only screen
+
+and (min-width: 768px)
+and (max-width: 801px)
+
+{
 
   .navbar-inverse .navbar-brand {
     color: white;
