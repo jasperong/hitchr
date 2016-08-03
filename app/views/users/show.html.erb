@@ -20,9 +20,9 @@
           <% rating_total << booking.rating %>
         <% end %>
         <% total = rating_total.compact %>
-        <% rating_average = total.inject(:+) / total.count - 1 %>
-        <div class="rateYo stars-readonly" data-rating=<% rating_average %>></div>
-          <% total.count - 1%> ratings
+        <% rating_average = total.compact.inject(:+) / total.count %>
+        <div class="rateYo stars-readonly" data-rating=<%= rating_average %>></div>
+          <% total.count - 1 %> ratings
         <br />
 
         <%= @user.first_name.capitalize %> | <%= @user.last_name.capitalize %><br />

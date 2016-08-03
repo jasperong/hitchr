@@ -42,7 +42,11 @@ $(function() {
    });
 
    $('.stars-readonly').each(function(index){
-     $(this).rateYo("option", "readOnly", true)
+     $(this).rateYo("option", "readOnly", true);
+
+    //  $(this).rateYo(
+    //    "option", "rating", $(this).data('rating')
+    //  )
    });
 
 });
