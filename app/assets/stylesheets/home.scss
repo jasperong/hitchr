@@ -109,8 +109,8 @@ and (max-width: 1100px)
 // Desktop responsive for search continued
 @media only screen
 
-and (min-width: 802px)
-and (max-width: 1100px)
+and (min-width: 1100px)
+and (max-width: 1250px)
 
 {
 
@@ -121,8 +121,16 @@ and (max-width: 1100px)
     border-radius: 20px;
     padding-left: 5px;
     float: left;
-    width: 120%;
+    width: 127%;
   }
+
+  input.search-button {
+      height: 40px;
+      margin-bottom: -5px;
+      border-radius: 10px;
+      margin-right: 100px;
+      margin-top: 10px;
+    }
 
 }
 
