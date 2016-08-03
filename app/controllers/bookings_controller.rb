@@ -36,7 +36,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:seats)
+    params.require(:booking).permit(:seats, :review, :rating)
   end
 
   def load_ride
