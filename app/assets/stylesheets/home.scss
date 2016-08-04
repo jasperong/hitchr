@@ -441,6 +441,11 @@ h3.info-3 {
 
 /* sadie */
 
+figure.effect-sadie {
+
+background-color: #dae5e1;
+}
+
 figure.effect-sadie figcaption::before {
   position: absolute;
   top: 0;
@@ -465,7 +470,7 @@ figure.effect-sadie h2 {
   top: 50%;
   left: 0;
   width: 100%;
-  color: #a6a4a4;
+  color: grey;
   -webkit-transition: -webkit-transform 0.35s, color 0.35s;
   transition: transform 0.35s, color 0.35s;
   -webkit-transform: translate3d(0,-50%,0);
@@ -490,7 +495,7 @@ figure.effect-sadie p {
 }
 
 figure.effect-sadie:hover h2 {
-  color: white;
+  color: grey;
   -webkit-transform: translate3d(0,-50%,0) translate3d(0,-40px,0);
   transform: translate3d(0,-50%,0) translate3d(0,-40px,0);
 }
