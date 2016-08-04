@@ -13,36 +13,47 @@
 
   <div class="tab active" id="tab1">
     <div class="user_profile">
-      <h1> User Profile Page</h1>
+      <h1 class="user_header"> User Profile</h1>
+        <div class="image_div">
           <%= image_tag @user.avatar.url, class: "user-avatar"%><br />
-
+        </div>
+    <div class="user_content clearfix">
+          <h3 class="rating">Rating</h3>
           <% rating_total = [0] %>
           <% @user.reviews.each do |review| %>
             <% rating_total << review.rating %>
           <% end %>
           <% rating_average = rating_total.inject(:+) / rating_total.count - 1 %>
           <div class="rateYo stars-readonly" data-rating=<% rating_average %>></div>
-            <% rating_total.count - 1%> ratings
+            <% rating_total.count - 1%>
           <br />
 
-          <%= @user.first_name.capitalize %> | <%= @user.last_name.capitalize %><br />
+      <div id="user_details">
+          <h3>Details</h3>
+          Name: <%= @user.first_name.capitalize %> <%= @user.last_name.capitalize %><br />
+          Age: <%= @user.age %><br />
+               <%= @user.gender %><br />
+      </div>
+        <div id="user_contact">
+          <h3>Contact</h3>
           <%= @user.email %><br />
-          <%= @user.gender %><br />
-          <%= @user.age %><br />
           <%= number_to_phone(@user.phone_number, area_code: true) %><br>
-          <% if current_user == @user %>
-            <%= link_to "Edit profile", edit_user_path(@user) %><br>
-            <%= link_to "Delete User profile", user_path(@user), :method => :delete, data: {confirm: "Delete User: #{@user.first_name.capitalize} #{@user.last_name.capitalize}?"} %>
 
-          <% end %>
+        </div>
+      </div>
       <div >
         <!--PUT ERB TAGS ON THIS AND FIX
          render @user.reviews -->
       </div>
-      <div>
+      <div class="user_links">
         <% if current_user == @user %>
-          <%= link_to "Offer a Ride", new_ride_path(@user)%>
+        <p> <%= link_to "Offer a Ride", new_ride_path(@user)%></p>
         <%end%>
+        <% if current_user == @user %>
+        <p> <%= link_to "Edit profile", edit_user_path(@user) %></p>
+        <p>   <%= link_to "Delete User profile", user_path(@user), :method => :delete, data: {confirm: "Delete User: #{@user.first_name.capitalize} #{@user.last_name.capitalize}?"} %> </p>
+
+        <% end %>
       </div>
     </div>
   </div>
