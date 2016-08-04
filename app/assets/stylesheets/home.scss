@@ -97,12 +97,13 @@ and (max-width: 1100px)
 
 {
 
+
   input#date_ {
     height: 37px;
     border-radius: 20px;
     padding-left: 5px;
-    float: left;
-    width: 120%;
+    margin-top: 10px;
+    width: 100%;
   }
 
 }
@@ -110,8 +111,8 @@ and (max-width: 1100px)
 // Desktop responsive for search continued
 @media only screen
 
-and (min-width: 1100px)
-and (max-width: 1280px)
+and (min-width: 1101px)
+and (max-width: 1223px)
 
 {
 
@@ -120,9 +121,9 @@ and (max-width: 1280px)
 
     border-radius: 20px;
     padding-left: 5px;
-    float: left;
-    width: 127%;
+    width: 98%;
   }
+
 
   input.search-button {
       height: 40px;
@@ -134,33 +135,7 @@ and (max-width: 1280px)
 
 }
 
-// Desktop responsive for search continued
-@media only screen
 
-and (min-width: 1280px)
-
-
-{
-
-  input#date_ {
-    height: 37px;
-
-    border-radius: 20px;
-    padding-left: 5px;
-    float: left;
-    width: 129%;
-  }
-
-  input.search-button {
-      height: 40px;
-      margin-bottom: -5px;
-      border-radius: 10px;
-      margin-right: 100px;
-      margin-top: 10px;
-      margin-left: 85px;
-    }
-
-}
 
 input.search-button {
     height: 40px;
@@ -624,5 +599,49 @@ input#start_location {
 .search_wrap > input {
     width: 100%;
     border: none;
+
+}
+
+
+// Desktop responsive for search continued
+@media only screen
+
+and (min-width: 1224px)
+
+
+{
+
+  input#date_ {
+    height: 37px;
+
+    border-radius: 20px;
+    padding-left: 5px;
+    display: inline-block;
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  input.search-button {
+      height: 40px;
+      margin-bottom: -5px;
+      border-radius: 10px;
+      margin-right: 100px;
+      margin-top: 10px;
+      margin-left: 10px;
+    }
+
+    #search-form {
+      width: 60%;
+      text-align: center;
+      padding: 30px 0px 30px 0px;
+      background-color: rgba(0, 0, 0, 0.4);
+      position: relative;
+      z-index: 20;
+      border-radius: 100px;
+      float: right;
+      padding-right: 40px;
+      padding-left: 40px;
+      margin-top: 10px;
+    }
 
 }
