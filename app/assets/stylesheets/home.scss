@@ -191,7 +191,7 @@ h3#tagline {
 }
 
 h3.icon {
-    color: white;
+    color: grey;
     font-weight: 100;
     font-size: 24px;
     display: inline-block;
@@ -303,19 +303,24 @@ h3.info-3 {
 }
 
 #description {
-    color: white;
+    color: grey;
     font-size: 40px;
     padding-top: 16px;
 }
 
 #content_1 {
   position: relative;
-  background-color: #eee;
+  background-color: #f3fffa;
   // @media (min-width: 820px) {
   //   margin-top: -51px;
   // }
   height: 750px;
 
+}
+
+#content_2 {
+
+  background-color: #f3fffa;
 }
 
 
@@ -506,7 +511,7 @@ input.search-button {
   font-size: 15px;
   padding: 9px 27px;
   border-radius: 2px;
-  font-family: raleway, arial, sans-serif;
+  font-family: "Raleway", arial, sans-serif;
 }
 
 input#date_ {
