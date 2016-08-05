@@ -5,10 +5,18 @@
     font-family: 'Raleway';
 
 }
+html {
+  width: 100%;
+}
 
-body {
+ body {
   width: 100%;
   background-color: #f3fffa;
+}
+
+.search-empty {
+  color: grey;
+  padding: 100px;
 }
 
 .first-img {
@@ -178,6 +186,7 @@ video#my-video {
 div#video-wrap {
     background-color: black;
     height: 600px;
+    width: 100%;
 }
 
 .content-overlay {
@@ -234,9 +243,9 @@ h3#tagline {
 h3.icon {
     color: grey;
     font-weight: 100;
-    font-size: 24px;
-    display: inline-block;
+    font-size: 100%;
     margin-left: 20px;
+    text-align: center;
 }
 
 .icon > span {
@@ -245,18 +254,24 @@ h3.icon {
 }
 
 .icon-home {
-  display: inline-block;
-  width: 70px;
-  height: 70px;
+  display: table-cell;
+  width: 20px;
+   height: 300px;
+   padding: 0px 8px 0px 8px;
+   border-right: 2px solid rgba(0, 0, 0, 0.1);
 }
 
 .all-icons {
   margin-top: 10px;
+  display: table;
+   width: 100%;
+   margin-top: 100px;
+   text-align: center;
+   overflow: hidden;
 }
 
 .icon-home > img {
-  width: 80px;
-  height: 80px;
+  width: 30%;
 }
 
 .wrap-icon {
@@ -406,7 +421,6 @@ h3.info-3 {
     text-align: center;
     cursor: pointer;
     height: 150px;
-    border-radius: 50px;
     background-color: white;
     /* border: 3px solid rgba(0, 0, 0, 0.2); */
 }
@@ -497,16 +511,12 @@ figure.effect-sadie figcaption::before {
 
 figure.effect-sadie figcaption:hover {
   // background-color: #ff8f4e;
-  border-radius: 50px;
 }
 
 figure.effect-sadie h2 {
   padding-top: 25px;
-<<<<<<< HEAD
   font-family: "raleway", "Arial", sans-serif;
-=======
-  font-family: "Raleway", "Arial", sans-serif;
->>>>>>> 16fde2dee2e5c1050e8ed879d97ea6b8c02ab9ed
+
   position: absolute;
   top: 50%;
   left: 0;
