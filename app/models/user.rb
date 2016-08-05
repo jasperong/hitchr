@@ -23,9 +23,10 @@ class User < ActiveRecord::Base
   validates_with AttachmentSizeValidator, attributes: :avatar, less_than: 3.megabytes
 
 
+
   def age
     now = Time.now.utc.to_date
-    now.year - User.first.date_of_birth.year
+    now.year - date_of_birth.year
   end
 
   private
