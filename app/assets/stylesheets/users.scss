@@ -2,7 +2,60 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+.image_div {
+  margin: 0 auto;
+  width: 50%;
+  padding-bottom: 50px;
+}
+
 .user-avatar {
   width: 150px;
   height: 150px;
+  margin: 0 auto;
+}
+
+.user_profile {
+  margin: 0 auto;
+  width: 50%;
+}
+
+#user_contact {
+  clear: both;
+  float: right;
+  margin-top: -60px;
+}
+
+#user_details {
+  width: 75%;
+  margin: 0 auto;
+  padding-bottom: 10px;
+}
+
+.user_header {
+  font-family: inherit;
+  font-size: 3em;
+  text-align: center;
+  margin: 40px;
+}
+
+.user_content {
+    margin-bottom: 100px;
+}
+
+.clearfix:before,
+.clearfix:after {
+  display: block;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.rating {
+  text-align: center;
+}
+
+.user_links {
+  text-align: center;
 }
