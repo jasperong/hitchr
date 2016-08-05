@@ -11,7 +11,7 @@ html {
 
  body {
   width: 100%;
-  background-color: #f3fffa;
+  background-color: #e8f4ef;
 }
 
 .search-empty {
@@ -153,9 +153,7 @@ input.search-button {
     margin-right: 100px;
     margin-top: 10px;
 
-    // @media (min-width: 820px) {
-    //   margin-top: -51px;
-    // }
+
   }
 
 
@@ -172,7 +170,7 @@ input.search-button {
 
 
 div#outer-wrap {
-  margin-top: -31px;
+  margin-top: -51px;
 
 }
 
@@ -189,7 +187,7 @@ video#my-video {
 
 div#video-wrap {
     background-color: black;
-    height: 600px;
+    height: 630px;
     width: 100%;
 }
 
@@ -254,6 +252,7 @@ h3.icon {
 
 .icon > span {
     font-weight: bold;
+    margin-left: -25px;
 
 }
 
@@ -276,6 +275,10 @@ h3.icon {
 
 .icon-home > img {
   width: 30%;
+}
+
+#find > img {
+  width: 35%;
 }
 
 .wrap-icon {
@@ -370,12 +373,8 @@ h3.info-3 {
 
 #content_1 {
   position: relative;
-  background-color: #f3fffa;
-  // @media (min-width: 820px) {
-  //   margin-top: -51px;
-  // }
+  background-color: #e8f4ef;
   height: 750px;
-
 }
 
 
