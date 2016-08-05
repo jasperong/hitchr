@@ -1,4 +1,9 @@
 /* Outer */
+
+label {
+    font-size: 1.5em;
+    font-family: "Raleway", arial, sans-serif;
+}
 .popup {
     width:100%;
     height:100%;
@@ -97,7 +102,7 @@ select#user_gender, select#user_date_of_birth_1i, select#user_date_of_birth_2i, 
   border-left: 2px solid #9C9C9C;
   border-top: 2px solid #9C9C9C;
   border-right: 2px solid #EDEDED;
-  border-bottom: 2px solid #EDEDED
+  border-bottom: 2px solid #EDEDED;
 }
 
 
@@ -124,4 +129,6 @@ input#user_avatar {
     margin: 0px;
 
   }
+
+
 }
