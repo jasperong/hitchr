@@ -5,10 +5,18 @@
     font-family: 'Raleway';
 
 }
-
-body {
+html {
   width: 100%;
-  background-color: #eee;
+}
+
+ body {
+  width: 100%;
+  background-color: #f3fffa;
+}
+
+.search-empty {
+  color: grey;
+  padding: 100px;
 }
 
 body.background {
@@ -90,7 +98,51 @@ input#date_ {
   width: 31.5em;
 }
 
+// Desktop responsive for search
+@media only screen
 
+and (min-width: 801px)
+and (max-width: 1100px)
+
+{
+
+
+  input#date_ {
+    height: 37px;
+    border-radius: 20px;
+    padding-left: 5px;
+    margin-top: 10px;
+    width: 100%;
+  }
+
+}
+
+// Desktop responsive for search continued
+@media only screen
+
+and (min-width: 1101px)
+and (max-width: 1223px)
+
+{
+
+  input#date_ {
+    height: 37px;
+
+    border-radius: 20px;
+    padding-left: 5px;
+    width: 98%;
+  }
+
+
+  input.search-button {
+      height: 40px;
+      margin-bottom: -5px;
+      border-radius: 10px;
+      margin-right: 100px;
+      margin-top: 10px;
+    }
+
+}
 
 
 
@@ -138,6 +190,7 @@ video#my-video {
 div#video-wrap {
     background-color: black;
     height: 600px;
+    width: 100%;
 }
 
 .content-overlay {
@@ -192,11 +245,11 @@ h3#tagline {
 }
 
 h3.icon {
-    color: white;
+    color: grey;
     font-weight: 100;
-    font-size: 24px;
-    display: inline-block;
+    font-size: 100%;
     margin-left: 20px;
+    text-align: center;
 }
 
 .icon > span {
@@ -205,18 +258,24 @@ h3.icon {
 }
 
 .icon-home {
-  display: inline-block;
-  width: 70px;
-  height: 70px;
+  display: table-cell;
+  width: 20px;
+   height: 300px;
+   padding: 0px 8px 0px 8px;
+   border-right: 2px solid rgba(0, 0, 0, 0.1);
 }
 
 .all-icons {
   margin-top: 10px;
+  display: table;
+   width: 100%;
+   margin-top: 100px;
+   text-align: center;
+   overflow: hidden;
 }
 
 .icon-home > img {
-  width: 80px;
-  height: 80px;
+  width: 30%;
 }
 
 .wrap-icon {
@@ -304,20 +363,21 @@ h3.info-3 {
 }
 
 #description {
-    color: white;
+    color: grey;
     font-size: 40px;
     padding-top: 16px;
 }
 
 #content_1 {
   position: relative;
-  background-color: #eee;
+  background-color: #f3fffa;
   // @media (min-width: 820px) {
   //   margin-top: -51px;
   // }
   height: 750px;
 
 }
+
 
 
 #wall_2 {
@@ -365,7 +425,6 @@ h3.info-3 {
     text-align: center;
     cursor: pointer;
     height: 150px;
-    border-radius: 50px;
     background-color: white;
     /* border: 3px solid rgba(0, 0, 0, 0.2); */
 }
@@ -437,6 +496,11 @@ h3.info-3 {
 
 /* sadie */
 
+figure.effect-sadie {
+
+background-color: #dae5e1;
+}
+
 figure.effect-sadie figcaption::before {
   position: absolute;
   top: 0;
@@ -451,17 +515,17 @@ figure.effect-sadie figcaption::before {
 
 figure.effect-sadie figcaption:hover {
   // background-color: #ff8f4e;
-  border-radius: 50px;
 }
 
 figure.effect-sadie h2 {
   padding-top: 25px;
-  font-family: "Railway", "Arial", sans-serif;
+  font-family: "raleway", "Arial", sans-serif;
+
   position: absolute;
   top: 50%;
   left: 0;
   width: 100%;
-  color: #a6a4a4;
+  color: grey;
   -webkit-transition: -webkit-transform 0.35s, color 0.35s;
   transition: transform 0.35s, color 0.35s;
   -webkit-transform: translate3d(0,-50%,0);
@@ -486,7 +550,7 @@ figure.effect-sadie p {
 }
 
 figure.effect-sadie:hover h2 {
-  color: white;
+  color: grey;
   -webkit-transform: translate3d(0,-50%,0) translate3d(0,-40px,0);
   transform: translate3d(0,-50%,0) translate3d(0,-40px,0);
 }
@@ -507,7 +571,7 @@ input.search-button {
   font-size: 15px;
   padding: 9px 27px;
   border-radius: 2px;
-  font-family: railway, arial, sans-serif;
+  font-family: "Raleway", arial, sans-serif;
 }
 
 input#date_ {
@@ -560,91 +624,11 @@ input#start_location {
 }
 
 
-// Desktop responsive for search
-@media only screen
-
-and (min-width: 801px)
-and (max-width: 1100px)
-
-{
-
-
-  input#date_ {
-    height: 37px;
-    border-radius: 20px;
-    padding-left: 5px;
-    margin-top: 10px;
-    width: 100%;
-  }
-
-  #search-form {
-    width: 60%;
-    text-align: center;
-    padding: 30px 0px 30px 0px;
-    background-color: rgba(0, 0, 0, 0.4);
-    position: relative;
-    z-index: 20;
-    border-radius: 100px;
-    float: right;
-    padding-right: 40px;
-    padding-left: 40px;
-    margin-top: 10px;
-  }
-
-
-}
-
-// Desktop responsive for search continued
-@media only screen
-
-and (min-width: 1101px)
-and (max-width: 1223px)
-
-{
-
-  input#date_ {
-    height: 37px;
-
-    border-radius: 20px;
-    padding-left: 5px;
-    width: 98%;
-    margin-top: 10px;
-  }
-
-
-  input.search-button {
-      height: 40px;
-      margin-bottom: -5px;
-      border-radius: 10px;
-      margin-right: 100px;
-      margin-top: 10px;
-    }
-
-
-    #search-form {
-      width: 60%;
-      text-align: center;
-      padding: 30px 0px 30px 0px;
-      background-color: rgba(0, 0, 0, 0.4);
-      position: relative;
-      z-index: 20;
-      border-radius: 100px;
-      float: right;
-      padding-right: 40px;
-      padding-left: 40px;
-      margin-top: 10px;
-    }
-
-}
-
-
-
-
 // Desktop responsive for search continued
 @media only screen
 
 and (min-width: 1224px)
-and (max-width: 1439px)
+
 
 {
 
@@ -689,58 +673,6 @@ and (max-width: 1439px)
     margin-left: 40px;
     border-radius: 20px;
     margin-left: 50px;
-}
-
-}
-
-// Desktop responsive for search continued
-@media only screen
-
-and (min-width: 1440px)
-and (max-width: 2560px)
-
-{
-
-  input#date_ {
-    height: 37px;
-
-    border-radius: 20px;
-    padding-left: 5px;
-    display: inline-block;
-    margin-top: 10px;
-    width: 100%;
-  }
-
-  input.search-button {
-      height: 40px;
-      margin-bottom: -5px;
-      border-radius: 10px;
-      margin-right: 100px;
-      margin-top: 10px;
-      margin-left: 10px;
-    }
-
-    #search-form {
-      width: 60%;
-      text-align: center;
-      padding: 30px 0px 30px 0px;
-      background-color: rgba(0, 0, 0, 0.4);
-      position: relative;
-      z-index: 20;
-      border-radius: 100px;
-      float: right;
-      padding-right: 40px;
-      padding-left: 40px;
-      margin-top: 10px;
-    }
-
-    #start_location_wrap {
-    float: left;
-    width: 40%;
-    padding-right: 25px;
-    padding-left: 40px;
-    margin-left: 60px;
-    border-radius: 20px;
 }
 
 }
