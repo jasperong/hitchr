@@ -9,10 +9,15 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @rides = @user.rides
 
-    @bookings = []
     @rides.each do |ride|
-      @bookings = ride.bookings
+      @total_rating = [4]
+      ride.bookings.each do |booking|
+        @total_rating << booking.rating
+      end
     end
+
+    @average_rating = @total_rating.compact.inject(:+) / @total_rating.length
+
   end
 
   def create
