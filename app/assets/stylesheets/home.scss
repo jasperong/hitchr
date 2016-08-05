@@ -93,7 +93,7 @@ div#search_date_wrap {
 input#date_ {
   height: 37px;
   border-radius: 20px;
-  padding-left: 5px;
+  padding-left: 10px;
   float: left;
   width: 31.5em;
 }
@@ -110,7 +110,7 @@ and (max-width: 1100px)
   input#date_ {
     height: 37px;
     border-radius: 20px;
-    padding-left: 5px;
+    padding-left: 10px;
     margin-top: 10px;
     width: 100%;
   }
@@ -129,7 +129,7 @@ and (max-width: 1223px)
     height: 37px;
 
     border-radius: 20px;
-    padding-left: 5px;
+    padding-left: 10px;
     width: 98%;
   }
 
@@ -579,6 +579,7 @@ input#date_ {
     padding-bottom: 9px;
     padding-top: 9px;
     color: #484848;
+    padding-left: 10px;
 }
 
 input#end_location {
@@ -636,7 +637,7 @@ and (min-width: 1224px)
     height: 37px;
 
     border-radius: 20px;
-    padding-left: 5px;
+    padding-left: 10px;
     display: inline-block;
     margin-top: 10px;
     width: 100%;
@@ -673,6 +674,6 @@ and (min-width: 1224px)
     margin-left: 40px;
     border-radius: 20px;
     margin-left: 50px;
-}
+    }
 
 }
