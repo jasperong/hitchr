@@ -13,7 +13,9 @@ class UsersController < ApplicationController
     @total_rating = [4]
     @rides.each do |ride|
       ride.bookings.each do |booking|
-        @total_rating << booking.rating
+        unless booking.rating.nil?
+          @total_rating << booking.rating
+        end
       end
     end
 
