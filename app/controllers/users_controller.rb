@@ -9,8 +9,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @rides = @user.rides
 
+    @total_rating = [4]
     @rides.each do |ride|
-      @total_rating = [4]
       ride.bookings.each do |booking|
         @total_rating << booking.rating
       end
