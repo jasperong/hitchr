@@ -9,23 +9,16 @@ class UsersController < ApplicationController
     @alt_color = true
     @user = User.find(params[:id])
     @rides = @user.rides
-    #FIX THIS BELOW TO SHOW ALL REVIEWS FOR USER
-    #@reviews = @user.rides.all.reviews
 
-    #FIX THIS BELOW TO SHOW ALL My Bookings
-    #and The bookings made for my ride offered
-    @reviews = @user.reviews
-
-    # if @review = Review.find_by(user_id: @user.id)
-    #   @review
-    # else
-      # @review = @user.reviews.build
-    # end
-
-    @bookings = []
+    @total_rating = [4]
     @rides.each do |ride|
-      @bookings = ride.bookings
+      ride.bookings.each do |booking|
+        @total_rating << booking.rating
+      end
     end
+
+    @average_rating = @total_rating.compact.inject(:+) / @total_rating.length
+
   end
 
   def create
@@ -57,6 +50,8 @@ class UsersController < ApplicationController
   def destroy
    @user = User.find(params[:id])
    UserMailer.deleted_user(@user).deliver_later
+   @user.rides.delete_all
+   @user.bookings.delete_all
    @user.destroy
    flash[:success] = "User deleted"
    redirect_to root_path

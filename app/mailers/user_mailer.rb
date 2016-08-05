@@ -61,8 +61,8 @@ class UserMailer < ApplicationMailer
     @ride.bookings.each do |booking|
       email = booking.user.email
       @booking = booking
-      mail(to: email, subject: "Your ride from #{ride.start_location} to
-      #{ride.end_location} on #{@ride.date.strftime("%b %-d, %Y")} has been completed!")
+      mail(to: email, subject: "Your ride from #{@ride.start_location} to
+      #{@ride.end_location} on #{@ride.date.strftime("%b %-d, %Y")} has been completed!")
     end
   end
 

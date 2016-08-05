@@ -1,10 +1,11 @@
 class Booking < ActiveRecord::Base
   belongs_to :ride
   belongs_to :user
-  has_one :review
   validates :seats, presence: true
+  validates_presence_of :rating, :review, on: :update
 
-  validate :enough_seats
+  validate :enough_seats, :booking_to_zero
+
 
   def enough_seats
 
@@ -13,6 +14,12 @@ class Booking < ActiveRecord::Base
     total_seats = arr.inject(:+)
     if total_seats >= ride.seats_available
       errors.add(:booking, "unavailable , there are no more seats left.")
+    end
+  end
+
+  def booking_to_zero
+    if rating == nil
+      rating = 0
     end
   end
 
