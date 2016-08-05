@@ -25,8 +25,14 @@ class User < ActiveRecord::Base
 
 
   def age
-    now = Time.now.utc.to_date
-    now.year - date_of_birth.year
+  #  now = Time.now.utc.to_date
+  #  age = now.year - date_of_birth.year
+    if Date.today >= date_of_birth
+      age = Date.today.year - date_of_birth.year
+    else
+      age = Date.today.year - date_of_birth.year - 1
+    end
+      age
   end
 
   private
