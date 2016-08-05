@@ -1,7 +1,4 @@
 
-
-
-
 * {
     margin: 0;
     padding: 0;
@@ -11,7 +8,7 @@
 
 body {
   width: 100%;
-  background-color: #eee;
+  background-color: #f3fffa;
 }
 
 .first-img {
@@ -191,7 +188,7 @@ h3#tagline {
 }
 
 h3.icon {
-    color: white;
+    color: grey;
     font-weight: 100;
     font-size: 24px;
     display: inline-block;
@@ -303,20 +300,22 @@ h3.info-3 {
 }
 
 #description {
-    color: white;
+    color: grey;
     font-size: 40px;
     padding-top: 16px;
 }
 
 #content_1 {
   position: relative;
-  background-color: #eee;
+  background-color: #f3fffa;
   // @media (min-width: 820px) {
   //   margin-top: -51px;
   // }
   height: 750px;
 
 }
+
+
 
 
 #wall_2 {
@@ -436,6 +435,11 @@ h3.info-3 {
 
 /* sadie */
 
+figure.effect-sadie {
+
+background-color: #dae5e1;
+}
+
 figure.effect-sadie figcaption::before {
   position: absolute;
   top: 0;
@@ -455,12 +459,12 @@ figure.effect-sadie figcaption:hover {
 
 figure.effect-sadie h2 {
   padding-top: 25px;
-  font-family: "Railway", "Arial", sans-serif;
+  font-family: "Raleway", "Arial", sans-serif;
   position: absolute;
   top: 50%;
   left: 0;
   width: 100%;
-  color: #a6a4a4;
+  color: grey;
   -webkit-transition: -webkit-transform 0.35s, color 0.35s;
   transition: transform 0.35s, color 0.35s;
   -webkit-transform: translate3d(0,-50%,0);
@@ -485,7 +489,7 @@ figure.effect-sadie p {
 }
 
 figure.effect-sadie:hover h2 {
-  color: white;
+  color: grey;
   -webkit-transform: translate3d(0,-50%,0) translate3d(0,-40px,0);
   transform: translate3d(0,-50%,0) translate3d(0,-40px,0);
 }
@@ -506,7 +510,7 @@ input.search-button {
   font-size: 15px;
   padding: 9px 27px;
   border-radius: 2px;
-  font-family: railway, arial, sans-serif;
+  font-family: "Raleway", arial, sans-serif;
 }
 
 input#date_ {
