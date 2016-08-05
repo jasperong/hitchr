@@ -14,22 +14,22 @@
             <div id="search-form" >
               <%= form_tag search_path, method: "get", class: "search" do %>
 
-              
+
 
                 <div class="search_wrap" id="start_location_wrap">
                   <div class="search_wrap_icon"><%= image_tag "Start_4Real.png" %></div>
-                  <%= text_field_tag :start_location, params[:start_location], placeholder: "Starting from?" %>
+                  <%= text_field_tag :start_location, params[:start_location], placeholder: "From?" %>
                 </div>
 
                 <div class="search_wrap" id="end_location_wrap">
                   <div class="search_wrap_icon"><%= image_tag "end_for_real.png" %></div>
-                  <%= text_field_tag :end_location, params[:end_location], placeholder: "Where to?" %>
+                  <%= text_field_tag :end_location, params[:end_location], placeholder: "To?" %>
                 </div>
 
 
+              <%= date_field :date, params[:date], min: Date.today, include_blank: true, class: 'date-search' %>
 
               <div id="search_date_wrap">
-                <%= date_field :date, params[:date], min: Date.today, include_blank: true, class: 'date-search' %>
                 <%= submit_tag "Search", name: nil, class: "search-button" %>
                 <% end %>
               </div>
