@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @alt_color = true
     @user = User.find(params[:id])
     @rides = @user.rides
 

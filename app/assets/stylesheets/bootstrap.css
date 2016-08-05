@@ -133,6 +133,22 @@ input[type="submit"] {
   -webkit-appearance: button;
   cursor: pointer;
 }
+
+.field input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+  border-color: #00df88;
+  border-bottom-color: #109a64;
+  background-color: #00df88;
+  color: #484848;
+  font-size: 15px;
+  padding: 9px 27px;
+  border-radius: 2px;
+  font-family: "Raleway", arial, sans-serif;
+  width: 100%;
+  margin-top: 5px;
+}
+
 button[disabled],
 html input[disabled] {
   cursor: default;
