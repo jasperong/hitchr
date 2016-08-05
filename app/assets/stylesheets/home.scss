@@ -1,7 +1,4 @@
 
-
-
-
 * {
     margin: 0;
     padding: 0;
@@ -235,7 +232,7 @@ h3#tagline {
 }
 
 h3.icon {
-    color: white;
+    color: grey;
     font-weight: 100;
     font-size: 24px;
     display: inline-block;
@@ -347,7 +344,7 @@ h3.info-3 {
 }
 
 #description {
-    color: white;
+    color: grey;
     font-size: 40px;
     padding-top: 16px;
 }
@@ -481,6 +478,11 @@ h3.info-3 {
 
 /* sadie */
 
+figure.effect-sadie {
+
+background-color: #dae5e1;
+}
+
 figure.effect-sadie figcaption::before {
   position: absolute;
   top: 0;
@@ -500,12 +502,16 @@ figure.effect-sadie figcaption:hover {
 
 figure.effect-sadie h2 {
   padding-top: 25px;
+<<<<<<< HEAD
   font-family: "raleway", "Arial", sans-serif;
+=======
+  font-family: "Raleway", "Arial", sans-serif;
+>>>>>>> 16fde2dee2e5c1050e8ed879d97ea6b8c02ab9ed
   position: absolute;
   top: 50%;
   left: 0;
   width: 100%;
-  color: #a6a4a4;
+  color: grey;
   -webkit-transition: -webkit-transform 0.35s, color 0.35s;
   transition: transform 0.35s, color 0.35s;
   -webkit-transform: translate3d(0,-50%,0);
@@ -530,7 +536,7 @@ figure.effect-sadie p {
 }
 
 figure.effect-sadie:hover h2 {
-  color: white;
+  color: grey;
   -webkit-transform: translate3d(0,-50%,0) translate3d(0,-40px,0);
   transform: translate3d(0,-50%,0) translate3d(0,-40px,0);
 }
