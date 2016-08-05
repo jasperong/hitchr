@@ -5,6 +5,7 @@ class RidesController < ApplicationController
   end
 
   def show
+    @alt_color = true
     @ride = Ride.find(params[:id])
     @booking = @ride.bookings.build
   end

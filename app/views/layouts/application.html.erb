@@ -36,7 +36,7 @@
        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
    <![endif]-->
 </head>
-<body>
+<body class="<%= @alt_color ? 'background' : ''%>">
   <div class="popup" data-popup="popup-1">
     <div class="popup-inner2">
         <%= render partial: "sessions/form", object: @user %>
@@ -67,7 +67,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/"><img src="<%= asset_path "Untitled-1.png"%>" alt="Hitchr" width="100px" /></a>
+          <a class="navbar-brand" href="/"><img class="image_class" src="<%= asset_path "Untitled-1.png"%>" alt="Hitchr" width="100px" /></a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
