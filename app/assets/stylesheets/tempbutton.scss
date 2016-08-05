@@ -9,7 +9,7 @@ and (max-width: 374px) {
   input#user_avatar {
       border: 1px black solid;
       border-radius: 2px;
-      width: 105px;
+      width: 100px;
       height: 10%;
       margin: 0;
       margin-left: 50px;
@@ -27,7 +27,7 @@ and (max-width: 424px) {
   input#user_avatar {
     border: 1px black solid;
     border-radius: 2px;
-    width: 105px;
+    width: 100px;
     height: 10%;
     margin: 0;
     margin-left: 75px;
@@ -45,7 +45,7 @@ and (max-width: 610px) {
   input#user_avatar {
     border: 1px black solid;
     border-radius: 2px;
-    width: 105px;
+    width: 100px;
     height: 10%;
     margin: 0;
     margin-left: 95px;
@@ -81,7 +81,7 @@ and (max-width: 1024px) {
 
   input#user_avatar {
     border: 1px black solid;
-    width: 124px;
+    width: 115px;
     border-radius: 2px;
     padding-top: 9px;
     padding-left: 14px;
@@ -89,5 +89,7 @@ and (max-width: 1024px) {
     height: 10%;
     border-bottom: 3px gray solid;
     border-right: 3px gray solid;
+    margin: 0;
+    margin-left: 245px;
   }
 }
