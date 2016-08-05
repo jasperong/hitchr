@@ -134,7 +134,7 @@ input[type="submit"] {
   cursor: pointer;
 }
 
-.field .input[type="submit"]{
+.field input[type="submit"] {
   -webkit-appearance: button;
   cursor: pointer;
   border-color: #00df88;
@@ -147,8 +147,8 @@ input[type="submit"] {
   font-family: "Raleway", arial, sans-serif;
   width: 100%;
   margin-top: 5px;
-
 }
+
 button[disabled],
 html input[disabled] {
   cursor: default;
