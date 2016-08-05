@@ -28,7 +28,7 @@ class BookingsController < ApplicationController
     if @booking.update_attributes(review_params)
       redirect_to user_path(@booking.ride.user)
     else
-      flash[:notice] = "You Suck, Review Failed"
+      flash[:notice] = "Review Failed, Make sure you have Review and Rating"
     end
   end
 

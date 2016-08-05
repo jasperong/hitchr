@@ -1,7 +1,7 @@
 $(function() {
 
   $(".rateYo").rateYo({
-    fullStar: true,
+    halfStar: true,
     multiColor: {
       "startColor": "#FF0000", //RED
       "endColor"  : "#00FF00"  //GREEN
@@ -44,9 +44,9 @@ $(function() {
    $('.stars-readonly').each(function(index){
      $(this).rateYo("option", "readOnly", true);
 
-    //  $(this).rateYo(
-    //    "option", "rating", $(this).data('rating')
-    //  )
+     $(this).rateYo(
+       "option", "rating", $(this).data('rating')
+     )
    });
 
 });
