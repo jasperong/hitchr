@@ -88,8 +88,9 @@
               <span class="input-group-btn">
                 <span class="btn btn-file">
                  <%= f.label "Choose a picture", class: "btn btn-default btn-file" %><br />
-                 <%= f.file_field :avatar, "data-parsley-pattern" => "/\.(jpe?g|png)$/i", class: "btn btn-default btn-file" %></span>
-                 <p class="form_warning">Your picture (jpg/jpeg/png) should be less than 3MB.</p>
+                 <%= f.file_field :avatar, "data-parsley-pattern" => "/\.(jpe?g|png)$/i",
+                 class: "btn btn-default btn-file", "data-parsley-pattern-message" =>
+                   "jpg/png files only please." %></span>
               </span>
             </div>
           </div>
