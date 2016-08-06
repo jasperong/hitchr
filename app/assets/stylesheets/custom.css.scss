@@ -53,7 +53,8 @@ input#password, input#email {
 
 
 li.parsley-type,
-li.parsley-required {
+li.parsley-required,
+li.parsley-minlength {
     color: #B94A48;
     font-family: "Raleway", arial, sans-serif;
     font-size: 1.3em;
