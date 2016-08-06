@@ -99,6 +99,10 @@ and (max-width: 767px) {
 
    }
 
+   #content_1 {
+      margin-bottom: 50px;
+   }
+
    .icon-home > img {
      width: 25%;
    }
@@ -106,6 +110,11 @@ and (max-width: 767px) {
    .all-icons {
      margin: 0;
      width: 315px;
+     padding-left: 60px;
+   }
+
+   .icon_styling {
+      padding-top: 20px;
    }
 
     h2.info-1 {
@@ -135,7 +144,11 @@ and (max-width: 767px) {
 
   .grid figure {
     margin: 10px;
-    min-width: 295px;
+    min-width: 300px;
+  }
+
+  .grid {
+    margin-left: 30px;
   }
 
 
@@ -231,6 +244,8 @@ and (max-width: 767px) {
         list-style: none;
         text-align: center;
       }
+
+
 }
 
 
