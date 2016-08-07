@@ -286,6 +286,55 @@ and (max-width: 833px)
 
 }
 
+///////////// Style Rides for Edit User ////////////
+
+
+
+
+@media only screen and (min-width: 768px) {
+
+ #edit_style {
+     margin-left: auto;
+     margin-right: auto;
+     width: 30%;
+   }
+
+   #edit_form {
+     margin: 0 auto;
+     width: auto;
+  }
+
+}
+
+@media only screen and (min-width: 1024px) {
+
+ #edit_style {
+     margin-left: auto;
+     margin-right: auto;
+     width: 30%;
+   }
+
+   #edit_form {
+     margin: 0 auto;
+     width: auto;
+  }
+
+}
+
+@media only screen and (min-width: 1440px) {
+
+ #edit_style {
+     margin-left: auto;
+     margin-right: auto;
+     width: 30%;
+   }
+
+   #edit_form {
+     margin: 0 auto;
+     width: auto;
+  }
+
+}
 
 ///////////// Style Rides I'm Offering Section ////////////
 
