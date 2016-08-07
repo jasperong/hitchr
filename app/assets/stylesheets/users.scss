@@ -76,6 +76,7 @@ a.button_style {
 .offer-text {
   padding-top: 10px;
   padding-left: 20px;
+  padding-right: 20px;
   color: #484848;
   font-family: arial, sans-serif;
   display: inline-block;
@@ -101,4 +102,188 @@ a.button_style {
   padding: 9px 27px;
   border-radius: 2px;
   font-family: arial, sans-serif;
+}
+
+// Responsive for mid-size 884px
+@media only screen
+
+and (max-width: 884px)
+
+{
+
+  .offer-ride {
+    height: 260px;
+  }
+
+  .offer-text {
+    padding-top: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+
+  }
+
+  .offer-body {
+    padding-top: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+
+  }
+
+  .offer-button {
+    margin-left: 30px;
+
+  }
+
+}
+
+// Responsive for mid-size 833px
+@media only screen
+
+and (max-width: 833px)
+
+{
+
+  .offer-ride {
+    height: 310px;
+  }
+
+  .offer-text {
+    padding-top: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+
+  }
+
+  .offer-body {
+    padding-top: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 20px;
+
+  }
+
+  .offer-button {
+    margin-left: 40px;
+
+  }
+
+  // Responsive for mid-size
+  @media only screen
+
+  and (max-width: 774px)
+
+  {
+
+    .offer-ride {
+      height: 240px;
+    }
+
+  }
+
+
+  // Responsive for mid-size 704px
+  @media only screen
+
+  and (max-width: 704px)
+
+  {
+
+    .offer-ride {
+      height: 220px;
+    }
+
+  }
+
+  // Responsive for mid-size 506px
+  @media only screen
+
+  and (max-width: 506px)
+
+  {
+
+    .offer-ride {
+      height: 260px;
+    }
+
+  }
+
+  // Responsive for mid-size 479px
+  @media only screen
+
+  and (max-width: 479px)
+
+  {
+
+    .offer-ride {
+      height: 290px;
+    }
+
+  }
+
+  // Responsive for mid-size 406px
+  @media only screen
+
+  and (max-width: 406px)
+
+  {
+
+    .offer-ride {
+      height: 340px;
+    }
+
+  }
+
+
+  // Responsive for mid-size 369px
+  @media only screen
+
+  and (max-width: 369px)
+
+  {
+
+    .offer-ride {
+      height: 380px;
+    }
+
+  }
+
+  // Responsive for mid-size 344px
+  @media only screen
+
+  and (max-width: 344px)
+
+  {
+
+    .offer-ride {
+      height: 420px;
+    }
+
+    .offer-text{
+      display:none;
+    }
+
+  }
+
+
+  // Responsive for mid-size 344px
+  @media only screen
+
+  and (max-width: 320px)
+
+  {
+
+    .offer-ride {
+      height: 280px;
+      width: 220px;
+    }
+
+    .offer-text{
+      display:none;
+    }
+
+  }
+
+
+
 }
