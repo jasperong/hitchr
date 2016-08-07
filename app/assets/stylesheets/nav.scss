@@ -92,9 +92,15 @@
 and (min-width: 320px)
 and (max-width: 767px) {
 
+  /* home responsiveness*/
+
    .icon-home {
      display: table-row-group;
 
+   }
+
+   #content_1 {
+      margin-bottom: 50px;
    }
 
    .icon-home > img {
@@ -104,6 +110,11 @@ and (max-width: 767px) {
    .all-icons {
      margin: 0;
      width: 315px;
+     padding-left: 60px;
+   }
+
+   .icon_styling {
+      padding-top: 20px;
    }
 
     h2.info-1 {
@@ -133,7 +144,11 @@ and (max-width: 767px) {
 
   .grid figure {
     margin: 10px;
-    min-width: 295px;
+    min-width: 300px;
+  }
+
+  .grid {
+    margin-left: 30px;
   }
 
 
@@ -195,6 +210,42 @@ and (max-width: 767px) {
     input.search-button {
       margin-right: 45px;
     }
+
+    /* footer responsiveness */
+
+    .footer {
+      height: 300px;
+      position: relative;
+      width: 100%;
+      background-color: gray;
+      margin-top: 400px;
+    }
+
+      .copywrite {
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+        margin-bottom: 10px;
+      }
+
+      .copywrite_h1 {
+        text-align: center;
+        margin:0 auto;
+        font-size: 1.2em;
+        margin: 30px;
+      }
+
+      .links_footer {
+        margin: 0 auto;
+        padding: 50px;
+      }
+
+      #link_container {
+        list-style: none;
+        text-align: center;
+      }
+
+
 }
 
 
