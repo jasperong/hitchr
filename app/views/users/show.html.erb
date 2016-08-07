@@ -79,7 +79,7 @@
 
           <% if ride.completed == false %>
             <i><%= link_to "Cancel Ride", ride_path(ride), :method => :delete %></i><br />
-            <% if ride.date < Date.today %>
+            <% if ride.date < Date.today %> -->
               <i><%= link_to "Ride Complete", ride_completed_path(ride), :method => :delete %></i><br />
             <% end %>
           <% end %>
