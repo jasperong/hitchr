@@ -1,5 +1,6 @@
 class UserMailer < ApplicationMailer
-
+  include SendGrid
+  sendgrid_unique_args from: %("Hitchr" "hitchr.ca@gmail.com")
   # 1. Setup a welcome email for new users
   def welcome(user)
     @user = user
