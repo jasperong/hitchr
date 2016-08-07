@@ -80,7 +80,7 @@
           <p><%= ride.date.strftime("%b %-d, %Y") %> | <%= ride.time.strftime("%-l:%M %p") %></p>
           <p><b>Seats Available: </b><%= ride.seats_available - total_seats < 0 ? 0 : ride.seats_available - total_seats %></p>
           <p><b>Price:</b> $<%= ride.price %></p>
-          <p>"<%= ride.comments %>"</p>
+          <p><i><%= ride.comments %></i></p>
           <p id="status"><b>Status: </b> <%= ride.completed ? "Complete" : "Not Complete" %></p>
 
           <% if ride.completed == false %>
@@ -91,23 +91,25 @@
           <% end %>
           <br />
 
-            <h5>Hitches on this ride: </h5>
+            <h5 id="hitches">Hitches on this ride: </h5>
             <ul>
-
-                <% ride.bookings.each do |booking| %>
-
                 <li>
-                <% if booking.user %>
-                  <p><%= link_to booking.user.first_name.capitalize, booking.user  %></p>
+
+                <% if ride.bookings.any? %>
+                  <% ride.bookings.each do |booking| %>
+                    <p><%= link_to booking.user.first_name.capitalize, booking.user  %></p>
+                    <p><%=  booking.seats %></p>
+                    <p><%=  booking.created_at %></p>
+                      <% if ride.completed == false %>
+                        <%= link_to "Decline Booking", booking_path(booking), :method => :delete %><br />
+                      <% end %>
+                    <% end %>
+                  <% else  %>
+                    <p>Sorry, nobody's booked a seat yet!</p>
                 <% end %>
-                  <p><%=  booking.seats %></p>
-                  <p><%=  booking.created_at %></p>
-                  <% if ride.completed == false %>
-                    <%= link_to "Decline Booking", booking_path(booking), :method => :delete %><br />
-                <% end %>
+
               </li><br><br>
 
-          <% end %>
           </ul>
         </li>
       </div>
