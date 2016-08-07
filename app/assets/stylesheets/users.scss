@@ -77,3 +77,19 @@ a.button_style {
   .save_button {
     width: 50%;
   }
+
+
+  @media only screen and (min-width: 1440px) {
+
+#edit_style {
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+  }
+
+  #edit_form {
+    margin: 0 auto;
+    width: auto;
+  }
+
+}
