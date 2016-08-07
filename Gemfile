@@ -60,6 +60,7 @@ group :development, :test do
 
   gem 'letter_opener'
 
+  gem 'sendgrid'
 end
 
 group :development do
@@ -75,6 +76,5 @@ end
 group :production do
   gem 'rails_12factor'
   gem 'puma'
-  gem 'sendgrid'
 
 end
