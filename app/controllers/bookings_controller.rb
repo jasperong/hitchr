@@ -12,7 +12,7 @@ class BookingsController < ApplicationController
     arr = [0]
     @booking.ride.bookings.each { |booking| arr << booking.seats }
     total_seats = arr.compact.inject(:+)
-    @booking.rating = 0
+    # @booking.rating = 0
 
     if @booking.save && @booking.seats <= total_seats
       UserMailer.seat_confirmation(@ride, @booking).deliver_later

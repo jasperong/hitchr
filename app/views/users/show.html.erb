@@ -28,12 +28,13 @@
               <%= @user.email %><br />
               <%= @user.gender %><br />
               Age: <%= @user.age %><br />
+
               <%= number_to_phone(@user.phone_number, area_code: true) %><br>
             </div>
             <div class="user_links">
               <% if current_user == @user %>
-                <%= link_to "Edit profile", edit_user_path(@user) %><br>
-                <%= link_to "Delete User profile", user_path(@user), :method => :delete, data: {confirm: "Delete User: #{@user.first_name.capitalize} #{@user.last_name.capitalize}?"} %>
+                <%= link_to "Edit profile", edit_user_path(@user), class: "button_style" %><br>
+              </br><%= link_to "Delete User profile", user_path(@user), class: "button_style", :method => :delete, data: {confirm: "Delete User: #{@user.first_name.capitalize} #{@user.last_name.capitalize}?"} %>
               <% end %>
             </div>
           </div>

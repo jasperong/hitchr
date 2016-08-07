@@ -18,16 +18,16 @@
 
                 <div class="search_wrap" id="start_location_wrap">
                   <div class="search_wrap_icon"><%= image_tag "Start_4Real.png" %></div>
-                  <%= text_field_tag :start_location, params[:start_location], placeholder: "From?" %>
+                  <%= text_field_tag :start_location, params[:start_location], placeholder: "Start City" %>
                 </div>
 
                 <div class="search_wrap" id="end_location_wrap">
                   <div class="search_wrap_icon"><%= image_tag "end_for_real.png" %></div>
-                  <%= text_field_tag :end_location, params[:end_location], placeholder: "To?" %>
+                  <%= text_field_tag :end_location, params[:end_location], placeholder: "End City" %>
                 </div>
 
 
-              <%= date_field :date, params[:date], min: Date.today, include_blank: true, class: 'date-search' %>
+              <%= date_field :date, params[:date], min: Date.today, include_blank: true, class: 'date-search', placeholder: "yyyy-mm-dd" %>
 
               <div id="search_date_wrap">
                 <%= submit_tag "Search", name: nil, class: "search-button" %>

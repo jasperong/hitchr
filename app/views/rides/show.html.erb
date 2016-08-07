@@ -27,20 +27,17 @@
             </div>
         </div>
         <div class="comments_style">
-          <% rating_total = [0] %>
-          <% @ride.user.bookings.each do |booking| %>
-            <% rating_total << booking.rating %>
-          <% end %>
-          <% rating_average = rating_total.compact.inject(:+) / rating_total.count - 1 %>
-          <div class="rateYo stars-readonly" data-rating=<%= rating_average %>></div>
-            <%= rating_total.count - 1%> ratings
+          <div class="rateYo stars-readonly" data-rating=<%= @average_rating %>></div>
+            <%= @total_rating.length %> ratings
           <br />
 
           <h3>Comments: </h3><p> <%= @ride.comments %></p><br>
         </div>
         <div class="back_to_rides">
-          <% unless @ride.user == current_user && @ride.completed == true%>
-            <%= render "bookings/form" %>
+          <% if current_user %>
+            <% unless @ride.user == current_user && @ride.completed == true%>
+              <%= render "bookings/form" %>
+            <% end %>
           <% end %>
           <%= link_to "Back to Home", root_path, class: "back_to_rides_a"%>
         </div>
