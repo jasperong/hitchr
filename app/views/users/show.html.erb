@@ -80,7 +80,14 @@
           <p><%= ride.date.strftime("%b %-d, %Y") %> | <%= ride.time.strftime("%-l:%M %p") %></p>
           <p><b>Seats Available: </b><%= ride.seats_available - total_seats < 0 ? 0 : ride.seats_available - total_seats %></p>
           <p><b>Price:</b> $<%= ride.price %></p>
-          <p><i><%= ride.comments %></i></p>
+
+          <% if ride.comments.present? == true %>
+          <p id="comment">"<%= ride.comments %>"</p>
+          <% if ride.comments == false  %>
+          <p></p>
+          <% end %>
+          <% end %>
+
           <p id="status"><b>Status: </b> <%= ride.completed ? "Complete" : "Not Complete" %></p>
 
           <% if ride.completed == false %>
@@ -105,7 +112,7 @@
                       <% end %>
                     <% end %>
                   <% else  %>
-                    <p>Sorry, nobody's booked a seat yet!</p>
+                    <p id="sorry">Sorry, nobody's booked a seat yet!</p>
                 <% end %>
 
               </li><br><br>
