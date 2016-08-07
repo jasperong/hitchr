@@ -46,6 +46,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
   gem 'delayed_job_active_record'
   gem 'judge'
   gem 'parsley-rails'
+  gem 'sendgrid'
 
 group :development, :test do
 
@@ -60,7 +61,6 @@ group :development, :test do
 
   gem 'letter_opener'
 
-  gem 'sendgrid'
 end
 
 group :development do
