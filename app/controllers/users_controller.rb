@@ -13,12 +13,13 @@ class UsersController < ApplicationController
     @total_rating = [4]
     @rides.each do |ride|
       ride.bookings.each do |booking|
-        @total_rating << booking.rating
+        unless booking.rating.nil?
+          @total_rating << booking.rating
+        end
       end
     end
 
-    @average_rating = @total_rating.compact.inject(:+) / @total_rating.length
-
+      @average_rating = @total_rating.compact.inject(:+) / @total_rating.length
   end
 
   def create

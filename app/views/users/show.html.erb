@@ -27,7 +27,8 @@
               <p class="user_name"><%= @user.first_name.capitalize %> | <%= @user.last_name.capitalize %><br />
               <%= @user.email %><br />
               <%= @user.gender %><br />
-              <%= @user.date_of_birth.strftime("%b %-d, %Y") %><br />
+              Age: <%= @user.age %><br />
+
               <%= number_to_phone(@user.phone_number, area_code: true) %><br>
             </div>
             <div class="user_links">
@@ -160,7 +161,7 @@
           <ul>
             <li><h5><b><%= booking.ride.start_location %> to <%= booking.ride.end_location %></b></h5>
               <% if booking.ride.user %>
-              <p><b>Your Driver:</b> <%= booking.ride.user.first_name.capitalize %> <%= booking.ride.user.last_name.capitalize %><br>
+                <p><b>Your Driver:</b> <%= link_to "#{booking.ride.user.first_name.capitalize} #{booking.ride.user.last_name.capitalize}", user_path(booking.ride.user) %><br>
                 <% end %>
                  <b>Date:</b> <%= booking.ride.date.strftime("%b %-d, %Y") %><br>
                  <b>Seats You Requested:</b> <%= booking.seats %></p><br>
