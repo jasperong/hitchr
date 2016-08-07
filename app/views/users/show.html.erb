@@ -138,7 +138,7 @@
                   <p><b>Your Driver:</b> <%= booking.ride.user.first_name.capitalize %> <%= booking.ride.user.last_name.capitalize %><br>
                 <% end %>
                      <b>Date:</b> <%= booking.ride.date.strftime("%b %-d, %Y") %> | <%= booking.ride.time.strftime("%-l:%M %p")  %> <br>
-                     <b>Seats You Requested:</b> <%= booking.seats %></p>
+                     <b>Seats You Requested:</b> <%= booking.seats %></p></br>
                      <p><%= link_to "View Ride Details", booking.ride, :class => "view-ride-button" %></p><br />
 
                 <% if current_user == booking.user %>
