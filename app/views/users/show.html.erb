@@ -65,22 +65,23 @@
         friend!</p>
           <%= link_to "Offer a Ride", new_ride_path(@user), :class => "offer-button"%><br>
     </div>
-    <br /> <h4>My Rides Offered: </h4>
+    <br /> <h3 id="midline">Rides I'm Offering: </h3>
+
+  <ul>
     <% @rides.reverse.each do |ride| %>
       <% arr = [0] %>
       <% ride.bookings.each { |booking| arr << booking.seats} %>
       <% total_seats = arr.compact.inject(:+) %>
 
-      <ul>
-        <li>
-          <p><b>From:</b> <%= ride.start_location %></p>
-          <p><b>To:</b> <%= ride.end_location %></p>
-          <p><b>Date:</b> <%= ride.date.strftime("%b %-d, %Y") %></p>
-          <p><b>Time:</b> <%= ride.time.strftime("%-l:%M %p") %></p>
-          <p><b>Seats Available:</b><%= ride.seats_available - total_seats < 0 ? 0 : ride.seats_available - total_seats %></p>
+    <div>
+        <li class="offered-ride">
+          <h4><%= ride.start_location %> - <%= ride.end_location %></h4>
+
+          <p><%= ride.date.strftime("%b %-d, %Y") %> | <%= ride.time.strftime("%-l:%M %p") %></p>
+          <p><b>Seats Available: </b><%= ride.seats_available - total_seats < 0 ? 0 : ride.seats_available - total_seats %></p>
           <p><b>Price:</b> $<%= ride.price %></p>
-          <p><b>Comments:</b> <%= ride.comments %></p>
-          <p><b>Status: </b> <%= ride.completed ? "Complete" : "Not Complete" %></p>
+          <p>"<%= ride.comments %>"</p>
+          <p id="status"><b>Status: </b> <%= ride.completed ? "Complete" : "Not Complete" %></p>
 
           <% if ride.completed == false %>
             <i><%= link_to "Cancel Ride", ride_path(ride), :method => :delete %></i><br />
@@ -92,8 +93,10 @@
 
             <h5>Hitches on this ride: </h5>
             <ul>
-              <li>
+
                 <% ride.bookings.each do |booking| %>
+
+                <li>
                 <% if booking.user %>
                   <p><%= link_to booking.user.first_name.capitalize, booking.user  %></p>
                 <% end %>
@@ -103,12 +106,15 @@
                     <%= link_to "Decline Booking", booking_path(booking), :method => :delete %><br />
                 <% end %>
               </li><br><br>
-            </ul>
+
           <% end %>
+          </ul>
         </li>
-        <p>------------------------------------------------------</p>
-      </ul>
+      </div>
+
+
     <% end %>
+    </ul>
   </div>
 
     <div class="tab" id="tab4">

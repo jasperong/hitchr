@@ -66,7 +66,7 @@ a.button_style {
 }
 
 
-// Style the offer ride section
+////////// Style the offer ride section ///////////////////
 
 .offer-ride {
   background-color: #fbfbfb;
@@ -284,6 +284,30 @@ and (max-width: 833px)
 
   }
 
+}
 
 
+///////////// Style Rides I'm Offering Section ////////////
+
+ul {
+  list-style: none;
+}
+
+li.offered-ride {
+  background-color: #fbfbfb;
+  margin-left: -40px;
+  margin-bottom: 40px;
+  padding: 40px;
+  color: #484848;
+}
+
+h3#midline {
+  font-size: 24px;
+  margin-bottom: 40px;
+  color: #484848;
+}
+
+p#status {
+    border-top: black solid 1px;
+    padding-top: 10px;
 }
