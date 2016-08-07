@@ -19,8 +19,7 @@ class UsersController < ApplicationController
       end
     end
 
-    @average_rating = @total_rating.compact.inject(:+) / @total_rating.length
-
+      @average_rating = @total_rating.compact.inject(:+) / @total_rating.length
   end
 
   def create
