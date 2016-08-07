@@ -58,7 +58,13 @@
   </div>
 
   <div class="tab" id="tab3">
-      <%= link_to "Offer a Ride", new_ride_path(@user)%><br>
+    <div class="offer-ride">
+      <h2 class="offer-text">Give someone a lift</h2>
+      <p class="offer-body">Have some spare seats in the car? Offer a ride to
+        save that gas money, cut back on carbon emissions, and make a new
+        friend!</p>
+          <%= link_to "Offer a Ride", new_ride_path(@user), :class => "offer-button"%><br>
+    </div>
     <br /> <h4>My Rides Offered: </h4>
     <% @rides.reverse.each do |ride| %>
       <% arr = [0] %>

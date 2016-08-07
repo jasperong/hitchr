@@ -64,3 +64,41 @@ a.button_style {
     font-size: 16px;
     padding: 4px;
 }
+
+
+// Style the offer ride section
+
+.offer-ride {
+  background-color: #fbfbfb;
+  height: 225px;
+}
+
+.offer-text {
+  padding-top: 10px;
+  padding-left: 20px;
+  color: #484848;
+  font-family: arial, sans-serif;
+  display: inline-block;
+}
+
+.offer-body {
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  color: #484848;
+  font-family: arial, sans-serif;
+  display: inline-block;
+}
+
+.offer-button {
+  margin-left: 20px;
+  border-color: #00df88;
+  border-bottom-color: #109a64;
+  background-color: #00df88;
+  color: #484848;
+  font-size: 15px;
+  padding: 9px 27px;
+  border-radius: 2px;
+  font-family: arial, sans-serif;
+}
