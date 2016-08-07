@@ -11,6 +11,7 @@ class Ride < ActiveRecord::Base
     .where("cast(date as text) ILIKE ?", "%#{date.to_date}%")
   end
 
+
   def correct_time
     if date.past?
       errors.add(:date, "You cannot make a ride in the past")
