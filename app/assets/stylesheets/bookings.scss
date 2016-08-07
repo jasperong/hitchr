@@ -1,3 +1,25 @@
 // Place all the styles related to the bookings controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.view-ride-button {
+    font-size: 15px;
+    padding: 9px 27px;
+    border-radius: 2px;
+    font-family: arial, sans-serif;
+    border-color: #00df88;
+    border-bottom-color: #109a64;
+    background-color: #00df88;
+    color: #fff;
+
+}
+
+.bookings-show{
+  background-color: #fbfbfb;
+  margin-left: -40px;
+  margin-bottom: 40px;
+  padding: 40px;
+  color: #484848;
+  padding-top: 10px;
+  margin-top: 40px;
+}

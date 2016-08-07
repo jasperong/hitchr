@@ -64,3 +64,294 @@ a.button_style {
     font-size: 16px;
     padding: 4px;
 }
+
+
+////////// Style the offer ride section ///////////////////
+
+.offer-ride {
+  background-color: #fbfbfb;
+  height: 225px;
+}
+
+.offer-text {
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: #484848;
+  font-family: arial, sans-serif;
+  display: inline-block;
+}
+
+.offer-body {
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  color: #484848;
+  font-family: arial, sans-serif;
+  display: inline-block;
+}
+
+.offer-button, {
+  margin-left: 20px;
+  border-color: #00df88;
+  border-bottom-color: #109a64;
+  background-color: #00df88;
+  color: #fff;
+  font-size: 15px;
+  padding: 9px 27px;
+  border-radius: 2px;
+  font-family: arial, sans-serif;
+}
+
+// Responsive for mid-size 884px
+@media only screen
+
+and (max-width: 884px)
+
+{
+
+  .offer-ride {
+    height: 260px;
+  }
+
+  .offer-text {
+    padding-top: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+
+  }
+
+  .offer-body {
+    padding-top: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+
+  }
+
+  .offer-button {
+    margin-left: 30px;
+
+  }
+
+}
+
+// Responsive for mid-size 833px
+@media only screen
+
+and (max-width: 833px)
+
+{
+
+  .offer-ride {
+    height: 310px;
+  }
+
+  .offer-text {
+    padding-top: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+
+  }
+
+  .offer-body {
+    padding-top: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 20px;
+
+  }
+
+  .offer-button {
+    margin-left: 40px;
+
+  }
+
+  // Responsive for mid-size
+  @media only screen
+
+  and (max-width: 774px)
+
+  {
+
+    .offer-ride {
+      height: 240px;
+    }
+
+  }
+
+
+  // Responsive for mid-size 704px
+  @media only screen
+
+  and (max-width: 704px)
+
+  {
+
+    .offer-ride {
+      height: 220px;
+    }
+
+  }
+
+  // Responsive for mid-size 506px
+  @media only screen
+
+  and (max-width: 506px)
+
+  {
+
+    .offer-ride {
+      height: 260px;
+    }
+
+  }
+
+  // Responsive for mid-size 479px
+  @media only screen
+
+  and (max-width: 479px)
+
+  {
+
+    .offer-ride {
+      height: 290px;
+    }
+
+  }
+
+  // Responsive for mid-size 406px
+  @media only screen
+
+  and (max-width: 406px)
+
+  {
+
+    .offer-ride {
+      height: 340px;
+    }
+
+  }
+
+
+  // Responsive for mid-size 369px
+  @media only screen
+
+  and (max-width: 369px)
+
+  {
+
+    .offer-ride {
+      height: 380px;
+    }
+
+  }
+
+  // Responsive for mid-size 344px
+  @media only screen
+
+  and (max-width: 344px)
+
+  {
+
+    .offer-ride {
+      height: 420px;
+    }
+
+    .offer-text{
+      display:none;
+    }
+
+  }
+
+
+  // Responsive for mid-size 344px
+  @media only screen
+
+  and (max-width: 320px)
+
+  {
+
+    .offer-ride {
+      height: 280px;
+      width: 220px;
+    }
+
+    .offer-text{
+      display:none;
+    }
+
+  }
+
+}
+
+
+///////////// Style Rides I'm Offering Section ////////////
+
+ul {
+  list-style: none;
+}
+
+li.offered-ride {
+  background-color: #fbfbfb;
+  margin-left: -40px;
+  margin-bottom: 40px;
+  padding: 40px;
+  color: #484848;
+}
+
+h3#midline {
+  font-size: 24px;
+  margin-bottom: 40px;
+  color: #484848;
+}
+
+p#status {
+    border-top: black solid 1px;
+    padding-top: 15px;
+    font-size: 18px;
+}
+
+
+h5#hitches {
+  font-size: 18px;
+  border-top: solid black 1px;
+  padding-top: 10px;
+  margin-top: 0px;
+}
+
+p#sorry, p#comment {
+  color: #626262;
+}
+
+.cancel-ride-button {
+  font-size: 15px;
+  padding: 9px 27px;
+  border-radius: 2px;
+  font-family: arial, sans-serif;
+  border-color: #ff5a5f;
+  border-bottom-color: #e00007;
+  background-color: #ff5a5f;
+  color: #fff;
+}
+
+  a:link {
+    color: #fff;
+}
+
+.reject-button {
+  font-size: 15px;
+  padding: 9px 27px;
+  border-radius: 2px;
+  font-family: arial, sans-serif;
+  border-color: #ff5a5f;
+  border-bottom-color: #e00007;
+  background-color: rgb(202, 60, 60);
+  color: #fff;
+}
+
+.seat-booker-button {
+  color: #626262;
+  font-size: 18px;
+}
