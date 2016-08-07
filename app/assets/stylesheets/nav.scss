@@ -5,17 +5,12 @@
   padding: 0 30px;
   text-decoration: none;
   margin: 0;
-
-
-
-}
+  }
 
 .alt-color {
   background-color: rgba(0, 0, 0, 0.8);
   height: 30%;
 }
-
-
 
 
 .navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus{
@@ -47,6 +42,33 @@
   margin-right: 9px;
 }
 
+/* Footer */
+
+  .footer {
+    height: 200px;
+    position: relative;
+    width: 100%;
+    background-color: gray;
+  }
+
+  #link_container {
+    list-style: none;
+    text-align: center;
+  }
+
+  .copywrite {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .copywrite_h1 {
+    text-align: center;
+    margin:0 auto;
+    font-size: 1.2em;
+    margin: 30px;
+  }
 
 
 
@@ -213,13 +235,13 @@ and (max-width: 767px) {
 
     /* footer responsiveness */
 
-    .footer {
-      height: 300px;
-      position: relative;
-      width: 100%;
-      background-color: gray;
-      margin-top: 400px;
-    }
+      .footer {
+        height: 300px;
+        position: relative;
+        width: 100%;
+        background-color: gray;
+        margin-top: 400px;
+      }
 
       .copywrite {
         position: absolute;
@@ -260,6 +282,15 @@ and (max-width: 435px) {
     text-align: center;
     font-size: large;
   }
+
+  .footer {
+    height: 300px;
+    position: relative;
+    width: 100%;
+    background-color: gray;
+    margin-top: 400px;
+  }
+
 
 }
 
@@ -345,4 +376,37 @@ and (max-width: 801px)
     input.search-button {
       margin-right: 45px;
     }
+
+      .footer {
+        height: 300px;
+        position: relative;
+        width: 100%;
+        background-color: gray;
+        margin-top: 400px;
+      }
+
+      .copywrite {
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+        margin-bottom: 10px;
+      }
+
+      .copywrite_h1 {
+        text-align: center;
+        margin:0 auto;
+        font-size: 1.2em;
+        margin: 30px;
+      }
+
+      .links_footer {
+        margin: 0 auto;
+        padding: 50px;
+      }
+
+      #link_container {
+        list-style: none;
+        text-align: center;
+      }
+
 }
