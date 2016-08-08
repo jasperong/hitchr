@@ -180,6 +180,12 @@ h2.driver-link {
 }
 
 @media only screen and (max-width: 500px) {
+
+  .user-avatar {
+    width: 200px;
+    height: 200px;
+  }
+
   .show_container {
         width: 300px;
         margin-bottom: 30px;
@@ -210,4 +216,10 @@ h2.driver-link {
     margin-left: -50px;
   }
 
+}
+
+@media only screen and (max-width: 500px) {
+
+
+  
 }
