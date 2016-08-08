@@ -20,9 +20,8 @@
 
             <div class="details">
 
-                <p><%= @ride.start_location %></p>
-                <p id="down-arrow">  &#8595 </p>
-                <p><%= @ride.end_location %></p></br>
+                <p>From: <%= @ride.start_location %></p>
+                <p>To: <%= @ride.end_location %></p>
                 <p><%= @ride.date.strftime("%b %-d, %Y") %> | <%= @ride.time.strftime("%-l:%M %p") %></p>
                 <p><%= pluralize(@ride.seats_available - total_seats < 0 ? 0 : @ride.seats_available - total_seats, "seat") %> available</p>
                 <p>$<%= @ride.price %> per seat</p>
