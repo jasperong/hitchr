@@ -2,13 +2,12 @@ class Booking < ActiveRecord::Base
   belongs_to :ride
   belongs_to :user
   validates :seats, presence: true
-  validates_presence_of :rating, :review, on: :update
+  validates_presence_of :rating, on: :update
 
   validate :enough_seats, :booking_to_zero
 
 
   def enough_seats
-
     arr = [0]
     ride.bookings.each { |booking| arr << booking.seats }
     total_seats = arr.inject(:+)
