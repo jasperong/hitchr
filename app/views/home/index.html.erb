@@ -85,7 +85,9 @@
         <div class="grid">
           <figure class="effect-sadie">
             <figcaption>
-              <h2>Departs: <%= ride.date.strftime("%b %-d, %Y") %> at <%= ride.time.strftime("%-l:%M %p") %><span><br>Price: $<%= ride.price %><br>From: <%= ride.start_location %> to: <%= ride.end_location %></span></h2>
+              <h2>Departs: <%= ride.date.strftime("%b %-d, %Y") %> at
+                <%= ride.time.strftime("%-l:%M %p") %><br><b>$<%= ride.price %></b><br>
+              <%= ride.start_location %> &#8594 <%= ride.end_location %></h2>
               <p>Driver: <%= ride.user.first_name %></p>
               <a href="<%= ride_path(ride) %>">View Ride</a>
             </figcaption>
