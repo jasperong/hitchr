@@ -3,22 +3,23 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-.image_div {
-  margin: 0 auto;
-  width: 50%;
-  padding-bottom: 50px;
-}
-
-.user-avatar {
-  width: 150px;
-  height: 150px;
-  margin: 0 auto;
-}
-
-.user_profile {
-  margin: 0 auto;
-  width: 50%;
-}
+// .image_div {
+//   margin: 0 auto;
+//   width: 50%;
+//   padding-bottom: 50px;
+//   margin-left: 135px;
+// }
+//
+// .user-avatar {
+//   width: 150px;
+//   height: 150px;
+//   margin: 0 auto;
+// }
+//
+// .user_profile {
+//   margin: 0 auto;
+//   width: 50%;
+// }
 
 #user_contact {
   clear: both;
@@ -36,7 +37,7 @@
   font-family: inherit;
   font-size: 3em;
   text-align: center;
-  margin: 40px;
+  margin: 50px;
 }
 
 .user_content {
@@ -63,6 +64,88 @@
 a.button_style {
     font-size: 16px;
     padding: 4px;
+}
+
+// .jq-ry-group-wrapper {
+//   margin-left: 120px;
+// }
+
+// p.user_name {
+//   margin-left: 80px;
+// }
+
+
+// @media only screen
+//
+// and (min-width: 1500px)
+//
+// {
+// }
+
+@media only screen
+
+and (min-width: 1500px)
+and (max-width: 1699px)
+
+{
+  .jq-ry-group-wrapper {
+    margin-left: 100px;
+  }
+
+  p.user_name {
+    margin-left: 60px;
+  }
+
+  .image_div {
+    margin: 0 auto;
+    width: 50%;
+    padding-bottom: 50px;
+  }
+
+  .user-avatar {
+    width: 175px;
+    height: 175px;
+    margin-left: 10px;
+  }
+
+  .user_profile {
+    margin: 0 auto;
+    width: 50%;
+  }
+}
+
+
+@media only screen
+
+and (min-width: 1700px)
+and (max-width: 1916px)
+
+{
+  .jq-ry-group-wrapper {
+    margin-left: 120px;
+  }
+
+  p.user_name {
+    margin-left: 80px;
+  }
+
+  .image_div {
+    margin: 0 auto;
+    width: 50%;
+    padding-bottom: 50px;
+    margin-left: 135px;
+  }
+
+  .user-avatar {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+  }
+
+  .user_profile {
+    margin: 0 auto;
+    width: 50%;
+  }
 }
 
 
