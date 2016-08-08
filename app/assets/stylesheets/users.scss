@@ -21,6 +21,21 @@
 //   width: 50%;
 // }
 
+
+.offer-button {
+  background-color: #7FB5DA;
+  border-style: none;
+  width: 120px;
+  height: 30px;
+  color: #fff;
+}
+
+.offer-button:hover {
+  background-color: #0ec6f1;
+  transition: 0.5s ease;
+}
+
+
 #user_contact {
   clear: both;
   float: right;
