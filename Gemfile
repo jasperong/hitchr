@@ -46,7 +46,7 @@ gem 'awesome_print'
 gem 'delayed_job_active_record'
 gem 'judge'
 gem 'parsley-rails'
-gem 'sendgrid'
+# gem 'sendgrid'
 
 group :development, :test do
 
