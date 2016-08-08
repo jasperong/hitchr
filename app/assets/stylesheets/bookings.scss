@@ -2,27 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.edit-button {
+.edit-button, .view-ride-button {
   font-size: 15px;
-  padding: 9px 27px;
+  padding: 9px 22px;
   border-radius: 2px;
   font-family: arial, sans-serif;
   background-color: #7FB5DA;
   color: #fff;
 }
 
-
-.view-ride-button {
-    font-size: 15px;
-    padding: 9px 27px;
-    border-radius: 2px;
-    font-family: arial, sans-serif;
-    border-color: #00df88;
-    border-bottom-color: #109a64;
-    background-color: #00df88;
-    color: #fff;
-
-}
 
 .bookings-show{
   background-color: #fbfbfb;
