@@ -37,7 +37,9 @@
   font-family: inherit;
   font-size: 3em;
   text-align: center;
-  margin: 50px;
+  margin-bottom: 50px;
+  width: 125%;
+  margin-left: -20px;
 }
 
 .user_content {
@@ -81,9 +83,52 @@ a.button_style {
 //
 // {
 // }
+
 @media only screen
 
-and (min-width: 1000px)
+and (min-width: 768px)
+and (max-width: 900px)
+
+{
+  .jq-ry-group-wrapper {
+    margin-left: 30px;
+  }
+
+  p.user_name {
+    margin-left: 18px;
+  }
+
+  .image_div {
+    margin: 0 auto;
+    width: 50%;
+    padding-bottom: 50px;
+  }
+
+  .user-avatar {
+    width: 110px;
+    height: 110px;
+    margin-left: 5px;
+  }
+
+  .user_profile {
+    margin: 0 auto;
+    width: 50%;
+  }
+
+  .user-header {
+    width: 150%;
+  }
+
+
+
+}
+
+
+
+
+@media only screen
+
+and (min-width: 900px)
 and (max-width: 1099px)
 
 {
@@ -112,9 +157,11 @@ and (max-width: 1099px)
     width: 50%;
   }
 
-  .user-header{
-    margin-left:55px;
+  .user-header {
+    width: 125%;
   }
+
+
 }
 
 
@@ -149,9 +196,10 @@ and (max-width: 1199px)
     width: 50%;
   }
 
-  .user-header{
-    margin-left:55px;
+  .user-header {
+    width: 125%;
   }
+
 }
 
 @media only screen
@@ -184,6 +232,11 @@ and (max-width: 1299px)
     margin: 0 auto;
     width: 50%;
   }
+
+  .user-header {
+    width: 125%;
+  }
+
 }
 
 
@@ -218,6 +271,11 @@ and (max-width: 1499px)
     margin: 0 auto;
     width: 50%;
   }
+
+  .user-header {
+    width: 125%;
+  }
+
 }
 
 
@@ -251,6 +309,11 @@ and (max-width: 1699px)
     margin: 0 auto;
     width: 50%;
   }
+
+  .user-header {
+    width: 125%;
+  }
+
 }
 
 
@@ -285,6 +348,11 @@ and (max-width: 1916px)
     margin: 0 auto;
     width: 50%;
   }
+
+  .user-header {
+    width: 125%;
+  }
+
 }
 
 
@@ -598,7 +666,7 @@ p#sorry, p#comment {
 
 .cancel-ride-button {
   font-size: 15px;
-  padding: 9px 27px;
+  padding: 10px 15px;
   border-radius: 2px;
   font-family: arial, sans-serif;
   border-color: #ff5a5f;

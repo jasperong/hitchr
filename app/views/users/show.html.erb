@@ -37,7 +37,7 @@
             <div class="user_links">
               <!-- ONLY ALLOW EDIT AND DELETE IF YOU ARE THE USER OF THE USER PROFILE -->
               <% if current_user == @user %>
-                <%= link_to "Edit My Account", edit_user_path(@user), class: "edit-button" %><br>
+                <%= link_to "Edit My Account", edit_user_path(@user), class: "edit-button" %><br />
               </br><%= link_to "Delete Account", user_path(@user), class: "cancel-ride-button", :method => :delete, data: {confirm: "Delete User: #{@user.first_name.capitalize} #{@user.last_name.capitalize}?"} %>
               <% end %>
             </div>
