@@ -385,7 +385,7 @@ p#sorry, p#comment {
   color: #fff;
 }
 
-  
+
 
 .reject-button {
   font-size: 15px;
@@ -400,6 +400,12 @@ p#sorry, p#comment {
 
 .seat-booker-button {
   color: #626262;
+  font-size: 18px;
+
+}
+
+.seat-booker-button:hover {
+  color: #0ec6f1;
   font-size: 18px;
 
 }
