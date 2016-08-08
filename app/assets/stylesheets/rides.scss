@@ -86,7 +86,11 @@
 }
 
 .driver-name {
-  color: #ff874f;
+  color: #7FB5DA;
+}
+
+.driver-name:hover {
+  color: #0ec6f1;
 }
 
 h2.driver-link {
@@ -134,6 +138,10 @@ h2.driver-link {
 .back_to_rides_a {
   color: #7FB5DA;
   text-decoration: none;
+}
+
+.back_to_rides_a:hover {
+  color: #0ec6f1;
 }
 
 .button_style {
