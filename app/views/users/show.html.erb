@@ -95,9 +95,9 @@
           <p id="status"><b>Status: </b> <%= ride.completed ? "Ride Complete" : "Ride Pending" %></p>
 
           <% if ride.completed == false %>
-            <%= link_to "Cancel Ride", ride_path(ride), :method => :delete, :class => "cancel-ride-button" %><br />
+            <%= link_to "Cancel Ride", ride_path(ride), :method => :delete, :class => "cancel-ride-button" %><br /><br />
             <% if ride.date < Date.today %>
-              <i><%= link_to "Ride Complete", ride_completed_path(ride), :method => :delete %></i><br />
+              <%= link_to "Ride Complete", ride_completed_path(ride), :method => :delete, :class => "ride-complete-button" %><br />
             <% end %>
           <% end %>
           <br />
