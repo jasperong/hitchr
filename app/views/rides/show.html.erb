@@ -34,10 +34,9 @@
           <h3>Comments: </h3><p> <%= @ride.comments %></p><br>
         </div>
         <div class="back_to_rides">
-          <% if current_user %>
-            <% unless @ride.user == current_user && @ride.completed == true%>
-              <%= render "bookings/form" %>
-            <% end %>
+
+          <% unless current_user == @ride.user || @ride.completed == true%>
+            <%= render "bookings/form" %>
           <% end %>
           <%= link_to "Back to Home", root_path, class: "back_to_rides_a"%>
         </div>
