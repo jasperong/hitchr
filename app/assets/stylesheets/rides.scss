@@ -57,6 +57,10 @@
   padding: 5px;
 }
 
+p#down-arrow {
+    margin-left: 50%;
+}
+
 /*  end */
 
 .show-header {
@@ -107,6 +111,7 @@ h2.driver-link {
   font-size: 15px;
   float: left;
   margin-left: -50px;
+  margin-top: 20px;
 }
 
 .user-avatar {
@@ -258,5 +263,5 @@ h2.driver-link {
 @media only screen and (max-width: 500px) {
 
 
-  
+
 }
