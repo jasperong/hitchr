@@ -1,4 +1,4 @@
-
+$primary-light: #f3fffa;
 * {
     margin: 0;
     padding: 0;
@@ -11,49 +11,22 @@ html {
 
  body {
   width: 100%;
-  background-color: #f3fffa;
+  background-color: $primary-light;
 }
 
-.search-empty {
-  color: grey;
-  padding: 100px;
-}
 
-body.background {
-  background-color: grey;
-}
 
-.first-img {
-  width: 8%;
-  margin-left: 20px;
 
-}
-
-.secont-img {
-  width: 8%;
-  margin-left: 20px;
-
-}
-
-.third-img {
-  width: 8%;
-  margin-left: 20px;
-
-}
 
 h3.icon {
   margin-bottom: 40px;
   display: inline;
   margin-left: 120px;
   margin-top: -100px;
-  /* display: inline-block; */
 }
 
 
-
-
-div#search_date_wrap {
-}
+//--------->> first slide <<-------------
 
 #start_location_wrap {
   float: left;
@@ -75,11 +48,7 @@ div#search_date_wrap {
 
 }
 
-.search_location_warp {
-  display: inline-block;
-}
-
-div#search_date_wrap {
+#search_date_wrap {
     display: inline-block;
     margin-top: 5px;
     margin-right: 8px;
@@ -90,7 +59,7 @@ div#search_date_wrap {
     color: white;
 }
 
-input#date_ {
+#date_ {
   height: 37px;
   border-radius: 20px;
   padding-left: 10px;
@@ -103,18 +72,14 @@ input#date_ {
 
 and (min-width: 801px)
 and (max-width: 1100px)
-
-{
-
-
-  input#date_ {
-    height: 37px;
-    border-radius: 20px;
-    padding-left: 10px;
-    margin-top: 10px;
-    width: 100%;
-  }
-
+  {
+    input#date_ {
+      height: 37px;
+      border-radius: 20px;
+      padding-left: 10px;
+      margin-top: 10px;
+      width: 100%;
+    }
 }
 
 // Desktop responsive for search continued
@@ -123,18 +88,15 @@ and (max-width: 1100px)
 and (min-width: 1101px)
 and (max-width: 1223px)
 
-{
+  {
+    #date_ {
+      height: 37px;
+      border-radius: 20px;
+      padding-left: 10px;
+      width: 98%;
+    }
 
-  input#date_ {
-    height: 37px;
-
-    border-radius: 20px;
-    padding-left: 10px;
-    width: 98%;
-  }
-
-
-  input.search-button {
+    .search-button {
       height: 40px;
       margin-bottom: -5px;
       border-radius: 10px;
@@ -142,20 +104,17 @@ and (max-width: 1223px)
       margin-top: 10px;
     }
 
-}
+  }
 
 
 
-input.search-button {
+.search-button {
     height: 40px;
     margin-bottom: -5px;
     border-radius: 10px;
     margin-right: 100px;
     margin-top: 10px;
 
-    // @media (min-width: 820px) {
-    //   margin-top: -51px;
-    // }
   }
 
 
@@ -171,17 +130,17 @@ input.search-button {
 }
 
 
-div#outer-wrap {
+#outer-wrap {
   margin-top: -31px;
 
 }
 
-div#Video {
+#Video {
     margin-top: -31px;
     background-color: black;
 }
 
-video#my-video {
+#my-video {
     opacity: 0.5;
 }
 
@@ -192,6 +151,17 @@ div#video-wrap {
     height: 600px;
     width: 100%;
 }
+
+
+// ----------->>Second slide <<-----------
+
+h3.icon {
+  margin-bottom: 40px;
+  display: inline;
+  margin-left: 120px;
+  margin-top: -100px;
+}
+
 
 .content-overlay {
   position: relative;
