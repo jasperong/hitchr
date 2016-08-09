@@ -180,8 +180,6 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
-    sendgrid (1.2.4)
-      json
     sorcery (0.9.1)
       bcrypt (~> 3.1)
       oauth (~> 0.4, >= 0.4.4)
@@ -234,7 +232,6 @@ DEPENDENCIES
   randumb
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
-  sendgrid
   sorcery
   spring
   uglifier (>= 1.3.0)
