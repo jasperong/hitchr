@@ -2,6 +2,7 @@ $primary-light: #f3fffa;
 
 * {
   box-sizing: border-box;
+  font-family: 'Raleway';
 
 }
 
@@ -399,7 +400,7 @@ and (min-width: 2800px)
 }
 
 #my-video {
-    opacity: 0.8;
+    opacity: 0.7;
 }
 
 #video-wrap {
@@ -455,7 +456,7 @@ h1.title {
 
 h3#tagline {
     color: white;
-    font-weight: 100;
+    font-weight: 200;
     font-size: 23px;
 }
 
