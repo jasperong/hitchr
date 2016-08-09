@@ -68,7 +68,7 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = false
 
   # Enqueue emails
-  config.active_job.queue_adapter = :delayed_job
+  # config.active_job.queue_adapter = :delayed_job
 
   # Paste this in from rails...
   # config.action_mailer.smtp_settings = {
