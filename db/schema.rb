@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160729010017) do
+ActiveRecord::Schema.define(version: 20160803202947) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "bookings", force: :cascade do |t|
     t.integer  "ride_id"
@@ -19,6 +22,9 @@ ActiveRecord::Schema.define(version: 20160729010017) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "seats"
+    t.integer  "review_id"
+    t.text     "review"
+    t.float    "rating"
   end
 
   create_table "delayed_jobs", force: :cascade do |t|
@@ -35,17 +41,7 @@ ActiveRecord::Schema.define(version: 20160729010017) do
     t.datetime "updated_at"
   end
 
-  add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority"
-
-  create_table "reviews", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "ride_id"
-    t.text     "review"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.float    "rating"
-    t.boolean  "completed"
-  end
+  add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
 
   create_table "rides", force: :cascade do |t|
     t.date     "date"
@@ -79,6 +75,6 @@ ActiveRecord::Schema.define(version: 20160729010017) do
     t.string   "phone_number"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
 end
